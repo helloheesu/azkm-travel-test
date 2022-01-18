@@ -1,16 +1,62 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('/fonts/Cafe24Ssurround.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cafe24SsurroundAir';
+  src: url('/fonts/Cafe24SsurroundAir.ttf') format('truetype');
 }
 
+/* reset start */
 a {
   color: inherit;
   text-decoration: none;
 }
-
 * {
   box-sizing: border-box;
+}
+html,
+body,
+p,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+/* reset end */
+
+body {
+  font-family: Cafe24SsurroundAir;
+  text-align: center;
+}
+
+.heading {
+  font-family: Cafe24Ssurround;
+}
+
+.container {
+  max-width: 425px;
+  margin: 0 auto;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image {
+  /* margin: 0 5em; */
+}
+
+.button {
+  border: 1px solid black;
+  border-radius: 3em;
+  padding: 0.5em 1.5em;
+  background-color: #feba12;
+  font-family: Cafe24SsurroundAir;
+  cursor: pointer;
+}
+
+.accent.button {
+  background-color: #feba12;
 }
