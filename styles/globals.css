@@ -31,6 +31,7 @@ body {
 
 .heading {
   font-family: Cafe24Ssurround;
+  margin-bottom: 1em;
 }
 
 .container {
@@ -44,6 +45,16 @@ body {
   align-items: stretch;
   position: relative;
   /* background-color: #feba12; */
+}
+
+.container progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .main-image {
