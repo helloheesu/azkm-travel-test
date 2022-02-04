@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       </div>
       {/* </div> */}
       {/* <div className="lower"> */}
-      <Link href={'test/1'}>
+      <Link href={'test/1'} as={'/'}>
         <a>
           <button className="button accent">테스트 시작 &gt;</button>
         </a>
