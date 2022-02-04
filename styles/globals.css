@@ -38,25 +38,73 @@ body {
   margin: 0 auto;
   display: flex;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  position: relative;
+  /* background-color: #feba12; */
 }
 
 .main-image {
-  /* margin: 0 5em; */
+  margin: 0 5em;
+  flex-shrink: 1;
+  max-width: 100%;
 }
 
 .button {
   border: 1px solid black;
+  /* border: 2px solid black; */
   border-radius: 3em;
-  padding: 0.5em 1.5em;
-  background-color: #feba12;
+  padding: 0.8em 2em;
+  /* padding: 2em 1.5em; */
+  background-color: transparent;
   font-family: Cafe24SsurroundAir;
+  /* font-family: Cafe24Ssurround; */
   cursor: pointer;
 }
 
 .accent.button {
   background-color: #feba12;
 }
+.button.option:not(:first-of-type) {
+  margin-top: 1.5em;
+}
+.button.option {
+  margin: 0 2em;
+}
+
+.progress-indicator-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 2em;
+  background-color: red;
+}
+.progress-indicator-wrapper .progress {
+  height: 100%;
+  background-color: yellow;
+  width: 30%;
+}
+
+/* 
+.container {
+  background-color: #33d0bb;
+}
+.upper {
+  background-color: #33d0bb;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.lower {
+  background-color: #feba12;
+  width: 100%;
+  flex-grow: 1;
+}
+.lower a {
+  position: relative;
+  top: -1em;
+} 
+*/
