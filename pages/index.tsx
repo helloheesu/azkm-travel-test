@@ -8,8 +8,8 @@ const Home: NextPage = () => {
   return (
     <div className="container">
       <Head>
-        <title>아찌끄미 유형 테스트</title>
-        <meta name="description" content="나는 어떤 유형일까?" />
+        <title>여행 유형 테스트</title>
+        <meta name="description" content="나는 어떤 여행 유형일까?" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <div className="upper"> */}

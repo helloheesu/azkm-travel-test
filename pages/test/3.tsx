@@ -3,10 +3,16 @@ import Image from 'next/image';
 import Progress from 'components/Progress';
 import MainPic from 'public/images/3.png';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const Test: NextPage = () => {
   return (
     <div className="container">
+      <Head>
+        <title>3/5 - 여행 유형 테스트</title>
+        <meta name="description" content="나는 어떤 여행 유형일까?" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Progress max={5} value={3} />
       <h2 className="heading">어떤 여행스타일이야?</h2>
       <div className="main-image">
