@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Progress from '../../components/Progress';
-import IntroPic from '../../public/images/intro.png';
+import Progress from 'components/Progress';
+import IntroPic from 'public/images/intro.png';
 
 const Test: NextPage = () => {
   return (
