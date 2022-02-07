@@ -10,7 +10,7 @@ const Result: NextPage = () => {
   useEffect(() => {
     setTimeout(() => {
       router.replace('result/vanilla', 'vanilla');
-    }, 300);
+    }, 1000);
   }, [router]);
 
   return (

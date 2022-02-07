@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Progress from 'components/Progress';
-import MainPic from 'public/images/1.png';
+import MainPic from 'public/images/test-2.png';
 import Link from 'next/link';
 import Head from 'next/head';
 

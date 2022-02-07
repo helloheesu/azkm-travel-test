@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import MainPic from 'public/images/1.png';
+import MainPic from 'public/images/result-vanilla.png';
 import Link from 'next/link';
 
 const Test: NextPage = () => {
