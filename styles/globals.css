@@ -123,5 +123,5 @@ body {
   padding-top: 22%;
 }
 .button.option:not(:first-of-type) {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
