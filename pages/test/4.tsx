@@ -14,18 +14,30 @@ const Test: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Progress max={5} value={4} />
-      <h2 className="heading">운동을 좋아해?</h2>
+      <h2 className="heading">
+        여행지에서 개인 자유시간! 당신은 무엇을 하고싶은가?
+      </h2>
       <div className="main-image">
         <Image src={MainPic} alt="인트로 이미지 설명" />
       </div>
       <Link href={'5'} passHref as={'/'}>
         <button className="button option">
-          운동이 싫어. 운동하느니 차라리 한숨 자는 게 낫지!
+          난 쉬러왔어. 숙소에 누워서 핸드폰이나 해야지
         </button>
       </Link>
       <Link href={'5'} passHref as={'/'}>
         <button className="button option">
-          난 무거운 돌을 들지 못하면 화가 나!
+          여행은 체력이지! 운동을 빼먹을순없어
+        </button>
+      </Link>
+      <Link href={'5'} passHref as={'/'}>
+        <button className="button option">
+          주변 구경도 할겸 가벼운 산책을 하고싶어!
+        </button>
+      </Link>
+      <Link href={'5'} passHref as={'/'}>
+        <button className="button option">
+          이따 야시장에 가기위해 지금 잠깐 자야해!
         </button>
       </Link>
     </div>

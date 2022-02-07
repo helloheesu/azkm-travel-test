@@ -94,15 +94,15 @@ body {
   /* font-family: BR R; */
   cursor: pointer;
   border: none;
-  background-image: url('/images/button.png');
+  /* background-image: url('/images/button.png');
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-color: var(--button-bg-color);
+  background-color: var(--button-bg-color); */
   /* border-image-outset: 100em; */
 }
 
-.accent.button {
+.button {
   /* background-color: #feba12; */
   background-color: transparent;
   background-image: url('/images/filled-button.png');

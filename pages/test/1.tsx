@@ -15,33 +15,29 @@ const Test: NextPage = () => {
       </Head>
       <Progress max={5} value={1} />
       <h2 className="heading">
-        요리를 할래 아님 뒷정리를 할래? 라고 묻는다면?
+        친구들과 함께 여행가기로 전날 밤이다. 당신이 자기전 하는일은?
       </h2>
       <div className="main-image">
         <Image src={MainPic} alt="요리 이미지" />
       </div>
       <Link href={'2'} passHref as={'/'}>
         <button className="button option">
-          요리도 할 수 있지만 난 청소를 할래.
-          <br />
-          깔끔한 게 좋거든.
-        </button>
-      </Link>
-      <Link href={'2'} passHref as={'/'}>
-        <button className="button option accent">
-          요리도 할 수 있지만 난 청소를 할래.
-          <br />
-          깔끔한 게 좋거든.
+          여권, 필수품, 옷가지 등 꼼꼼하게 계속 체크해 본다.
         </button>
       </Link>
       <Link href={'2'} passHref as={'/'}>
         <button className="button option">
-          당연히 요리를 할래. 설거지나 뒷정리는 귀찮거든.
+          친구한테 전화 통화를 걸어 여행에 관한 대화를 나눈다.
         </button>
       </Link>
       <Link href={'2'} passHref as={'/'}>
-        <button className="button option accent">
-          당연히 요리를 할래. 설거지나 뒷정리는 귀찮거든.
+        <button className="button option">
+          빨리자야지! 내일 아침에 제 시간에 일어나야 하니까
+        </button>
+      </Link>
+      <Link href={'2'} passHref as={'/'}>
+        <button className="button option">
+          빼먹은 게 있어도, 가서 사면되지! 짐 싸는 건 귀찮아~
         </button>
       </Link>
     </div>

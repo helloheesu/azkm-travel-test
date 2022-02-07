@@ -14,23 +14,30 @@ const Test: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Progress max={5} value={3} />
-      <h2 className="heading">어떤 여행스타일이야?</h2>
+      <h2 className="heading">
+        드디어 도착! 여행지에서 가장먼저 눈에들어 온것은 무엇인가?
+      </h2>
       <div className="main-image">
         <Image src={MainPic} alt="여행 스타일 이미지" />
       </div>
       <Link href={'4'} passHref as={'/'}>
         <button className="button option">
-          여행보단 사실 집에서 쉬는 게 좋은 걸. 여행을 가서도 숙소에 있곤해.
+          눈에보이는건 걸어다니는 사람들 그리고 또 사람들...
         </button>
       </Link>
       <Link href={'4'} passHref as={'/'}>
         <button className="button option">
-          나는 역사적인 유적지나 유명한 장소보단 식도락 여행이 좋아.
+          일단 지도앱부터 켜서 숙소에 짐을 가져다 놔야지!
         </button>
       </Link>
       <Link href={'4'} passHref as={'/'}>
         <button className="button option">
-          미리 시간에 맞춰 동선을 짜놓는게 좋아.
+          아~ 즐겁다 즐거워~ 이 순간을 그냥 즐겨~
+        </button>
+      </Link>
+      <Link href={'4'} passHref as={'/'}>
+        <button className="button option">
+          아..배고파 체력이 떨어진다! 식당부터 찾는다.
         </button>
       </Link>
     </div>
