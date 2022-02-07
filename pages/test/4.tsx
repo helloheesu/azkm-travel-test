@@ -33,11 +33,6 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
           <div>주변 구경도 할겸 가벼운 산책을 하고싶어!</div>
         </a>
       </Link>
-      <Link href={'5'} as={'/'}>
-        <a className="button option">
-          <div>이따 야시장에 가기위해 지금 잠깐 자야해!</div>
-        </a>
-      </Link>
     </div>
   );
 };

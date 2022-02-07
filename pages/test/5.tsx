@@ -31,11 +31,6 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
           <div>아쉬워서 다음여행은 언제 어디로갈지 이야기한다.</div>
         </a>
       </Link>
-      <Link href={'/result'} passHref>
-        <a className="button option">
-          <div>여행지에서 하지못하고 빼먹은 것이 있나 찾아본다.</div>
-        </a>
-      </Link>
     </div>
   );
 };

@@ -33,11 +33,6 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
           <div>아~ 즐겁다 즐거워~ 이 순간을 그냥 즐겨~</div>
         </a>
       </Link>
-      <Link href={'4'} as={'/'}>
-        <a className="button option">
-          <div>아..배고파 체력이 떨어진다! 식당부터 찾는다.</div>
-        </a>
-      </Link>
     </div>
   );
 };
