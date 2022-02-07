@@ -7,7 +7,7 @@ import Head from 'next/head';
 
 const Test: NextPage<{ height: string }> = ({ height }) => {
   return (
-    <div className="container" style={{ height }}>
+    <div className="container" style={{ minHeight: height, height: 'auto' }}>
       <Head>
         <title>1/5 - 여행 유형 테스트</title>
         <meta name="description" content="나는 어떤 여행 유형일까?" />

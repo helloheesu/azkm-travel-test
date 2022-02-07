@@ -14,7 +14,7 @@ const Result: NextPage<{ height: string }> = ({ height }) => {
   }, [router]);
 
   return (
-    <div className="container" style={{ height }}>
+    <div className="container" style={{ minHeight: height, height: 'auto' }}>
       <div className="main-image">
         <Image src={LoadingPic} alt="로딩 이미지" />
       </div>
