@@ -1,8 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
-import IntroPic from 'public/images/intro.png';
 
 const Home: NextPage<{ height: string }> = ({ height }) => {
   return (
@@ -21,7 +19,9 @@ const Home: NextPage<{ height: string }> = ({ height }) => {
         <div style={{ backgroundImage: `url('/images/intro.png')` }}></div>
       </div>
       <Link href={'test/1'} as={'/'}>
-        <a className="button accent">테스트 시작 &gt;</a>
+        <a className="button">
+          <div>테스트 시작 &gt;</div>
+        </a>
       </Link>
     </div>
   );

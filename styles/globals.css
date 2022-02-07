@@ -79,17 +79,31 @@ body {
   background-repeat: no-repeat;
   background-color: transparent;
 
-  width: 80vw;
+  width: 100%;
   margin: 0 auto;
+
+  position: relative;
+}
+.main-image > div,
+.button > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-image {
   margin: 1em auto;
   flex-shrink: 1;
-  max-width: 100%;
 
   background-image: url('/images/main.png');
-  height: 64vw;
+  /* 0.71% */
+  padding-top: 71%;
 }
 .main-image > div {
   width: 100%;
@@ -105,11 +119,8 @@ body {
   cursor: pointer;
 
   background-image: url('/images/button.png');
-  height: 20vw;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* 0.22% */
+  padding-top: 22%;
 }
 .button.option:not(:first-of-type) {
   margin-top: 1em;

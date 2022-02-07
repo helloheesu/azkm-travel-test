@@ -20,20 +20,22 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
       </div>
       <Link href={'4'} as={'/'}>
         <a className="button option">
-          눈에보이는건 걸어다니는 사람들 그리고 또 사람들...
+          <div>눈에보이는건 걸어다니는 사람들 그리고 또 사람들...</div>
         </a>
       </Link>
       <Link href={'4'} as={'/'}>
         <a className="button option">
-          일단 지도앱부터 켜서 숙소에 짐을 가져다 놔야지!
+          <div>일단 지도앱부터 켜서 숙소에 짐을 가져다 놔야지!</div>
         </a>
       </Link>
       <Link href={'4'} as={'/'}>
-        <a className="button option">아~ 즐겁다 즐거워~ 이 순간을 그냥 즐겨~</a>
+        <a className="button option">
+          <div>아~ 즐겁다 즐거워~ 이 순간을 그냥 즐겨~</div>
+        </a>
       </Link>
       <Link href={'4'} as={'/'}>
         <a className="button option">
-          아..배고파 체력이 떨어진다! 식당부터 찾는다.
+          <div>아..배고파 체력이 떨어진다! 식당부터 찾는다.</div>
         </a>
       </Link>
     </div>
