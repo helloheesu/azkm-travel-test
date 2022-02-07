@@ -1,10 +1,7 @@
 @font-face {
-  font-family: 'Cafe24Ssurround';
-  src: url('/fonts/Cafe24Ssurround.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Cafe24SsurroundAir';
-  src: url('/fonts/Cafe24SsurroundAir.ttf') format('truetype');
+  font-family: 'BR R';
+  src: local(BR R), url('/fonts/BR_Regular.ttf'), url('/fonts/BR_Regular.otf');
+  font-weight: 100;
 }
 
 /* reset start */
@@ -14,6 +11,7 @@ a {
 }
 * {
   box-sizing: border-box;
+  font-weight: 100;
 }
 html,
 body,
@@ -24,14 +22,21 @@ h1 {
 }
 /* reset end */
 
+:root {
+  --bg-color: #f5d57e;
+  --result-bg-color: #fffeea;
+  --button-bg-color: #c0dc65;
+}
+
 body {
-  font-family: Cafe24SsurroundAir;
+  font-family: BR R;
   text-align: center;
+  background-color: var(--bg-color);
 }
 
 .heading {
-  font-family: Cafe24Ssurround;
-  margin-bottom: 1em;
+  font-family: BR R;
+  margin: 0;
 }
 
 .container {
@@ -44,7 +49,6 @@ body {
   justify-content: center;
   align-items: stretch;
   position: relative;
-  /* background-color: #feba12; */
   padding: 1em;
 }
 
@@ -60,25 +64,43 @@ body {
 }
 
 .main-image {
-  margin: 0 5em;
+  margin: 2em 5em;
   flex-shrink: 1;
   max-width: 100%;
+  background-color: var(--result-bg-color);
+  border-radius: 1em/1.5em;
+  border-image: url('/images/main.png') 30 round;
+  border: none;
+  background-image: url('/images/main.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .button {
-  border: 1px solid black;
-  /* border: 2px solid black; */
-  border-radius: 3em;
+  /* border: 1px solid black; */
+  border-radius: 5em;
   padding: 0.8em 2em;
   /* padding: 2em 1.5em; */
-  background-color: transparent;
-  font-family: Cafe24SsurroundAir;
-  /* font-family: Cafe24Ssurround; */
+  font-family: BR R;
+  /* font-family: BR R; */
   cursor: pointer;
+  border: none;
+  background-image: url('/images/button.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: var(--button-bg-color);
+  /* border-image-outset: 100em; */
 }
 
 .accent.button {
-  background-color: #feba12;
+  /* background-color: #feba12; */
+  background-color: transparent;
+  background-image: url('/images/filled-button.png');
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .button.option:not(:first-of-type) {
   margin-top: 1.5em;

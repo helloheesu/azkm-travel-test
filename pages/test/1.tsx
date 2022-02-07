@@ -28,7 +28,19 @@ const Test: NextPage = () => {
         </button>
       </Link>
       <Link href={'2'} passHref as={'/'}>
+        <button className="button option accent">
+          요리도 할 수 있지만 난 청소를 할래.
+          <br />
+          깔끔한 게 좋거든.
+        </button>
+      </Link>
+      <Link href={'2'} passHref as={'/'}>
         <button className="button option">
+          당연히 요리를 할래. 설거지나 뒷정리는 귀찮거든.
+        </button>
+      </Link>
+      <Link href={'2'} passHref as={'/'}>
+        <button className="button option accent">
           당연히 요리를 할래. 설거지나 뒷정리는 귀찮거든.
         </button>
       </Link>
