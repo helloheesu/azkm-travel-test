@@ -57,7 +57,7 @@ body {
   justify-content: center;
   align-items: stretch;
   position: relative;
-  padding: 1em;
+  padding: 2em;
 }
 
 .container progress[value] {
@@ -79,12 +79,12 @@ body {
   background-repeat: no-repeat;
   background-color: transparent;
 
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
 }
 
 .main-image {
-  margin: 1em 0;
+  margin: 1em auto;
   flex-shrink: 1;
   max-width: 100%;
 
