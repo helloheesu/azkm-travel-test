@@ -108,8 +108,8 @@ body {
   flex-shrink: 1;
 
   background-image: url('/images/main.png');
-  /* 0.71% */
-  padding-top: 71%;
+  /* 0.70% */
+  padding-top: 70%;
 }
 .main-image > div {
   width: 100%;
