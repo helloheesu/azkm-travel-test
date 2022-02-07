@@ -1,3 +1,4 @@
+import MainImage from 'components/MainImage';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -15,9 +16,7 @@ const Home: NextPage<{ height: string }> = ({ height }) => {
         <p>성격 유형 테스트</p>
         <h1 className="heading">나는 어떤 유형일까?</h1>
       </header>
-      <div className="main-image">
-        <div style={{ backgroundImage: `url('/images/intro.png')` }}></div>
-      </div>
+      <MainImage src={'/images/intro.png'} alt="인트로 이미지 설명" />
       <Link href={'test/1'} as={'/'}>
         <a className="button">
           <div>테스트 시작 &gt;</div>

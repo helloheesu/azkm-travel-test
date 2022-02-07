@@ -1,3 +1,4 @@
+import MainImage from 'components/MainImage';
 import type { NextPage } from 'next';
 
 const Test: NextPage<{ height: string }> = ({ height }) => {
@@ -8,11 +9,7 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
     >
       <h2>당신의 베스트 여행메이트는:</h2>
       <h1 className="heading">바닐라</h1>
-      <div className="main-image">
-        <div
-          style={{ backgroundImage: `url('/images/result-vanilla.png')` }}
-        ></div>
-      </div>
+      <MainImage src={'/images/result-vanilla.png'} alt="바닐라" />
       <p>
         동력은 두기 얼마나 쓸쓸하랴? 불어 기관과 작고 꾸며 굳세게 생생하며,
         그들의 꽃 이상, 위하여서. 용기가 바로 할지니, 갑 그들에게 끝까지 우리의

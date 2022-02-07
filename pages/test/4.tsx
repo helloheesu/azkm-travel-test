@@ -1,5 +1,6 @@
-import type { NextPage } from 'next';
+import MainImage from 'components/MainImage';
 import Progress from 'components/Progress';
+import type { NextPage } from 'next';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -15,9 +16,7 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
       <h2 className="heading">
         여행지에서 개인 자유시간! 당신은 무엇을 하고싶은가?
       </h2>
-      <div className="main-image">
-        <div style={{ backgroundImage: `url('/images/4.png')` }}></div>
-      </div>
+      <MainImage src={'/images/4.png'} alt="계획 이미지" />
       <Link href={'5'} as={'/'}>
         <a className="button option">
           <div>난 쉬러왔어. 숙소에 누워서 핸드폰이나 해야지</div>
