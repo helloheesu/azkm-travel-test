@@ -20,25 +20,25 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
       <div className="main-image">
         <Image src={MainPic} alt="요리 이미지" />
       </div>
-      <Link href={'2'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'2'} as={'/'}>
+        <a className="button option">
           여권, 필수품, 옷가지 등 꼼꼼하게 계속 체크해 본다.
-        </button>
+        </a>
       </Link>
-      <Link href={'2'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'2'} as={'/'}>
+        <a className="button option">
           친구한테 전화 통화를 걸어 여행에 관한 대화를 나눈다.
-        </button>
+        </a>
       </Link>
-      <Link href={'2'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'2'} as={'/'}>
+        <a className="button option">
           빨리자야지! 내일 아침에 제 시간에 일어나야 하니까
-        </button>
+        </a>
       </Link>
-      <Link href={'2'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'2'} as={'/'}>
+        <a className="button option">
           빼먹은 게 있어도, 가서 사면되지! 짐 싸는 건 귀찮아~
-        </button>
+        </a>
       </Link>
     </div>
   );

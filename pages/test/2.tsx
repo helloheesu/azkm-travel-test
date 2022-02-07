@@ -20,25 +20,21 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
       <div className="main-image">
         <Image src={MainPic} alt="자유시간 이미지" />
       </div>
-      <Link href={'3'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'3'} as={'/'}>
+        <a className="button option">
           아..졸려 약속에 늦지않게 10분만 더 잔다.
-        </button>
+        </a>
       </Link>
-      <Link href={'3'} passHref as={'/'}>
-        <button className="button option">
-          만나는 시간 전까지 인터넷 서핑을 한다.
-        </button>
+      <Link href={'3'} as={'/'}>
+        <a className="button option">만나는 시간 전까지 인터넷 서핑을 한다.</a>
       </Link>
-      <Link href={'3'} passHref as={'/'}>
-        <button className="button option">
-          금강산도 식후경! 아침밥을 간단히 먹는다
-        </button>
+      <Link href={'3'} as={'/'}>
+        <a className="button option">금강산도 식후경! 아침밥을 간단히 먹는다</a>
       </Link>
-      <Link href={'3'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'3'} as={'/'}>
+        <a className="button option">
           늦으면 안돼! 미리 약속장소에 나가있는다.
-        </button>
+        </a>
       </Link>
     </div>
   );

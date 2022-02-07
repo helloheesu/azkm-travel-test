@@ -20,25 +20,23 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
       <div className="main-image">
         <Image src={MainPic} alt="여행 스타일 이미지" />
       </div>
-      <Link href={'4'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'4'} as={'/'}>
+        <a className="button option">
           눈에보이는건 걸어다니는 사람들 그리고 또 사람들...
-        </button>
+        </a>
       </Link>
-      <Link href={'4'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'4'} as={'/'}>
+        <a className="button option">
           일단 지도앱부터 켜서 숙소에 짐을 가져다 놔야지!
-        </button>
+        </a>
       </Link>
-      <Link href={'4'} passHref as={'/'}>
-        <button className="button option">
-          아~ 즐겁다 즐거워~ 이 순간을 그냥 즐겨~
-        </button>
+      <Link href={'4'} as={'/'}>
+        <a className="button option">아~ 즐겁다 즐거워~ 이 순간을 그냥 즐겨~</a>
       </Link>
-      <Link href={'4'} passHref as={'/'}>
-        <button className="button option">
+      <Link href={'4'} as={'/'}>
+        <a className="button option">
           아..배고파 체력이 떨어진다! 식당부터 찾는다.
-        </button>
+        </a>
       </Link>
     </div>
   );

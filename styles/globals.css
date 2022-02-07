@@ -111,10 +111,10 @@ body {
   background-repeat: no-repeat;
 }
 .button.option:not(:first-of-type) {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 .button.option {
-  margin: 0 2em;
+  margin: 0 1em;
 }
 
 /* 
