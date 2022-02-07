@@ -38,6 +38,9 @@ body {
 .button {
   line-height: 1.2em;
 }
+.result p {
+  line-height: 1.6em;
+}
 
 .heading {
   font-family: BR R;

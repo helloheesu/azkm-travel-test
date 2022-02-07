@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Test: NextPage = () => {
   return (
-    <div className="container">
+    <div className="container result">
       <h2>당신의 베스트 여행메이트는:</h2>
       <h1 className="heading">바닐라</h1>
       <div className="main-image">
