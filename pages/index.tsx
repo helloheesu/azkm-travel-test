@@ -18,14 +18,11 @@ const Home: NextPage<{ height: string }> = ({ height }) => {
         <h1 className="heading">나는 어떤 유형일까?</h1>
       </header>
       <div className="main-image">
-        <Image src={IntroPic} alt="인트로 이미지 설명" />
+        <div style={{ backgroundImage: `url('/images/intro.png')` }}></div>
       </div>
-      {/* </div> */}
-      {/* <div className="lower"> */}
       <Link href={'test/1'} as={'/'}>
         <a className="button accent">테스트 시작 &gt;</a>
       </Link>
-      {/* </div> */}
     </div>
   );
 };

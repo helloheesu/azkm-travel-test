@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import Progress from 'components/Progress';
-import MainPic from 'public/images/5.png';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -16,7 +14,7 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
       <Progress max={5} value={5} />
       <h2 className="heading">여행이 이제 끝났다. 마지막으로 하고싶은것은?</h2>
       <div className="main-image">
-        <Image src={MainPic} alt="비밀 이미지" />
+        <div style={{ backgroundImage: `url('/images/5.png')` }}></div>
       </div>
       <Link href={'/result'} passHref>
         <a className="button option">

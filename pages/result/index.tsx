@@ -1,7 +1,5 @@
 import { NextPage } from 'next';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
-import LoadingPic from 'public/images/loading.png';
 import { useEffect } from 'react';
 
 const Result: NextPage<{ height: string }> = ({ height }) => {
@@ -16,7 +14,7 @@ const Result: NextPage<{ height: string }> = ({ height }) => {
   return (
     <div className="container" style={{ minHeight: height, height: 'auto' }}>
       <div className="main-image">
-        <Image src={LoadingPic} alt="로딩 이미지" />
+        <div style={{ backgroundImage: `url('/images/loading.png')` }}></div>
       </div>
       분석 중...
     </div>

@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import Progress from 'components/Progress';
-import MainPic from 'public/images/4.png';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -18,7 +16,7 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
         여행지에서 개인 자유시간! 당신은 무엇을 하고싶은가?
       </h2>
       <div className="main-image">
-        <Image src={MainPic} alt="인트로 이미지 설명" />
+        <div style={{ backgroundImage: `url('/images/4.png')` }}></div>
       </div>
       <Link href={'5'} as={'/'}>
         <a className="button option">

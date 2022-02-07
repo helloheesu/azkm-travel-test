@@ -1,7 +1,4 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
-import MainPic from 'public/images/result-vanilla.png';
-import Link from 'next/link';
 
 const Test: NextPage<{ height: string }> = ({ height }) => {
   return (
@@ -12,7 +9,9 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
       <h2>당신의 베스트 여행메이트는:</h2>
       <h1 className="heading">바닐라</h1>
       <div className="main-image">
-        <Image src={MainPic} alt="요리 이미지" />
+        <div
+          style={{ backgroundImage: `url('/images/result-vanilla.png')` }}
+        ></div>
       </div>
       <p>
         동력은 두기 얼마나 쓸쓸하랴? 불어 기관과 작고 꾸며 굳세게 생생하며,
