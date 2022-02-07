@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import LoadingPic from 'public/images/loading.png';
 import { useEffect } from 'react';
 
-const Result: NextPage = () => {
+const Result: NextPage<{ height: string }> = ({ height }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Result: NextPage = () => {
   }, [router]);
 
   return (
-    <div className="container">
+    <div className="container" style={{ height }}>
       <div className="main-image">
         <Image src={LoadingPic} alt="로딩 이미지" />
       </div>

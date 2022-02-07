@@ -5,9 +5,9 @@ import MainPic from 'public/images/4.png';
 import Link from 'next/link';
 import Head from 'next/head';
 
-const Test: NextPage = () => {
+const Test: NextPage<{ height: string }> = ({ height }) => {
   return (
-    <div className="container">
+    <div className="container" style={{ height }}>
       <Head>
         <title>4/5 - 여행 유형 테스트</title>
         <meta name="description" content="나는 어떤 여행 유형일까?" />

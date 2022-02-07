@@ -3,9 +3,9 @@ import Image from 'next/image';
 import MainPic from 'public/images/result-vanilla.png';
 import Link from 'next/link';
 
-const Test: NextPage = () => {
+const Test: NextPage<{ height: string }> = ({ height }) => {
   return (
-    <div className="container result">
+    <div className="container result" style={{ minHeight: height }}>
       <h2>당신의 베스트 여행메이트는:</h2>
       <h1 className="heading">바닐라</h1>
       <div className="main-image">
