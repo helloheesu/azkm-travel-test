@@ -7,14 +7,16 @@ interface Props {
 const MainImage = ({ src, alt }: Props) => {
   return (
     <div className="main-image">
-      <div>
-        <Image
-          src={src}
-          alt={alt}
-          layout="fill"
-          objectFit="contain"
-          objectPosition="center"
-        />
+      <div className="size-container">
+        <div className="relative-container">
+          <Image
+            src={src}
+            alt={alt}
+            layout="fill"
+            objectFit="contain"
+            objectPosition="center"
+          />
+        </div>
       </div>
     </div>
   );
