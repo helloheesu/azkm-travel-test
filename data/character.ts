@@ -5,5 +5,5 @@ export enum Character {
   Cinamon = '시나몽',
   Coby = '코비',
   Hiff = '히프',
-  Somsom = '솜솜',
+  Somsom = '솜솜이',
 }
