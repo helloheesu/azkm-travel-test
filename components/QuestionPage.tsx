@@ -1,6 +1,7 @@
 import MainImage from 'components/MainImage';
 import Progress from 'components/Progress';
-import { Character, Question } from 'utils/questions';
+import { Character } from 'data/character';
+import { Question } from 'data/questions';
 
 interface Props extends Question {
   pageNumber: number;

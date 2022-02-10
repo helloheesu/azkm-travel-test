@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import QuestionPage from 'components/QuestionPage';
-import data, { Character } from 'utils/questions';
+import questions from 'data/questions';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { Character } from 'data/character';
 
 const getInitialScoreMap = () => {
   const scoreMap: { [key: string]: number } = {};
@@ -14,7 +15,7 @@ const getInitialScoreMap = () => {
 
 const Test: NextPage = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const totalPageNumber = data.length;
+  const totalPageNumber = questions.length;
 
   const [scoreMap, setScoreMap] = useState(getInitialScoreMap());
 
@@ -46,7 +47,7 @@ const Test: NextPage = () => {
     <QuestionPage
       pageNumber={pageNumber}
       totalPageNumber={totalPageNumber}
-      {...data[pageNumber - 1]}
+      {...questions[pageNumber - 1]}
       onNext={onNext}
     />
   );
