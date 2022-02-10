@@ -18,7 +18,7 @@ const Home: NextPage<{ height: string }> = ({ height }) => {
       </header>
       <MainImage src={'/images/intro.png'} alt="인트로 이미지 설명" />
       <Link href={'/test'} as={'/'}>
-        <a className="button image-background">
+        <a className="button image-background content-container">
           <div>테스트 시작 &gt;</div>
         </a>
       </Link>

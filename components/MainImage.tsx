@@ -6,7 +6,7 @@ interface Props {
 }
 const MainImage = ({ src, alt }: Props) => {
   return (
-    <div className="main-image image-background">
+    <div className="main-image image-background content-container">
       <div className="size-container">
         <img src={src} alt={alt} />
       </div>

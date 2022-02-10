@@ -33,7 +33,7 @@ const QuestionPage: NextPage<Props> = ({
           <button
             key={i}
             onClick={handleClick}
-            className="button image-background"
+            className="button image-background content-container"
           >
             <div>{option}</div>
           </button>
