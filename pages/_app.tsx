@@ -8,6 +8,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setHeight(`${window.innerHeight}px`);
+      window.addEventListener('resize', () => {
+        setHeight(`${window.innerHeight}px`);
+      });
     }
   }, []);
 
