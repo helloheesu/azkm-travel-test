@@ -7,10 +7,10 @@ interface Props {
 const ResultPage = ({ character, descriptions }: Props) => {
   return (
     <div className="content-wrapper content-aligner result">
-      <h1>
+      <header className="heading">
         <p className="subtitle">당신의 베스트 여행메이트는:</p>
-        <p className="title">{character}</p>
-      </h1>
+        <h1 className="title">{character}</h1>
+      </header>
       <MainImage src={`/images/characters/${character}.png`} alt={character} />
       <div className="description">
         <ul>
