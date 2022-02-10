@@ -1,3 +1,5 @@
+import { Character } from './character';
+
 type Option = {
   text: string;
   characters: Character[];
@@ -8,17 +10,7 @@ export interface Question {
   options: Option[];
 }
 
-export enum Character {
-  Totti = '또띠',
-  Munboo = '먼부',
-  Vanilla = '바닐라',
-  Cinamon = '시나몽',
-  Coby = '코비',
-  Hiff = '히프',
-  Somsom = '솜솜',
-}
-
-const data: Question[] = [
+const questions: Question[] = [
   {
     title: '코로나가 드디어 끝이나고 해외여행을 가려고한다!',
     options: [
@@ -187,4 +179,4 @@ const data: Question[] = [
   },
 ];
 
-export default data;
+export default questions;
