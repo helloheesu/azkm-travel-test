@@ -1,9 +1,13 @@
 import LoadingResultPage from 'components/LoadingResultPage';
 import ResultPage from 'components/ResultPage';
 import { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 const Result: NextPage = () => {
+  const router = useRouter();
+  const character = router.query.character as string;
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,7 +19,7 @@ const Result: NextPage = () => {
   if (isLoading) {
     return <LoadingResultPage />;
   } else {
-    return <ResultPage />;
+    return <ResultPage character={character} />;
   }
 };
 
