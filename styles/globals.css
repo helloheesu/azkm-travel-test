@@ -151,11 +151,13 @@ body {
   margin-top: 0.5em;
 }
 
+.progress-wrapper {
+  padding: 5px 2em 0 2em;
+}
 .progress-container {
   background-image: url('/images/progress/border.png');
   /* height/width ratio */
   padding-top: 8.4%;
-  margin-top: 5px;
 }
 .progress-container .border-container {
   width: 100%;
@@ -171,8 +173,11 @@ body {
 .progress-container .bar {
   background-color: #f88772;
   height: 100%;
-  border-radius: 11px;
+  border-radius: 11px 0 0 11px;
   position: relative;
+}
+.progress-container.end .bar {
+  border-radius: 11px;
 }
 .progress-container .indicator {
   position: absolute;
