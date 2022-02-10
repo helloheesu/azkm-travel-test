@@ -20,7 +20,7 @@ const QuestionPage = ({
     <div className="fix-and-stretch-aligner">
       <Progress max={totalPageNumber} value={pageNumber} />
       <div className=" content-aligner stretch">
-        <h2 className="heading">{title}</h2>
+        <h2 className="title">{title}</h2>
         <MainImage
           src={`/images/main/${pageNumber}.png`}
           alt={mainImgDescription}

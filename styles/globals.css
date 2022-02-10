@@ -6,7 +6,6 @@
 
 /* reset start */
 a {
-  color: inherit;
   text-decoration: none;
 }
 * {
@@ -22,26 +21,21 @@ h1 {
 }
 /* reset end */
 
-:root {
-  --bg-color: #f5d57e;
-  --result-bg-color: #fffeea;
-  --button-bg-color: #c0dc65;
-}
-
-body {
+* {
   font-family: BR R;
+  color: inherit;
+}
+body {
   text-align: center;
-  background-color: var(--bg-color);
+  background-color: #f5d57e;
 }
 
-.heading,
+.title,
 .button {
   line-height: 1.2em;
 }
-
-.heading {
-  font-family: BR R;
-  margin: 0;
+.subtitle {
+  font-size: 0.8em;
 }
 
 .container {
@@ -129,9 +123,7 @@ body {
   border: none;
 
   padding: 0.8em 2em;
-  font-family: BR R;
   cursor: pointer;
-  color: black;
   font-size: 1rem;
 
   background-image: url('/images/ui/button.png');
