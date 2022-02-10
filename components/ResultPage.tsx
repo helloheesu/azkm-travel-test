@@ -1,7 +1,7 @@
 import MainImage from 'components/MainImage';
 import type { NextPage } from 'next';
 
-const Test: NextPage<{ height: string }> = ({ height }) => {
+const ResultPage: NextPage = () => {
   return (
     <div className="content-wrapper result">
       <h2>당신의 베스트 여행메이트는:</h2>
@@ -23,4 +23,4 @@ const Test: NextPage<{ height: string }> = ({ height }) => {
   );
 };
 
-export default Test;
+export default ResultPage;

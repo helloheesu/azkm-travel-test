@@ -1,17 +1,12 @@
 import MainImage from 'components/MainImage';
 import Progress from 'components/Progress';
 import type { NextPage } from 'next';
-import Link from 'next/link';
+import { Question } from 'utils/questions';
 
-export interface Question {
-  title: string;
-  mainImgDescription?: string;
-  options: string[];
-}
 interface Props extends Question {
   pageNumber: number;
   totalPageNumber: number;
-  height: string;
+  onNext: () => void;
 }
 const QuestionPage: NextPage<Props> = ({
   pageNumber,
@@ -19,8 +14,12 @@ const QuestionPage: NextPage<Props> = ({
   title,
   mainImgDescription,
   options,
-  height,
+  onNext,
 }: Props) => {
+  const handleClick = () => {
+    onNext();
+  };
+
   return (
     <div className="content-wrapper">
       <Progress max={totalPageNumber} value={pageNumber} />
@@ -30,18 +29,13 @@ const QuestionPage: NextPage<Props> = ({
         alt={mainImgDescription}
       />
       {options.map((option, i) => (
-        <Link
+        <button
           key={i}
-          href={{
-            pathname: '/test/[pid]',
-            query: { pid: pageNumber + 1 },
-          }}
-          as={'/'}
+          onClick={handleClick}
+          className="button option image-background"
         >
-          <a className="button option image-background">
-            <div>{option}</div>
-          </a>
-        </Link>
+          <div>{option}</div>
+        </button>
       ))}
     </div>
   );

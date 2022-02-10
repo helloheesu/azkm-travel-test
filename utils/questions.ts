@@ -1,7 +1,8 @@
-import type { NextPage } from 'next';
-import LoadingResultPage from 'components/LoadingResultPage';
-import QuestionPage, { Question } from 'components/QuestionPage';
-import { useRouter } from 'next/router';
+export interface Question {
+  title: string;
+  mainImgDescription?: string;
+  options: string[];
+}
 
 const data: Question[] = [
   {
@@ -51,24 +52,4 @@ const data: Question[] = [
   },
 ];
 
-const Test: NextPage<{ height: string }> = ({ height }) => {
-  const router = useRouter();
-  const { pid } = router.query;
-  const pageNumber = typeof pid === 'string' ? parseInt(pid) : 1;
-  const totalPageNumber = data.length;
-
-  if (pageNumber > totalPageNumber) {
-    return <LoadingResultPage />;
-  }
-
-  return (
-    <QuestionPage
-      height={height}
-      pageNumber={pageNumber}
-      totalPageNumber={totalPageNumber}
-      {...data[pageNumber - 1]}
-    />
-  );
-};
-
-export default Test;
+export default data;

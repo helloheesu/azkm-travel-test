@@ -133,6 +133,8 @@ body {
   padding: 0.8em 2em;
   font-family: BR R;
   cursor: pointer;
+  color: black;
+  font-size: 1rem;
 
   background-image: url('/images/button.png');
   /* 0.22% */
