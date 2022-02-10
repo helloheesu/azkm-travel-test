@@ -15,7 +15,8 @@ a {
 html,
 body,
 p,
-h1 {
+h1,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -182,6 +183,27 @@ body {
 .result .description {
   text-align: left;
   line-height: 2em;
+}
+.description ul {
+  list-style-type: none;
+}
+.description li {
+  position: relative;
+  padding-left: 2.2em;
+  margin-left: 4px;
+}
+.description li::before {
+  content: '';
+  background-color: transparent;
+  background-image: url('/images/ui/list.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  left: 0;
 }
 
 .image-preloader {

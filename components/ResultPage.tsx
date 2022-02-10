@@ -12,11 +12,13 @@ const ResultPage = ({ character, descriptions }: Props) => {
         <p className="title">{character}</p>
       </h1>
       <MainImage src={`/images/characters/${character}.png`} alt={character} />
-      <ul className="description">
-        {descriptions.map((text, i) => (
-          <li key={i}>{text}</li>
-        ))}
-      </ul>
+      <div className="description">
+        <ul>
+          {descriptions.map((text, i) => (
+            <li key={i}>{text}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
