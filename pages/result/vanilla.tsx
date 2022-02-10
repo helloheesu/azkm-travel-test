@@ -3,10 +3,7 @@ import type { NextPage } from 'next';
 
 const Test: NextPage<{ height: string }> = ({ height }) => {
   return (
-    <div
-      className="container result"
-      style={{ minHeight: height, height: 'auto' }}
-    >
+    <div className="content-wrapper result">
       <h2>당신의 베스트 여행메이트는:</h2>
       <h1 className="heading">바닐라</h1>
       <MainImage src={'/images/result-vanilla.png'} alt="바닐라" />

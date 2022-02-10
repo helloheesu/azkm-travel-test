@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Home: NextPage<{ height: string }> = ({ height }) => {
   return (
-    <div className="container" style={{ minHeight: height, height: 'auto' }}>
+    <div className="content-wrapper">
       <Head>
         <title>여행 유형 테스트</title>
         <meta name="description" content="나는 어떤 여행 유형일까?" />

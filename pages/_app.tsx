@@ -28,7 +28,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileImage" content="/favicon.png" />
         <meta name="msapplication-TileColor" content="#f5d57e"></meta>
       </Head>
-      <Component {...pageProps} height={height} />
+      <div className="container" style={{ minHeight: height, height: 'auto' }}>
+        <Component {...pageProps} height={height} />
+      </div>
       <div className="image-preloader" />
     </div>
   );

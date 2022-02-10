@@ -13,7 +13,7 @@ const LoadingResultPage: NextPage = () => {
   }, [router]);
 
   return (
-    <div className="container">
+    <div className="content-wrapper">
       <MainImage src={'/images/loading.png'} alt="로딩 이미지 설명" />
       분석 중...
     </div>

@@ -22,7 +22,7 @@ const QuestionPage: NextPage<Props> = ({
   height,
 }: Props) => {
   return (
-    <div className="container" style={{ minHeight: height, height: 'auto' }}>
+    <div className="content-wrapper">
       <Progress max={totalPageNumber} value={pageNumber} />
       <h2 className="heading">{title}</h2>
       <MainImage
