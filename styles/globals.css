@@ -15,7 +15,6 @@ a {
 html,
 body,
 p,
-h1,
 ul {
   margin: 0;
   padding: 0;
@@ -31,6 +30,9 @@ body {
   background-color: #f5d57e;
 }
 
+.title {
+  margin: 0;
+}
 .title,
 .button {
   line-height: 1.2em;
@@ -132,7 +134,7 @@ body {
   padding-top: 22%;
 }
 .button:not(:first-of-type) {
-  margin-top: 0.5em;
+  margin-top: 0.2em;
 }
 
 .progress-wrapper {
