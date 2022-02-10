@@ -1,10 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 interface Props {
   max: number;
   value: number;
 }
 
 const Progress = ({ max, value }: Props) => {
-  const ratio = value / max;
+  const percentage = (value / max) * 100;
+
   return (
     <div
       className={`progress-container image-background ${
@@ -12,8 +14,14 @@ const Progress = ({ max, value }: Props) => {
       }`}
     >
       <div className="border-container">
-        <div className="bar" style={{ width: `${ratio * 100}%` }}></div>
+        <div className="bar" style={{ width: `${percentage}%` }}></div>
       </div>
+      <img
+        className="indicator"
+        src="/images/progress/indicator.png"
+        alt=""
+        style={{ left: `${percentage - 15}%` }}
+      />
     </div>
   );
 };

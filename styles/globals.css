@@ -165,5 +165,13 @@ body {
 .progress-container .bar {
   background-color: #f88772;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 11px;
+  position: relative;
+}
+.progress-container .indicator {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  top: 10px;
+  z-index: 2;
 }
