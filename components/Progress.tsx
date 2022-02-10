@@ -14,7 +14,7 @@ const Progress = ({ max, value }: Props) => {
       }`}
     >
       <div className="border-container">
-        <div className="bar" style={{ width: `${percentage}%` }}></div>
+        <div className="bar" style={{ width: `${percentage}%` }} />
       </div>
       <img
         className="indicator"

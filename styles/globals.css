@@ -155,11 +155,17 @@ body {
   background-image: url('/images/progress/border.png');
   /* height/width ratio */
   padding-top: 8.4%;
+  margin-top: 5px;
 }
 .progress-container .border-container {
   width: 100%;
   height: 100%;
-  padding: 0.8%;
+
+  border-radius: 200px;
+  background-color: white;
+  background-origin: content-box;
+  padding: 2px;
+
   z-index: -1;
 }
 .progress-container .bar {
