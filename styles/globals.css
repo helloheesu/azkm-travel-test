@@ -152,7 +152,7 @@ body {
 }
 
 .progress-container {
-  background-image: url('/images/progress/start.png');
+  background-image: url('/images/progress/border.png');
   /* height/width ratio */
   padding-top: 8.4%;
 }
