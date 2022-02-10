@@ -24,7 +24,7 @@ const Home: NextPage<{ height: string }> = ({ height }) => {
         }}
         as={'/'}
       >
-        <a className="button">
+        <a className="button image-background">
           <div>테스트 시작 &gt;</div>
         </a>
       </Link>

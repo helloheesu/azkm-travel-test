@@ -38,7 +38,7 @@ const QuestionPage: NextPage<Props> = ({
           }}
           as={'/'}
         >
-          <a className="button option">
+          <a className="button option image-background">
             <div>{option}</div>
           </a>
         </Link>
