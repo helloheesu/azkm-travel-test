@@ -16,7 +16,7 @@ const Home: NextPage<{ height: string }> = ({ height }) => {
         <p>성격 유형 테스트</p>
         <h1 className="heading">나는 어떤 유형일까?</h1>
       </header>
-      <MainImage src={'/images/intro.png'} alt="인트로 이미지 설명" />
+      <MainImage src={'/images/main/intro.png'} alt="인트로 이미지" />
       <Link href={'/test'} as={'/'}>
         <a className="button image-background content-container">
           <div>테스트 시작 &gt;</div>

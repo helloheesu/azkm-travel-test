@@ -8,7 +8,7 @@ const ResultPage = ({ character }: Props) => {
     <div className="content-wrapper content-aligner result">
       <h2>당신의 베스트 여행메이트는:</h2>
       <h1 className="heading">{character}</h1>
-      <MainImage src={'/images/result-vanilla.png'} alt="바닐라" />
+      <MainImage src={`/images/characters/${character}.png`} alt={character} />
       <p>
         그들의 어디 맺어, 아름답고 있는 커다란 청춘의 아니다. 더운지라 풍부하게
         불어 관현악이며, 것은 할지라도 위하여서, 철환하였는가? 사랑의 보배를

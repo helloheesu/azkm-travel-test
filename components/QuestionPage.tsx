@@ -21,7 +21,7 @@ const QuestionPage = ({
       <div className=" content-aligner stretch">
         <h2 className="heading">{title}</h2>
         <MainImage
-          src={`/images/test/${pageNumber}.png`}
+          src={`/images/main/${pageNumber}.png`}
           alt={mainImgDescription}
         />
         {options.map(({ text, characters }, i) => (
