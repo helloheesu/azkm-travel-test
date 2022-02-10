@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 
 const ResultPage: NextPage = () => {
   return (
-    <div className="content-wrapper result">
+    <div className="content-wrapper content-aligner result">
       <h2>당신의 베스트 여행메이트는:</h2>
       <h1 className="heading">바닐라</h1>
       <MainImage src={'/images/result-vanilla.png'} alt="바닐라" />

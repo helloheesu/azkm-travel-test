@@ -21,22 +21,24 @@ const QuestionPage: NextPage<Props> = ({
   };
 
   return (
-    <div className="content-wrapper">
+    <div className="fix-and-stretch-aligner">
       <Progress max={totalPageNumber} value={pageNumber} />
-      <h2 className="heading">{title}</h2>
-      <MainImage
-        src={`/images/test/${pageNumber}.png`}
-        alt={mainImgDescription}
-      />
-      {options.map((option, i) => (
-        <button
-          key={i}
-          onClick={handleClick}
-          className="button option image-background"
-        >
-          <div>{option}</div>
-        </button>
-      ))}
+      <div className=" content-aligner stretch">
+        <h2 className="heading">{title}</h2>
+        <MainImage
+          src={`/images/test/${pageNumber}.png`}
+          alt={mainImgDescription}
+        />
+        {options.map((option, i) => (
+          <button
+            key={i}
+            onClick={handleClick}
+            className="button image-background"
+          >
+            <div>{option}</div>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

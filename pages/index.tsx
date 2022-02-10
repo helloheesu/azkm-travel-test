@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Home: NextPage<{ height: string }> = ({ height }) => {
   return (
-    <div className="content-wrapper">
+    <div className="content-wrapper content-aligner">
       <Head>
         <title>여행 유형 테스트</title>
         <meta name="description" content="나는 어떤 여행 유형일까?" />

@@ -12,7 +12,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className="wrapper" style={{ minHeight: height, height: 'auto' }}>
+    <div
+      className="fullscreen-container"
+      style={{ minHeight: height, height: 'auto' }}
+    >
       <Head>
         <title>아찌끄미 여행 유형 테스트</title>
         <meta
@@ -28,8 +31,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileImage" content="/favicon.png" />
         <meta name="msapplication-TileColor" content="#f5d57e"></meta>
       </Head>
-      <div className="container" style={{ minHeight: height, height: 'auto' }}>
-        <Component {...pageProps} height={height} />
+      <div className="container" style={{ height: height }}>
+        <Component {...pageProps} />
       </div>
       <div className="image-preloader" />
     </div>
