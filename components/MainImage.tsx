@@ -1,22 +1,14 @@
-import Image from 'next/image';
-
+// next/image fill layout flickers
+/* eslint-disable @next/next/no-img-element */
 interface Props {
-  src: StaticImageData | string;
+  src: string;
   alt?: string;
 }
 const MainImage = ({ src, alt }: Props) => {
   return (
     <div className="main-image">
       <div className="size-container">
-        <div className="relative-container">
-          <Image
-            src={src}
-            alt={alt}
-            layout="fill"
-            objectFit="contain"
-            objectPosition="center"
-          />
-        </div>
+        <img src={src} alt={alt} />
       </div>
     </div>
   );
