@@ -38,9 +38,6 @@ body {
 .button {
   line-height: 1.2em;
 }
-.result p {
-  line-height: 2em;
-}
 
 .heading {
   font-family: BR R;
@@ -188,4 +185,9 @@ body {
   width: auto;
   top: 10px;
   z-index: 2;
+}
+
+.result .description {
+  text-align: left;
+  line-height: 2em;
 }
