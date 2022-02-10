@@ -9,13 +9,18 @@ const Progress = ({ max, value }: Props) => {
 
   return (
     <div className="progress-wrapper">
+      <div className="numbers">
+        {value} / {max}
+      </div>
       <div
         className={`progress-container image-background ${
           value === max ? 'end' : ''
         }`}
       >
         <div className="border-container">
-          <div className="bar" style={{ width: `${percentage}%` }} />
+          <div className="full-bar">
+            <div className="bar" style={{ width: `${percentage}%` }} />
+          </div>
         </div>
         <img
           className="indicator"
