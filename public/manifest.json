@@ -1,0 +1,20 @@
+{
+  "short_name": "manifest short",
+  "name": "manifest name",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "128x128"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#c0dc65",
+  "background_color": "#f5d57e"
+}
