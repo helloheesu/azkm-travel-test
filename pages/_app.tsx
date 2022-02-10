@@ -37,7 +37,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className="container" style={{ height: height }}>
         <Component {...pageProps} />
       </div>
-      <div className="image-preloader" />
     </div>
   );
 }

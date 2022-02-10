@@ -34,12 +34,6 @@ body {
   background-color: var(--bg-color);
 }
 
-.image-preloader {
-  background-image: url('/images/test/1.png'), url('/images/test/2.png'),
-    url('/images/test/3.png'), url('/images/test/4.png'),
-    url('/images/test/5.png');
-}
-
 .heading,
 .button {
   line-height: 1.2em;
@@ -119,7 +113,7 @@ body {
   margin: 1em auto;
   flex-shrink: 1;
 
-  background-image: url('/images/main.png');
+  background-image: url('/images/ui/main.png');
   /* height/width ratio */
   padding-top: 70%;
 }
@@ -143,7 +137,7 @@ body {
   color: black;
   font-size: 1rem;
 
-  background-image: url('/images/button.png');
+  background-image: url('/images/ui/button.png');
   /* height/width ratio */
   padding-top: 22%;
 }
