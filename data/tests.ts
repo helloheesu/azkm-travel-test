@@ -4,13 +4,13 @@ type Option = {
   text: string;
   characters: Character[];
 };
-export interface Question {
+export interface TestData {
   title: string;
   mainImgDescription?: string;
   options: Option[];
 }
 
-const questions: Question[] = [
+const tests: TestData[] = [
   {
     title: '코로나가 드디어 끝이나고 해외여행을 가려고한다!',
     options: [
@@ -179,4 +179,4 @@ const questions: Question[] = [
   },
 ];
 
-export default questions;
+export default tests;

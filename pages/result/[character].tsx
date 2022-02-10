@@ -1,5 +1,5 @@
-import LoadingResultPage from 'components/LoadingResultPage';
-import ResultPage from 'components/ResultPage';
+import LoadingResultPage from 'components/pages/LoadingResult';
+import ResultPage from 'components/pages/Result';
 import { Character } from 'data/character';
 import results from 'data/results';
 import { NextPage } from 'next';

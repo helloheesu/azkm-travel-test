@@ -1,14 +1,14 @@
 import MainImage from 'components/MainImage';
 import Progress from 'components/Progress';
 import { Character } from 'data/character';
-import { Question } from 'data/questions';
+import { TestData } from 'data/tests';
 
-interface Props extends Question {
+interface Props extends TestData {
   pageNumber: number;
   totalPageNumber: number;
   onNext: (characters: Character[]) => void;
 }
-const QuestionPage = ({
+const TestPage = ({
   pageNumber,
   totalPageNumber,
   title,
@@ -39,4 +39,4 @@ const QuestionPage = ({
   );
 };
 
-export default QuestionPage;
+export default TestPage;

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import QuestionPage from 'components/QuestionPage';
-import questions from 'data/questions';
+import TestPage from 'components/pages/Test';
+import tests from 'data/tests';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Character } from 'data/character';
@@ -15,7 +15,7 @@ const getInitialScoreMap = () => {
 
 const Test: NextPage = () => {
   const [pageNumber, setPageNumber] = useState(1);
-  const totalPageNumber = questions.length;
+  const totalPageNumber = tests.length;
 
   const [scoreMap, setScoreMap] = useState(getInitialScoreMap());
 
@@ -44,10 +44,10 @@ const Test: NextPage = () => {
   };
 
   return (
-    <QuestionPage
+    <TestPage
       pageNumber={pageNumber}
       totalPageNumber={totalPageNumber}
-      {...questions[pageNumber - 1]}
+      {...tests[pageNumber - 1]}
       onNext={onNext}
     />
   );
