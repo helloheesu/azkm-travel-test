@@ -9,7 +9,7 @@ interface Props extends TestData {
   totalPageNumber: number;
   onNext: (characters: Character[]) => void;
   href: React.ComponentProps<typeof Link>['href'];
-  as: string;
+  as: React.ComponentProps<typeof Link>['as'];
 }
 const TestPage = ({
   pageNumber,

@@ -4,9 +4,7 @@ import tests, { TestData } from 'data/tests';
 import { useContext } from 'react';
 import { Character } from 'data/character';
 import { ParsedUrlQuery } from 'querystring';
-import ScoreMapContext, {
-  getHighestCharacter,
-} from 'components/ScoreMapContext';
+import ScoreMapContext from 'components/ScoreMapContext';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -52,14 +50,10 @@ const Test: NextPage<Props> = ({
   pageNumber,
   data: { title, mainImgDescription, options },
 }: Props) => {
-  const { scoreMap, increaseScoreToCharacters } = useContext(ScoreMapContext);
-
+  const { increaseScoreToCharacters } = useContext(ScoreMapContext);
   const onNext = (characters: Character[]) => {
     increaseScoreToCharacters(characters);
   };
-
-  const highestCharacter =
-    pageNumber < totalPageNumber ? '' : getHighestCharacter(scoreMap);
 
   const href =
     pageNumber < totalPageNumber
@@ -67,11 +61,8 @@ const Test: NextPage<Props> = ({
           pathname: '/test/[pageNumber]',
           query: { pageNumber: (pageNumber + 1).toString() },
         }
-      : {
-          pathname: '/result/[character]',
-          query: { character: highestCharacter },
-        };
-  const as = pageNumber < totalPageNumber ? '/' : `/${highestCharacter}`;
+      : '/result';
+  const as = pageNumber < totalPageNumber ? '/' : undefined;
 
   return (
     <TestPage
