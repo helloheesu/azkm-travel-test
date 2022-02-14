@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { ScoreMapProvider } from 'components/ScoreMapContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [height, setHeight] = useState('100vh');
@@ -35,7 +36,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#f5d57e"></meta>
       </Head>
       <div className="container" style={{ height: height }}>
-        <Component {...pageProps} />
+        <ScoreMapProvider>
+          <Component {...pageProps} />
+        </ScoreMapProvider>
       </div>
       <div className="image-preloader" />
     </div>

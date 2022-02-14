@@ -17,7 +17,13 @@ const Home: NextPage = () => {
         <h1 className="title">나는 어떤 유형일까?</h1>
       </header>
       <MainImage src={'/images/main/intro.png'} alt="인트로 이미지" />
-      <Link href={'/test'} as={'/'}>
+      <Link
+        href={{
+          pathname: '/test/[pageNumber]',
+          query: { pageNumber: '1' },
+        }}
+        as={'/'}
+      >
         <a className="button image-background content-container">
           <div>테스트 시작 &gt;</div>
         </a>
