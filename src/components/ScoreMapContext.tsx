@@ -1,5 +1,5 @@
 import { Character } from 'data/character';
-import { createContext, FunctionComponent, useEffect, useState } from 'react';
+import { createContext, FunctionComponent, useState } from 'react';
 
 export type ScoreMap = { [key: string]: number };
 
