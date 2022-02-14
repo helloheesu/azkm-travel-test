@@ -1,6 +1,7 @@
 import Head from 'components/Head';
 import Link from 'components/Link';
 import MainImage from 'components/MainImage';
+import Share from 'components/Share';
 import { Character, characterNames } from 'data/character';
 
 interface Props {
@@ -32,6 +33,7 @@ const ResultPage = ({ character, descriptions }: Props) => {
       </main>
       <footer>
         <Link text="테스트 다시하기" href={'/'} />
+        <Share />
       </footer>
     </div>
   );
