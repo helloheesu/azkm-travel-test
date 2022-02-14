@@ -1,7 +1,7 @@
+import Link from 'components/Link';
 import MainImage from 'components/MainImage';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -23,11 +23,8 @@ const Home: NextPage = () => {
           query: { pageNumber: '1' },
         }}
         as={'/'}
-      >
-        <a className="button image-background content-container">
-          <div>테스트 시작 &gt;</div>
-        </a>
-      </Link>
+        text={'테스트 시작 >'}
+      />
     </div>
   );
 };

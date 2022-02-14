@@ -1,8 +1,8 @@
+import Link from 'components/Link';
 import MainImage from 'components/MainImage';
 import Progress from 'components/Progress';
 import { Character } from 'data/character';
 import { TestData } from 'data/tests';
-import Link from 'next/link';
 
 interface Props extends TestData {
   pageNumber: number;
@@ -31,14 +31,13 @@ const TestPage = ({
           alt={mainImgDescription}
         />
         {options.map(({ text, characters }, i) => (
-          <Link key={i} href={href} as={as}>
-            <a
-              className="button image-background content-container"
-              onClick={() => onNext(characters)}
-            >
-              <div>{text}</div>
-            </a>
-          </Link>
+          <Link
+            key={i}
+            href={href}
+            as={as}
+            text={text}
+            onClick={() => onNext(characters)}
+          />
         ))}
       </div>
     </div>
