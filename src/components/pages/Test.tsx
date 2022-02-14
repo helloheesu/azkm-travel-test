@@ -1,3 +1,4 @@
+import Head from 'components/Head';
 import Link from 'components/Link';
 import MainImage from 'components/MainImage';
 import Progress from 'components/Progress';
@@ -23,6 +24,7 @@ const TestPage = ({
 }: Props) => {
   return (
     <div className="fix-and-stretch-aligner">
+      <Head />
       <Progress max={totalPageNumber} value={pageNumber} />
       <div className=" content-aligner stretch">
         <h2 className="title">{title}</h2>
