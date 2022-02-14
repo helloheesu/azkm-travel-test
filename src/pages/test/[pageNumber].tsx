@@ -9,13 +9,6 @@ import ScoreMapContext from 'components/ScoreMapContext';
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
 }
-
-interface Props {
-  totalPageNumber: number;
-  pageNumber: number;
-  data: TestData;
-}
-
 export const getStaticPaths: GetStaticPaths<StaticProps> = () => {
   const paths = tests.map((_, i) => ({
     params: {
@@ -29,6 +22,11 @@ export const getStaticPaths: GetStaticPaths<StaticProps> = () => {
   };
 };
 
+interface Props {
+  totalPageNumber: number;
+  pageNumber: number;
+  data: TestData;
+}
 export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
   params,
 }) => {
@@ -62,7 +60,7 @@ const Test: NextPage<Props> = ({
           query: { pageNumber: (pageNumber + 1).toString() },
         }
       : '/result';
-  const as = pageNumber < totalPageNumber ? '/' : undefined;
+  const as = '/';
 
   return (
     <TestPage

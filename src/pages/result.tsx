@@ -4,20 +4,25 @@ import ScoreMapContext, {
 } from 'components/ScoreMapContext';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 const Result: NextPage = () => {
   const { scoreMap } = useContext(ScoreMapContext);
   const highestCharacter = getHighestCharacter(scoreMap);
 
   const router = useRouter();
-  router.replace(
-    {
-      pathname: '/result/[character]',
-      query: { character: highestCharacter },
-    },
-    `/${highestCharacter}`
-  );
+  useEffect(() => {
+    router.replace(
+      {
+        pathname: '/[result]',
+        query: { result: highestCharacter },
+      },
+      `/${highestCharacter}`,
+      {
+        shallow: true,
+      }
+    );
+  }, [highestCharacter, router]);
 
   return <LoadingResultPage />;
 };
