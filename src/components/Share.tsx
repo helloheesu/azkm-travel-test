@@ -99,8 +99,6 @@ const Share = ({
       case 'facebook':
         window.open('http://www.facebook.com/sharer/sharer.php?u=' + url);
         break;
-      case 'instagram':
-        break;
       case 'twitter':
         window.open(
           'https://twitter.com/intent/tweet?text=' + title + '&url=' + url
