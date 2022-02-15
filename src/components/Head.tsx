@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 interface Props {
   title?: string;
@@ -10,6 +11,13 @@ const Comp = ({
   description = '나와 가장 잘 맞는 여행 스타일의 캐릭터는?',
   img = '/og.png',
 }: Props) => {
+  const [fullImgUrl, setFullImgUrl] = useState(img);
+  useEffect(() => {
+    const baseUrl = document.location.href;
+    const urlObj = new URL(img, baseUrl);
+    setFullImgUrl(urlObj.href);
+  }, [img]);
+
   return (
     <Head>
       <title>{title}</title>
@@ -22,7 +30,7 @@ const Comp = ({
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <meta name="msapplication-TileImage" content="/favicon.png" />
       <meta name="msapplication-TileColor" content="#f5d57e"></meta>
-      <meta property="og:image" content={img} />
+      <meta property="og:image" content={fullImgUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
     </Head>
