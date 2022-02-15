@@ -223,14 +223,14 @@ p.subtitle {
   display: flex;
   justify-content: space-around;
   margin-top: 1em;
-  padding: 1em;
+  padding: 0.8em;
   background-color: #bfdc64;
   border-radius: 28px;
   border: 3.5px solid #4f3526;
 }
 .share li {
   flex-grow: 1;
-  padding: 0 1em;
+  padding: 0 0.5em;
 }
 .share li:not(:first-of-type) {
   border-left: 3px solid #4f3526;
