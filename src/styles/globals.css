@@ -153,7 +153,7 @@ p.subtitle {
 .progress-container {
   background-image: url('/images/progress/border.png');
   /* height/width ratio */
-  padding-top: 8.4%;
+  padding-top: 5.2%;
 }
 .progress-container .border-container {
   width: 100%;
