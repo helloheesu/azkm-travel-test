@@ -108,64 +108,66 @@ const Share = ({
         onLoad={() => setIsKakaoLoaded(true)}
       />
       {isRendered && (
-        <ul>
-          <input
-            className="hidden"
-            ref={inputRef}
-            type="text"
-            defaultValue={url}
-          />
-          {shareable && (
-            <li onClick={() => onClick('share')}>
-              <SocialButton service="share" altText="공유하기" />
+        <div className="image-background content-container">
+          <ul>
+            <input
+              className="hidden"
+              ref={inputRef}
+              type="text"
+              defaultValue={url}
+            />
+            {shareable && (
+              <li onClick={() => onClick('share')}>
+                <SocialButton service="share" altText="공유하기" />
+              </li>
+            )}
+            {isKakaoLoaded && (
+              <li onClick={() => onClick('kakao')}>
+                <SocialButton service="kakao" altText="카카오" />
+              </li>
+            )}
+            <li onClick={() => onClick('url')}>
+              <SocialButton service="url" altText="URL" />
             </li>
-          )}
-          {isKakaoLoaded && (
-            <li onClick={() => onClick('kakao')}>
-              <SocialButton service="kakao" altText="카카오" />
+            <li onClick={() => onClick('instagram')}>
+              <SocialButton service="instagram" altText="인스타그램" />
             </li>
-          )}
-          <li onClick={() => onClick('url')}>
-            <SocialButton service="url" altText="URL" />
-          </li>
-          <li onClick={() => onClick('instagram')}>
-            <SocialButton service="instagram" altText="인스타그램" />
-          </li>
-          <li onClick={() => onClick('facebook')}>
-            <SocialButton service="facebook" altText="페이스북" />
-          </li>
-          <li onClick={() => onClick('twitter')}>
-            <SocialButton service="twitter" altText="트위터" />
-          </li>
-          <div className="hidden">
-            <p>
-              Icons made by{' '}
-              <a
-                href="https://www.flaticon.com/authors/aficons-studio"
-                title="Aficons studio"
-              >
-                Aficons studio
-              </a>{' '}
-              from{' '}
-              <a href="https://www.flaticon.com/" title="Flaticon">
-                www.flaticon.com
-              </a>
-            </p>
-            <p>
-              Icons made by{' '}
-              <a
-                href="https://www.flaticon.com/authors/riajulislam"
-                title="riajulislam"
-              >
-                riajulislam
-              </a>{' '}
-              from{' '}
-              <a href="https://www.flaticon.com/" title="Flaticon">
-                www.flaticon.com
-              </a>
-            </p>
-          </div>
-        </ul>
+            <li onClick={() => onClick('facebook')}>
+              <SocialButton service="facebook" altText="페이스북" />
+            </li>
+            <li onClick={() => onClick('twitter')}>
+              <SocialButton service="twitter" altText="트위터" />
+            </li>
+            <div className="hidden">
+              <p>
+                Icons made by{' '}
+                <a
+                  href="https://www.flaticon.com/authors/aficons-studio"
+                  title="Aficons studio"
+                >
+                  Aficons studio
+                </a>{' '}
+                from{' '}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </p>
+              <p>
+                Icons made by{' '}
+                <a
+                  href="https://www.flaticon.com/authors/riajulislam"
+                  title="riajulislam"
+                >
+                  riajulislam
+                </a>{' '}
+                from{' '}
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com
+                </a>
+              </p>
+            </div>
+          </ul>
+        </div>
       )}
     </div>
   );
