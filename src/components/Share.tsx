@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
 import SocialButton from './SocialButton';
@@ -10,7 +9,13 @@ interface Props {
   img?: string;
 }
 
-export type Service = 'share' | 'kakao' | 'url';
+export type Service =
+  | 'share'
+  | 'kakao'
+  | 'url'
+  | 'facebook'
+  | 'twitter'
+  | 'instagram';
 declare global {
   interface Window {
     Kakao: any;
@@ -91,6 +96,7 @@ const Share = ({
         }
         alert('클립보드에 주소가 복사되었어요');
       default:
+        alert('아직 개발 중');
         break;
     }
   };
@@ -121,6 +127,15 @@ const Share = ({
           )}
           <li onClick={() => onClick('url')}>
             <SocialButton service="url" altText="URL" />
+          </li>
+          <li onClick={() => onClick('instagram')}>
+            <SocialButton service="instagram" altText="인스타그램" />
+          </li>
+          <li onClick={() => onClick('facebook')}>
+            <SocialButton service="facebook" altText="페이스북" />
+          </li>
+          <li onClick={() => onClick('twitter')}>
+            <SocialButton service="twitter" altText="트위터" />
           </li>
           <div className="hidden">
             <p>
