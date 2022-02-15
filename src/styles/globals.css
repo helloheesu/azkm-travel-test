@@ -219,6 +219,10 @@ p.subtitle {
   display: none;
 }
 
+footer {
+  margin-top: 1em;
+}
+
 .share ul {
   display: flex;
   justify-content: space-around;
