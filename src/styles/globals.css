@@ -151,7 +151,7 @@ p.subtitle {
   margin-right: 5px;
 }
 .progress-container {
-  background-image: url('/images/progress/border.png');
+  background-image: url('/images/ui/progress.png');
   /* height/width ratio */
   padding-top: 5.2%;
 }
