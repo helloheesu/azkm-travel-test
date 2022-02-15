@@ -236,9 +236,6 @@ footer {
   flex-grow: 1;
   padding: 0 0.6em;
 }
-.share li:not(:first-of-type) {
-  border-left: 3px solid #4f3526;
-}
 .share button {
   border: none;
   background-color: transparent;
