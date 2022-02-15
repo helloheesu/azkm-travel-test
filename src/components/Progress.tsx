@@ -22,12 +22,6 @@ const Progress = ({ max, value }: Props) => {
             <div className="bar" style={{ width: `${percentage}%` }} />
           </div>
         </div>
-        <img
-          className="indicator"
-          src="/images/progress/indicator.png"
-          alt=""
-          style={{ left: `${percentage - 8}%` }}
-        />
       </div>
     </div>
   );

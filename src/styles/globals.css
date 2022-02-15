@@ -178,13 +178,6 @@ p.subtitle {
 .progress-container.end .bar {
   border-radius: 11px;
 }
-.progress-container .indicator {
-  position: absolute;
-  height: 100%;
-  width: auto;
-  top: 10px;
-  z-index: 2;
-}
 
 .result .description {
   text-align: left;
