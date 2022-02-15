@@ -95,6 +95,17 @@ const Share = ({
           break;
         }
         alert('클립보드에 주소가 복사되었어요');
+        break;
+      case 'facebook':
+        window.open('http://www.facebook.com/sharer/sharer.php?u=' + url);
+        break;
+      case 'instagram':
+        break;
+      case 'twitter':
+        window.open(
+          'https://twitter.com/intent/tweet?text=' + title + '&url=' + url
+        );
+        break;
       default:
         alert('아직 개발 중');
         break;
@@ -126,9 +137,6 @@ const Share = ({
                 <SocialButton service="kakao" altText="카카오" />
               </li>
             )}
-            <li onClick={() => onClick('url')}>
-              <SocialButton service="url" altText="URL" />
-            </li>
             <li onClick={() => onClick('instagram')}>
               <SocialButton service="instagram" altText="인스타그램" />
             </li>
@@ -137,6 +145,9 @@ const Share = ({
             </li>
             <li onClick={() => onClick('twitter')}>
               <SocialButton service="twitter" altText="트위터" />
+            </li>
+            <li onClick={() => onClick('url')}>
+              <SocialButton service="url" altText="URL" />
             </li>
             <div className="hidden">
               <p>
