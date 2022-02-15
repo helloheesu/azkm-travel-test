@@ -23,19 +23,21 @@ const Share = ({
 }: Props) => {
   const [isRendered, setIsRendered] = useState(false);
   const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
-  const [isAllLoaded, setIsAllLoaded] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setIsRendered(true);
+
+    if (window.Kakao) {
+      // onLoad executes only on initial load
+      setIsKakaoLoaded(true);
+    }
   }, []);
   useEffect(() => {
-    setIsAllLoaded(isRendered && isKakaoLoaded);
-  }, [isKakaoLoaded, isRendered]);
-  useEffect(() => {
-    if (isKakaoLoaded) {
+    if (isKakaoLoaded && window.Kakao) {
       window.Kakao.init('462c5c22392a021d6cb372f4140a34a1');
+      return () => window.Kakao.cleanup();
     }
   }, [isKakaoLoaded]);
 
@@ -64,13 +66,15 @@ const Share = ({
         // log 'share'
         break;
       case 'kakao':
-        window.Kakao.Link.sendScrap({
-          requestUrl: url,
-          templateId: 70961,
-          templateArgs: {
-            path: urlObj.pathname,
-          },
-        });
+        if (window.Kakao?.isInitialized()) {
+          window.Kakao.Link.sendScrap({
+            requestUrl: url,
+            templateId: 70961,
+            templateArgs: {
+              path: urlObj.pathname,
+            },
+          });
+        }
         // log 'kakao'
         // log when succeed
         break;
@@ -95,7 +99,7 @@ const Share = ({
         src="https://developers.kakao.com/sdk/js/kakao.min.js"
         onLoad={() => setIsKakaoLoaded(true)}
       />
-      {isAllLoaded && (
+      {isRendered && (
         <ul>
           <input
             className="hidden"
@@ -104,7 +108,7 @@ const Share = ({
             defaultValue={url}
           />
           {shareable && <li onClick={() => onClick('share')}>공유하기</li>}
-          <li onClick={() => onClick('kakao')}>카카오</li>
+          {isKakaoLoaded && <li onClick={() => onClick('kakao')}>카카오</li>}
           <li onClick={() => onClick('url')}>URL</li>
         </ul>
       )}
