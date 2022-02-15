@@ -5,6 +5,7 @@ interface Props {
   title?: string;
   url?: string;
   description?: string;
+  img?: string;
 }
 
 type Service = 'share' | 'kakao' | 'url';
@@ -18,6 +19,7 @@ const Share = ({
   title: givenTitle = '',
   url: givenUrl = '',
   description: givenDescription = '',
+  img: givenImg = '',
 }: Props) => {
   const [isRendered, setIsRendered] = useState(false);
   const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
@@ -40,13 +42,14 @@ const Share = ({
   }
 
   const title = givenTitle || document.title;
-
-  const canonical = document.querySelector<HTMLLinkElement>(
-    'link[rel=canonical]'
-  );
-  const url = givenUrl || (canonical ? canonical.href : document.location.href);
+  const url = givenUrl || document.location.href;
+  const urlObj = new URL(url);
   const description = givenDescription;
   const shareable = !!navigator.share;
+  const ogImage = document.querySelector<HTMLMetaElement>(
+    'meta[property="og:image"]'
+  );
+  const img = givenImg || ogImage?.content;
 
   const onClick = async (service: Service) => {
     switch (service) {
@@ -59,10 +62,12 @@ const Share = ({
         // log 'share'
         break;
       case 'kakao':
-        console.log('URL', url);
-
         window.Kakao.Link.sendScrap({
           requestUrl: url,
+          templateId: 70961,
+          templateArgs: {
+            path: urlObj.pathname,
+          },
         });
         // log 'kakao'
         break;
