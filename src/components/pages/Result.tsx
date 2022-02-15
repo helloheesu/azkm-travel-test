@@ -10,19 +10,20 @@ interface Props {
 }
 const ResultPage = ({ character, descriptions }: Props) => {
   const characterName = characterNames[character];
+  const imgSrc = `/images/characters/${character}.png`;
 
   return (
     <div className="content-wrapper content-aligner result">
-      <Head title={`당신의 베스트 여행메이트는: ${characterName}`} />
+      <Head
+        title={`당신의 베스트 여행메이트는: ${characterName}`}
+        img={imgSrc}
+      />
       <header className="heading">
         <p className="subtitle">당신의 베스트 여행메이트는:</p>
         <h1 className="title">{characterName}</h1>
       </header>
       <main>
-        <MainImage
-          src={`/images/characters/${character}.png`}
-          alt={character}
-        />
+        <MainImage src={imgSrc} alt={character} />
         <div className="description">
           <ul>
             {descriptions.map((text, i) => (

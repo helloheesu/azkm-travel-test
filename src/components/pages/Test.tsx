@@ -22,16 +22,15 @@ const TestPage = ({
   href,
   as,
 }: Props) => {
+  const imgSrc = `/images/main/${pageNumber}.png`;
+
   return (
     <div className="fix-and-stretch-aligner">
-      <Head />
+      <Head img={imgSrc} />
       <Progress max={totalPageNumber} value={pageNumber} />
       <div className=" content-aligner stretch">
         <h2 className="title">{title}</h2>
-        <MainImage
-          src={`/images/main/${pageNumber}.png`}
-          alt={mainImgDescription}
-        />
+        <MainImage src={imgSrc} alt={mainImgDescription} />
         {options.map(({ text, characters }, i) => (
           <Link
             key={i}
