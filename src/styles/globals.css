@@ -290,3 +290,19 @@ p.subtitle {
 .product-container a {
   color: blue;
 }
+
+.credits {
+  display: flex;
+  margin-top: 3em;
+}
+.credits > * {
+  flex-grow: 1;
+}
+.credits ul {
+  display: flex;
+  flex-grow: 3;
+  justify-content: space-evenly;
+}
+.credits ul::before {
+  content: ':';
+}

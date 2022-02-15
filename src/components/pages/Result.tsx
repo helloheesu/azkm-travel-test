@@ -1,3 +1,4 @@
+import Credits from 'components/Credits';
 import Head from 'components/Head';
 import Link from 'components/Link';
 import MainImage from 'components/MainImage';
@@ -41,6 +42,7 @@ const ResultPage = ({ character, descriptions }: Props) => {
         </footer>
       </section>
       <Product />
+      <Credits />
     </div>
   );
 };
