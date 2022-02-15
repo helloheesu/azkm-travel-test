@@ -1,5 +1,5 @@
 import Script from 'next/script';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Props {
   title?: string;
@@ -24,6 +24,8 @@ const Share = ({
   const [isRendered, setIsRendered] = useState(false);
   const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
   const [isAllLoaded, setIsAllLoaded] = useState(false);
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setIsRendered(true);
@@ -70,7 +72,18 @@ const Share = ({
           },
         });
         // log 'kakao'
+        // log when succeed
         break;
+      case 'url':
+        if (!!navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+        } else if (inputRef.current) {
+          inputRef.current.select();
+          await document.execCommand('copy');
+        } else {
+          break;
+        }
+        alert('클립보드에 주소가 복사되었어요');
       default:
         break;
     }
@@ -84,6 +97,12 @@ const Share = ({
       />
       {isAllLoaded && (
         <ul>
+          <input
+            className="hidden"
+            ref={inputRef}
+            type="text"
+            defaultValue={url}
+          />
           {shareable && <li onClick={() => onClick('share')}>공유하기</li>}
           <li onClick={() => onClick('kakao')}>카카오</li>
           <li onClick={() => onClick('url')}>URL</li>
