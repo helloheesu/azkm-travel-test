@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
+import SocialButton from './SocialButton';
 
 interface Props {
   title?: string;
@@ -9,14 +10,12 @@ interface Props {
   img?: string;
 }
 
-type Service = 'share' | 'kakao' | 'url';
+export type Service = 'share' | 'kakao' | 'url';
 declare global {
   interface Window {
     Kakao: any;
   }
 }
-
-const getButtonImgUrl = (service: Service) => `/images/social/${service}.png`;
 
 const Share = ({
   title: givenTitle = '',
@@ -112,46 +111,16 @@ const Share = ({
           />
           {shareable && (
             <li onClick={() => onClick('share')}>
-              <button>
-                <span className="hidden">공유하기</span>
-                <div className="image-container">
-                  <Image
-                    src={getButtonImgUrl('share')}
-                    alt=""
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </button>
+              <SocialButton service="share" altText="공유하기" />
             </li>
           )}
           {isKakaoLoaded && (
             <li onClick={() => onClick('kakao')}>
-              <button>
-                <span className="hidden">카카오</span>
-                <div className="image-container">
-                  <Image
-                    src={getButtonImgUrl('kakao')}
-                    alt=""
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              </button>
+              <SocialButton service="kakao" altText="카카오" />
             </li>
           )}
           <li onClick={() => onClick('url')}>
-            <button>
-              <span className="hidden">URL</span>
-              <div className="image-container">
-                <Image
-                  src={getButtonImgUrl('url')}
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-            </button>
+            <SocialButton service="url" altText="URL" />
           </li>
           <div className="hidden">
             <p>
