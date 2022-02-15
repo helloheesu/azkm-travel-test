@@ -1,7 +1,9 @@
 import Head from 'components/Head';
 import Link from 'components/Link';
 import MainImage from 'components/MainImage';
+import Product from 'components/Product';
 import Share from 'components/Share';
+import SocialButton from 'components/SocialButton';
 import { Character, characterNames } from 'data/character';
 
 interface Props {
@@ -18,24 +20,27 @@ const ResultPage = ({ character, descriptions }: Props) => {
         title={`당신의 베스트 여행메이트는: ${characterName}`}
         img={imgSrc}
       />
-      <header className="heading">
-        <p className="subtitle">당신의 베스트 여행메이트는:</p>
-        <h1 className="title">{characterName}</h1>
-      </header>
-      <main>
-        <MainImage src={imgSrc} alt={character} />
-        <div className="description">
-          <ul>
-            {descriptions.map((text, i) => (
-              <li key={i}>{text}</li>
-            ))}
-          </ul>
-        </div>
-      </main>
-      <footer>
-        <Link text="테스트 다시하기" href={'/'} />
-        <Share />
-      </footer>
+      <section>
+        <header className="heading">
+          <p className="subtitle">당신의 베스트 여행메이트는:</p>
+          <h1 className="title">{characterName}</h1>
+        </header>
+        <main className="main">
+          <MainImage src={imgSrc} alt={character} />
+          <div className="description">
+            <ul>
+              {descriptions.map((text, i) => (
+                <li key={i}>{text}</li>
+              ))}
+            </ul>
+          </div>
+        </main>
+        <footer className="footer">
+          <Link text="테스트 다시하기" href={'/'} />
+          <Share />
+        </footer>
+      </section>
+      <Product />
     </div>
   );
 };
