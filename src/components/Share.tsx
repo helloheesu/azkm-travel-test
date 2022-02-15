@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
 
@@ -14,6 +15,8 @@ declare global {
     Kakao: any;
   }
 }
+
+const getButtonImgUrl = (service: Service) => `/images/social/${service}.png`;
 
 const Share = ({
   title: givenTitle = '',
@@ -107,9 +110,77 @@ const Share = ({
             type="text"
             defaultValue={url}
           />
-          {shareable && <li onClick={() => onClick('share')}>공유하기</li>}
-          {isKakaoLoaded && <li onClick={() => onClick('kakao')}>카카오</li>}
-          <li onClick={() => onClick('url')}>URL</li>
+          {shareable && (
+            <li onClick={() => onClick('share')}>
+              <button>
+                <span className="hidden">공유하기</span>
+                <div className="image-container">
+                  <Image
+                    src={getButtonImgUrl('share')}
+                    alt=""
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </button>
+            </li>
+          )}
+          {isKakaoLoaded && (
+            <li onClick={() => onClick('kakao')}>
+              <button>
+                <span className="hidden">카카오</span>
+                <div className="image-container">
+                  <Image
+                    src={getButtonImgUrl('kakao')}
+                    alt=""
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </button>
+            </li>
+          )}
+          <li onClick={() => onClick('url')}>
+            <button>
+              <span className="hidden">URL</span>
+              <div className="image-container">
+                <Image
+                  src={getButtonImgUrl('url')}
+                  alt=""
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </button>
+          </li>
+          <div className="hidden">
+            <p>
+              Icons made by{' '}
+              <a
+                href="https://www.flaticon.com/authors/aficons-studio"
+                title="Aficons studio"
+              >
+                Aficons studio
+              </a>{' '}
+              from{' '}
+              <a href="https://www.flaticon.com/" title="Flaticon">
+                www.flaticon.com
+              </a>
+            </p>
+            <p>
+              Icons made by{' '}
+              <a
+                href="https://www.flaticon.com/authors/riajulislam"
+                title="riajulislam"
+              >
+                riajulislam
+              </a>{' '}
+              from{' '}
+              <a href="https://www.flaticon.com/" title="Flaticon">
+                www.flaticon.com
+              </a>
+            </p>
+          </div>
         </ul>
       )}
     </div>
