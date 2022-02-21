@@ -1,14 +1,17 @@
 import { Character, characters } from 'data/character';
-import { createContext, FunctionComponent, useEffect, useState } from 'react';
+import { createContext, FunctionComponent, useState } from 'react';
 
 export type ScoreMap = Map<Character, number>;
+export type Scores = {
+  [key in Character]: number;
+};
 
 const ScoreMapContext = createContext<{
   scoreMap: ScoreMap;
-  increaseScoreToCharacters: (characters: Character[]) => void;
+  increaseScores: (scores: Scores) => void;
 }>({
   scoreMap: new Map(),
-  increaseScoreToCharacters: ([]) => {},
+  increaseScores: ({}) => {},
 });
 
 const getInitialScoreMap = (): ScoreMap => {
@@ -43,12 +46,13 @@ export const getHighestCharacter = (scoreMap: ScoreMap): Character => {
 export const ScoreMapProvider: FunctionComponent = ({ children }) => {
   const [scoreMap, setScoreMap] = useState(getInitialScoreMap());
 
-  const increaseScoreToCharacters = (characters: Character[]) => {
+  const increaseScores = (scores: Scores) => {
     setScoreMap((scoreMap) => {
       const newScoreMap = new Map(scoreMap);
-      characters.forEach((character) =>
-        newScoreMap.set(character, (newScoreMap.get(character) || 0) + 1)
-      );
+      characters.forEach((character) => {
+        const score = scores[character];
+        newScoreMap.set(character, (newScoreMap.get(character) || 0) + score);
+      });
       return newScoreMap;
     });
   };
@@ -57,7 +61,7 @@ export const ScoreMapProvider: FunctionComponent = ({ children }) => {
     <ScoreMapContext.Provider
       value={{
         scoreMap,
-        increaseScoreToCharacters,
+        increaseScores,
       }}
     >
       {children}

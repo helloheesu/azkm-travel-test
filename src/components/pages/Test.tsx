@@ -22,7 +22,7 @@ const TestPage = ({
   as,
 }: Props) => {
   const imgSrc = `/images/main/${pageNumber}.png`;
-  const { increaseScoreToCharacters } = useContext(ScoreMapContext);
+  const { increaseScores } = useContext(ScoreMapContext);
 
   return (
     <div className="fix-and-stretch-aligner">
@@ -31,13 +31,13 @@ const TestPage = ({
       <div className=" content-aligner stretch">
         <h2 className="title">{title}</h2>
         <MainImage src={imgSrc} alt={mainImgDescription} />
-        {options.map(({ text, characters }, i) => (
+        {options.map(({ text, scores }, i) => (
           <Link
             key={i}
             href={href}
             as={as}
             text={text}
-            onClick={() => increaseScoreToCharacters(characters)}
+            onClick={() => increaseScores(scores)}
           />
         ))}
       </div>
