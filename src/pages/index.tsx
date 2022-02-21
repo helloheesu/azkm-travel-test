@@ -1,5 +1,6 @@
 import Head from 'components/Head';
 import Link from 'components/Link';
+import LocaleToggler from 'components/LocaleToggler';
 import MainImage from 'components/MainImage';
 import { Locale } from 'data/languages';
 import type { GetStaticProps, NextPage } from 'next';
@@ -18,6 +19,15 @@ const Home: NextPage<Props> = ({ locale }) => {
   return (
     <div className="content-wrapper content-aligner">
       <Head />
+      <div
+        style={{
+          position: 'absolute',
+          top: '2em',
+          right: '1em',
+        }}
+      >
+        <LocaleToggler currentLocale={locale} />
+      </div>
       <header>
         <p>{{ ko: '여행 유형 테스트', en: 'Travel Type Test' }[locale]}</p>
         <h1 className="title">

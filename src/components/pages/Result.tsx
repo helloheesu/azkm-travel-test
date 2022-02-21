@@ -1,6 +1,7 @@
 import Credits from 'components/Credits';
 import Head from 'components/Head';
 import Link from 'components/Link';
+import LocaleToggler from 'components/LocaleToggler';
 import MainImage from 'components/MainImage';
 import Product from 'components/Product';
 import Share from 'components/Share';
@@ -34,7 +35,22 @@ const ResultPage = ({
           <h1 className="title">{characterName}</h1>
         </header>
         <main className="main">
-          <MainImage src={imgSrc} alt={character} />
+          <div
+            style={{
+              position: 'relative',
+            }}
+          >
+            <MainImage src={imgSrc} alt={character} />
+            <div
+              style={{
+                position: 'absolute',
+                right: '1em',
+                top: '1em',
+              }}
+            >
+              <LocaleToggler currentLocale={locale} />
+            </div>
+          </div>
           <div className="description">
             <ul>
               {descriptions.map((text, i) => (
