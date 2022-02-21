@@ -11,7 +11,13 @@ const SocialButton = ({ service, altText }: Props) => {
   return (
     <button>
       {altText && <span className="hidden">{altText}</span>}
-      <div className="image-container">
+      <div
+        className="image-container"
+        style={{
+          borderRadius: '5px',
+          overflow: 'hidden',
+        }}
+      >
         <Image
           src={getButtonImgUrl(service)}
           alt=""

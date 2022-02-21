@@ -16,7 +16,8 @@ export type Service =
   | 'facebook'
   | 'twitter'
   | 'instagram'
-  | 'smartstore';
+  | 'smartstore'
+  | 'idus';
 declare global {
   interface Window {
     Kakao: any;

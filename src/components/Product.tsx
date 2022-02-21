@@ -28,7 +28,7 @@ const Product = () => {
           <li>
             <a
               target="_blank"
-              href="https://smartstore.naver.com/jasminegarden"
+              href="https://smartstore.naver.com/jasminegarden/products/6326234032"
               rel="noreferrer"
             >
               <div className="profile-container">
@@ -37,6 +37,18 @@ const Product = () => {
                   altText="스마트스토어로 이동"
                 />
                 <span>아찌끄미 공식 스토어</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://smartstore.naver.com/jasminegarden/products/6326234032"
+              rel="noreferrer"
+            >
+              <div className="profile-container">
+                <SocialButton service="idus" altText="아이디어스로 이동" />
+                <span>아찌끄미 작가 페이지</span>
               </div>
             </a>
           </li>
