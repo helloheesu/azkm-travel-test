@@ -5,18 +5,24 @@ interface Props {
   title?: string;
   description?: string;
   img?: string;
+  pathname?: string;
 }
 const Comp = ({
   title = '아찌끄미 여행 유형 테스트',
   description = '나와 가장 잘 맞는 여행 스타일의 캐릭터는?',
   img = '/og.png',
+  pathname = '',
 }: Props) => {
-  const [fullImgUrl, setFullImgUrl] = useState(img);
+  const [baseUrl, setBaseUrl] = useState(
+    'https://azkm-travel-test.vercel.app/'
+  );
   useEffect(() => {
-    const baseUrl = document.location.href;
-    const urlObj = new URL(img, baseUrl);
-    setFullImgUrl(urlObj.href);
-  }, [img]);
+    setBaseUrl(document.location.href);
+  }, []);
+
+  const fullImgUrl = new URL(img, baseUrl).href;
+  const englishUrl = new URL(`/en/${pathname}`, baseUrl).href;
+  const koreanUrl = new URL(`/${pathname}`, baseUrl).href;
 
   return (
     <Head>
@@ -33,6 +39,8 @@ const Comp = ({
       <meta property="og:image" content={fullImgUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      <link rel="alternate" hrefLang="en" href={englishUrl} />
+      <link rel="alternate" hrefLang="ko" href={koreanUrl} />
     </Head>
   );
 };

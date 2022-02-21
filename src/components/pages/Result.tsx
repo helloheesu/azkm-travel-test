@@ -7,6 +7,7 @@ import Product from 'components/Product';
 import Share from 'components/Share';
 import { Character } from 'data/character';
 import { Locale } from 'data/languages';
+import { useRouter } from 'next/router';
 
 interface Props {
   character: Character;
@@ -28,7 +29,11 @@ const ResultPage = ({
 
   return (
     <div className="content-wrapper content-aligner result">
-      <Head title={`${title}: ${characterName}`} img={imgSrc} />
+      <Head
+        title={`${title}: ${characterName}`}
+        img={imgSrc}
+        pathname={character}
+      />
       <section>
         <header className="heading">
           <p className="subtitle">{title}:</p>
