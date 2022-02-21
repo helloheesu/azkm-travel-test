@@ -1,11 +1,12 @@
+// order matters, as it is the tie breaker
 export const characters = [
-  'Totti',
-  'Munboo',
   'Vanilla',
+  'Munboo',
+  'Totti',
+  'Somsom',
+  'Hiff',
   'Cinamon',
   'Coby',
-  'Hiff',
-  'Somsom',
 ] as const;
 
 export type Character = typeof characters[number];

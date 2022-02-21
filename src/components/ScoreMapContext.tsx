@@ -40,16 +40,17 @@ export const ScoreMapProvider: FunctionComponent = ({ children }) => {
   };
 
   const getHighestCharacter = (): Character => {
-    let highest: [character: Character, score: number] | null = null;
+    let highestScore = 0;
+    let highestCharacter: Character;
 
     characters.forEach((character) => {
       const score = scoreMap[character];
-      if (!highest || score > highest[1]) {
-        highest = [character as Character, score];
+      if (score > highestScore) {
+        highestCharacter = character;
       }
     });
 
-    return highest![0];
+    return highestCharacter!;
   };
 
   return (
