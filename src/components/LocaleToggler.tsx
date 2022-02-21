@@ -1,4 +1,5 @@
 import { Locale } from 'data/languages';
+import Cookies from 'js-cookie';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -10,6 +11,10 @@ const LocaleToggler = ({ currentLocale }: Props) => {
   const router = useRouter();
   const { pathname, asPath, query } = router;
 
+  const onClick = () => {
+    Cookies.set('NEXT_LOCALE', destinationLocale);
+  };
+
   return (
     <Link
       href={{ pathname, query }}
@@ -17,7 +22,7 @@ const LocaleToggler = ({ currentLocale }: Props) => {
       as={asPath}
       replace={true}
     >
-      <a>
+      <a onClick={onClick}>
         {{ ko: '한국어', en: 'English' }[destinationLocale]} {'>'}
       </a>
     </Link>
