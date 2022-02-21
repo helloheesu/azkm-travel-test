@@ -1,60 +1,55 @@
 import { Character, characters } from 'data/character';
 import { createContext, FunctionComponent, useState } from 'react';
 
-export type ScoreMap = Map<Character, number>;
-export type Scores = {
+export type ScoreMap = {
   [key in Character]: number;
+};
+
+const getInitialScoreMap = (): ScoreMap => {
+  const scoreMap: Partial<ScoreMap> = {};
+
+  characters.forEach((character) => {
+    scoreMap[character] = 0;
+  }, {});
+
+  return scoreMap as ScoreMap;
 };
 
 const ScoreMapContext = createContext<{
   scoreMap: ScoreMap;
-  increaseScores: (scores: Scores) => void;
+  increaseScores: (scores: ScoreMap) => void;
+  getHighestCharacter: () => Character;
 }>({
-  scoreMap: new Map(),
+  scoreMap: getInitialScoreMap(),
   increaseScores: ({}) => {},
+  getHighestCharacter: () => characters[0],
 });
-
-const getInitialScoreMap = (): ScoreMap => {
-  const scoreMap: ScoreMap = new Map();
-
-  characters.forEach((character) => {
-    scoreMap.set(character, 0);
-  }, new Map<Character, number>());
-
-  return scoreMap;
-};
-
-export const getHighestCharacter = (scoreMap: ScoreMap): Character => {
-  let highest: [character: Character, score: number] | null = null;
-  const iterator = scoreMap.entries();
-
-  for (
-    let current = iterator.next();
-    current.done === false;
-    current = iterator.next()
-  ) {
-    const [character, score] = current.value;
-
-    if (!highest || score > highest[1]) {
-      highest = [character, score];
-    }
-  }
-
-  return highest![0];
-};
 
 export const ScoreMapProvider: FunctionComponent = ({ children }) => {
   const [scoreMap, setScoreMap] = useState(getInitialScoreMap());
 
-  const increaseScores = (scores: Scores) => {
+  const increaseScores = (scores: ScoreMap) => {
     setScoreMap((scoreMap) => {
-      const newScoreMap = new Map(scoreMap);
+      const newScoreMap = { ...scoreMap };
       characters.forEach((character) => {
         const score = scores[character];
-        newScoreMap.set(character, (newScoreMap.get(character) || 0) + score);
+        newScoreMap[character] = newScoreMap[character] + score;
       });
       return newScoreMap;
     });
+  };
+
+  const getHighestCharacter = (): Character => {
+    let highest: [character: Character, score: number] | null = null;
+
+    characters.forEach((character) => {
+      const score = scoreMap[character];
+      if (!highest || score > highest[1]) {
+        highest = [character as Character, score];
+      }
+    });
+
+    return highest![0];
   };
 
   return (
@@ -62,6 +57,7 @@ export const ScoreMapProvider: FunctionComponent = ({ children }) => {
       value={{
         scoreMap,
         increaseScores,
+        getHighestCharacter,
       }}
     >
       {children}

@@ -1,14 +1,12 @@
 import LoadingResultPage from 'components/pages/LoadingResult';
-import ScoreMapContext, {
-  getHighestCharacter,
-} from 'components/ScoreMapContext';
+import ScoreMapContext from 'components/ScoreMapContext';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 
 const Result: NextPage = () => {
-  const { scoreMap } = useContext(ScoreMapContext);
-  const highestCharacter = getHighestCharacter(scoreMap);
+  const { getHighestCharacter } = useContext(ScoreMapContext);
+  const highestCharacter = getHighestCharacter();
 
   const router = useRouter();
   useEffect(() => {

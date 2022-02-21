@@ -1,8 +1,8 @@
-import { Scores } from 'components/ScoreMapContext';
+import { ScoreMap } from 'components/ScoreMapContext';
 
 type Option = {
   text: string;
-  scores: Scores;
+  scores: ScoreMap;
 };
 export interface TestData {
   title: string;
