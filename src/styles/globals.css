@@ -189,7 +189,7 @@ p.subtitle {
 }
 .description li {
   position: relative;
-  padding-left: 2.2em;
+  padding-left: 2em;
   margin-left: 4px;
 }
 .description li::before {
@@ -199,10 +199,11 @@ p.subtitle {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 2em;
-  height: 2em;
+  width: 1.6em;
+  height: 1.6em;
   position: absolute;
   left: 0;
+  top: 2px;
 }
 
 .image-preloader {
