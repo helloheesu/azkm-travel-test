@@ -2,13 +2,13 @@ import Head from 'components/Head';
 import Link from 'components/Link';
 import MainImage from 'components/MainImage';
 import Progress from 'components/Progress';
-import { Character } from 'data/character';
+import ScoreMapContext from 'components/ScoreMapContext';
 import { TestData } from 'data/tests';
+import { useContext } from 'react';
 
 interface Props extends TestData {
   pageNumber: number;
   totalPageNumber: number;
-  onNext: (characters: Character[]) => void;
   href: React.ComponentProps<typeof Link>['href'];
   as: React.ComponentProps<typeof Link>['as'];
 }
@@ -18,11 +18,11 @@ const TestPage = ({
   title,
   mainImgDescription,
   options,
-  onNext,
   href,
   as,
 }: Props) => {
   const imgSrc = `/images/main/${pageNumber}.png`;
+  const { increaseScoreToCharacters } = useContext(ScoreMapContext);
 
   return (
     <div className="fix-and-stretch-aligner">
@@ -37,7 +37,7 @@ const TestPage = ({
             href={href}
             as={as}
             text={text}
-            onClick={() => onNext(characters)}
+            onClick={() => increaseScoreToCharacters(characters)}
           />
         ))}
       </div>

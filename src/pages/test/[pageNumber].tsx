@@ -1,10 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import TestPage from 'components/pages/Test';
 import tests, { TestData } from 'data/tests';
-import { useContext } from 'react';
-import { Character } from 'data/character';
 import { ParsedUrlQuery } from 'querystring';
-import ScoreMapContext from 'components/ScoreMapContext';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -48,11 +45,6 @@ const Test: NextPage<Props> = ({
   pageNumber,
   data: { title, mainImgDescription, options },
 }: Props) => {
-  const { increaseScoreToCharacters } = useContext(ScoreMapContext);
-  const onNext = (characters: Character[]) => {
-    increaseScoreToCharacters(characters);
-  };
-
   const href =
     pageNumber < totalPageNumber
       ? {
@@ -69,7 +61,6 @@ const Test: NextPage<Props> = ({
       title={title}
       mainImgDescription={mainImgDescription}
       options={options}
-      onNext={onNext}
       href={href}
       as={as}
     />
