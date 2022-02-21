@@ -15,15 +15,15 @@ const tests: TestData[] = [
     title: '코로나가 드디어 끝이나고 해외여행을 가려고한다!',
     options: [
       {
-        text: '이웃나라~ 아시아로 간다.(일본,대만,싱가폴)',
+        text: '오랜만의 해외여행이니까 가까운 아시아로',
         characters: ['Totti', 'Cinamon', 'Coby'],
       },
       {
-        text: '에메랄드빛 바다에 풍덩~남태평양 휴양지로 떠난다. (피지,발리,사모아)',
+        text: '에메랄드빛 바다 남태평양 환상의 휴양지',
         characters: ['Munboo', 'Vanilla', 'Hiff', 'Somsom'],
       },
       {
-        text: '낭만과 열정이 있는 그 곳 남미로 간다!(브라질, 아르헨티나)',
+        text: '아주 멀리 가보는건 어때? 유럽이나 미국으로',
         characters: [],
       },
     ],
@@ -135,7 +135,7 @@ const tests: TestData[] = [
         characters: ['Vanilla', 'Somsom'],
       },
       {
-        text: '난 먹으러왔어. 편의점으로가서 간식을 잔뜩산다.',
+        text: '난 먹으러왔어. 편의점으로가서 간식을 잔뜩 산다.',
         characters: ['Totti', 'Coby'],
       },
       {
@@ -149,7 +149,7 @@ const tests: TestData[] = [
       '여행이 이제 끝났다. 마지막으로 하고싶은것은? (이제 여행을 마치고 돌아가는 길인데 약간 시간이 촉박하다. )',
     options: [
       {
-        text: '여행에 마지막은 기념품이지!! 기념품점으로 간다.',
+        text: '여행의 마지막은 기념품이지!! 기념품점으로 간다.',
         characters: ['Vanilla'],
       },
       {
