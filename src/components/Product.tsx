@@ -1,12 +1,15 @@
+import { Locale } from 'data/languages';
 import Image from 'next/image';
 import ProductImage from '../../public/images/main/product.jpeg';
 import SocialButton from './SocialButton';
 
-const Product = () => {
+const Product = ({ locale }: { locale: Locale }) => {
   return (
     <section className="product-container">
       <header className="heading">
-        <h1>아찌끄미 캐릭터 더 보기</h1>
+        <h1>
+          {{ ko: '아찌끄미 캐릭터 더 보기', en: 'See more about AZKM' }[locale]}
+        </h1>
       </header>
       <div className="profile-links">
         <ul>
@@ -36,7 +39,9 @@ const Product = () => {
                   service="smartstore"
                   altText="스마트스토어로 이동"
                 />
-                <span>아찌끄미 공식 스토어</span>
+                <span>
+                  {{ ko: '아찌끄미 공식 스토어', en: 'Smartstore' }[locale]}
+                </span>
               </div>
             </a>
           </li>
@@ -48,7 +53,9 @@ const Product = () => {
             >
               <div className="profile-container">
                 <SocialButton service="idus" altText="아이디어스로 이동" />
-                <span>아찌끄미 작가 페이지</span>
+                <span>
+                  {{ ko: '아찌끄미 작가 페이지', en: 'Idus' }[locale]}
+                </span>
               </div>
             </a>
           </li>

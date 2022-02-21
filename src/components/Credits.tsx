@@ -1,11 +1,13 @@
-const Credits = () => {
+import { Locale } from 'data/languages';
+
+const Credits = ({ locale }: { locale: Locale }) => {
   return (
     <section className="credits">
-      <header>만든 사람들</header>
+      <header>{{ ko: '만든 사람들', en: 'Credits' }[locale]}</header>
       <ul>
-        <li>윤서</li>
-        <li>신재</li>
-        <li>히수</li>
+        <li>{{ ko: '윤서', en: 'Jasmine' }[locale]}</li>
+        <li>{{ ko: '신재', en: 'Hwany' }[locale]}</li>
+        <li>{{ ko: '히수', en: 'Heesu' }[locale]}</li>
       </ul>
     </section>
   );

@@ -1,10 +1,21 @@
 import LoadingResultPage from 'components/pages/LoadingResult';
 import ScoreMapContext from 'components/ScoreMapContext';
-import { NextPage } from 'next';
+import { Locale } from 'data/languages';
+import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 
-const Result: NextPage = () => {
+interface Props {
+  locale: Locale;
+}
+export const getStaticProps: GetStaticProps<Props> = ({ locale }) => {
+  return {
+    props: {
+      locale: (locale as Locale) || 'ko',
+    },
+  };
+};
+const Result: NextPage<Props> = ({ locale }) => {
   const { getHighestCharacter } = useContext(ScoreMapContext);
   const highestCharacter = getHighestCharacter();
 
@@ -22,7 +33,7 @@ const Result: NextPage = () => {
     );
   }, [highestCharacter, router]);
 
-  return <LoadingResultPage />;
+  return <LoadingResultPage locale={locale} />;
 };
 
 export default Result;

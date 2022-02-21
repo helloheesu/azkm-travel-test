@@ -2,16 +2,22 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import TestPage from 'components/pages/Test';
 import tests, { TestData } from 'data/tests';
 import { ParsedUrlQuery } from 'querystring';
+import { Locale } from 'data/languages';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
 }
-export const getStaticPaths: GetStaticPaths<StaticProps> = () => {
-  const paths = tests.map((_, i) => ({
-    params: {
-      pageNumber: (i + 1).toString(),
-    },
-  }));
+export const getStaticPaths: GetStaticPaths<StaticProps> = ({
+  locales = ['ko', 'en'],
+}) => {
+  const paths = tests.flatMap((_, i) =>
+    locales.map((locale) => ({
+      params: {
+        pageNumber: (i + 1).toString(),
+      },
+      locale,
+    }))
+  );
 
   return {
     paths,
@@ -23,9 +29,11 @@ interface Props {
   totalPageNumber: number;
   pageNumber: number;
   data: TestData;
+  locale: Locale;
 }
 export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
   params,
+  locale,
 }) => {
   const totalPageNumber = tests.length;
   const pageNumber = parseInt(params!.pageNumber);
@@ -36,6 +44,7 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
       totalPageNumber,
       pageNumber,
       data,
+      locale: (locale as Locale) || 'ko',
     },
   };
 };
@@ -44,6 +53,7 @@ const Test: NextPage<Props> = ({
   totalPageNumber,
   pageNumber,
   data: { title, mainImgDescription, options },
+  locale,
 }: Props) => {
   const href =
     pageNumber < totalPageNumber
@@ -63,6 +73,7 @@ const Test: NextPage<Props> = ({
       options={options}
       href={href}
       as={as}
+      locale={locale}
     />
   );
 };

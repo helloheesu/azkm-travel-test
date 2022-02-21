@@ -4,26 +4,33 @@ import Link from 'components/Link';
 import MainImage from 'components/MainImage';
 import Product from 'components/Product';
 import Share from 'components/Share';
-import SocialButton from 'components/SocialButton';
-import { Character, characterNames } from 'data/character';
+import { Character } from 'data/character';
+import { Locale } from 'data/languages';
 
 interface Props {
   character: Character;
+  characterName: string;
   descriptions: string[];
+  locale: Locale;
 }
-const ResultPage = ({ character, descriptions }: Props) => {
-  const characterName = characterNames[character];
+const ResultPage = ({
+  character,
+  characterName,
+  descriptions,
+  locale,
+}: Props) => {
   const imgSrc = `/images/characters/${character}.png`;
+  const title = {
+    ko: '당신의 베스트 여행메이트는',
+    en: 'You best travel mate',
+  }[locale];
 
   return (
     <div className="content-wrapper content-aligner result">
-      <Head
-        title={`당신의 베스트 여행메이트는: ${characterName}`}
-        img={imgSrc}
-      />
+      <Head title={`${title}: ${characterName}`} img={imgSrc} />
       <section>
         <header className="heading">
-          <p className="subtitle">당신의 베스트 여행메이트는:</p>
+          <p className="subtitle">{title}:</p>
           <h1 className="title">{characterName}</h1>
         </header>
         <main className="main">
@@ -37,12 +44,15 @@ const ResultPage = ({ character, descriptions }: Props) => {
           </div>
         </main>
         <footer className="footer">
-          <Link text="테스트 다시하기" href={'/'} />
+          <Link
+            text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
+            href={'/'}
+          />
           <Share />
         </footer>
       </section>
-      <Product />
-      <Credits />
+      <Product locale={locale} />
+      <Credits locale={locale} />
     </div>
   );
 };
