@@ -34,7 +34,7 @@ const TestPage = ({
   const showPoi = () => setIsModalOn(true);
   useEffect(() => {
     const SECOND = 1000;
-    const timeoutId = setTimeout(showPoi, 60 * 60 * SECOND);
+    const timeoutId = setTimeout(showPoi, 60 * SECOND);
     return () => clearTimeout(timeoutId);
   }, [pageNumber]);
 
