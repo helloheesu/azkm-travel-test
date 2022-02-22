@@ -256,15 +256,7 @@ p.subtitle {
 
 .product-detail {
   margin-top: 1em;
-  border: 4px solid #4f3526;
-}
-.product-detail,
-.product-detail img {
-  border-radius: 2em;
-}
-.product-detail img {
-  z-index: -1;
-  border-radius: 1.5em;
+  background-color: transparent;
 }
 
 .profile-links li {

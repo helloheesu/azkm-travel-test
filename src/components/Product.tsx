@@ -1,6 +1,6 @@
 import { Locale } from 'data/languages';
 import Image from 'next/image';
-import ProductImage from '../../public/images/main/product.jpeg';
+import ProductImage from '../../public/images/main/product.png';
 import SocialButton from './SocialButton';
 
 const Product = ({ locale }: { locale: Locale }) => {
