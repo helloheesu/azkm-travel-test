@@ -278,7 +278,7 @@ p.subtitle {
   align-items: center;
 }
 .profile-container > *:not(:first-child) {
-  margin-left: 1em;
+  margin-left: 3px;
 }
 .product-container button {
   width: 1.6em;

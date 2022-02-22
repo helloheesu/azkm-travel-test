@@ -12,7 +12,12 @@ const Product = ({ locale }: { locale: Locale }) => {
         </h1>
       </header>
       <div className="profile-links">
-        <ul>
+        <ul
+          style={{
+            display: 'flex',
+            justifyContent: 'space-around',
+          }}
+        >
           <li>
             <a
               target="_blank"
@@ -39,9 +44,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                   service="smartstore"
                   altText="스마트스토어로 이동"
                 />
-                <span>
-                  {{ ko: '아찌끄미 공식 스토어', en: 'Smartstore' }[locale]}
-                </span>
+                <span>{{ ko: '스토어', en: 'Smartstore' }[locale]}</span>
               </div>
             </a>
           </li>
@@ -53,9 +56,7 @@ const Product = ({ locale }: { locale: Locale }) => {
             >
               <div className="profile-container">
                 <SocialButton service="idus" altText="아이디어스로 이동" />
-                <span>
-                  {{ ko: '아찌끄미 작가 페이지', en: 'Idus' }[locale]}
-                </span>
+                <span>{{ ko: '아이디어스', en: 'Idus' }[locale]}</span>
               </div>
             </a>
           </li>
