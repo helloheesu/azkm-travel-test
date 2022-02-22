@@ -30,13 +30,22 @@ const TestPage = ({
   const imgSrc = `/images/main/${pageNumber}.png`;
   const { increaseScores } = useContext(ScoreMapContext);
 
+  const [isPoiShown, setIsPoiShown] = useState(false);
   const [isModalOn, setIsModalOn] = useState(false);
-  const showPoi = () => setIsModalOn(true);
+
   useEffect(() => {
+    const showPoi = () => {
+      if (isPoiShown) {
+        return;
+      }
+      setIsPoiShown(true);
+      setIsModalOn(true);
+    };
+
     const SECOND = 1000;
     const timeoutId = setTimeout(showPoi, 60 * SECOND);
     return () => clearTimeout(timeoutId);
-  }, [pageNumber]);
+  }, [isPoiShown, pageNumber]);
 
   return (
     <div className="fix-and-stretch-aligner">
