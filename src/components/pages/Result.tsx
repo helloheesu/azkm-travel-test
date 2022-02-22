@@ -53,7 +53,7 @@ const ResultPage = ({
                 top: '1em',
               }}
             >
-              <LocaleToggler currentLocale={locale} />
+              {/* <LocaleToggler currentLocale={locale} /> */}
             </div>
           </div>
           <div className="description">

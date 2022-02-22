@@ -39,8 +39,8 @@ const Comp = ({
       <meta property="og:image" content={fullImgUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <link rel="alternate" hrefLang="en" href={englishUrl} />
-      <link rel="alternate" hrefLang="ko" href={koreanUrl} />
+      {/* <link rel="alternate" hrefLang="en" href={englishUrl} /> */}
+      {/* <link rel="alternate" hrefLang="ko" href={koreanUrl} /> */}
     </Head>
   );
 };

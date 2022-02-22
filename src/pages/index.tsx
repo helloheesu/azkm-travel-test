@@ -26,7 +26,7 @@ const Home: NextPage<Props> = ({ locale }) => {
           right: '1em',
         }}
       >
-        <LocaleToggler currentLocale={locale} />
+        {/* <LocaleToggler currentLocale={locale} /> */}
       </div>
       <header>
         <p>{{ ko: '여행 유형 테스트', en: 'Travel Type Test' }[locale]}</p>
