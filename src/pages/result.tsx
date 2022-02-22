@@ -1,4 +1,4 @@
-import LoadingResultPage from 'components/pages/LoadingResult';
+import MainImage from 'components/MainImage';
 import ScoreMapContext from 'components/ScoreMapContext';
 import { Locale } from 'data/languages';
 import { GetStaticProps, NextPage } from 'next';
@@ -33,7 +33,12 @@ const Result: NextPage<Props> = ({ locale }) => {
     );
   }, [highestCharacter, router]);
 
-  return <LoadingResultPage locale={locale} />;
+  return (
+    <div className="content-wrapper content-aligner">
+      <MainImage src={'/images/ui/loading.png'} alt="로딩 이미지 설명" />
+      {{ ko: '분석 중...', en: 'Loading...' }[locale]}
+    </div>
+  );
 };
 
 export default Result;
