@@ -288,6 +288,7 @@ p.subtitle {
 .credits {
   display: flex;
   margin-top: 3em;
+  align-items: center;
 }
 .credits > * {
   flex-grow: 1;
@@ -297,11 +298,13 @@ p.subtitle {
   flex-grow: 3;
   justify-content: space-evenly;
 }
-.credits ul::before {
-  content: ':';
-}
 .credits li {
   position: relative;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ffffeb;
+  border: 1px solid #503527;
+  box-shadow: 1px 1px #000;
 }
 .credits a {
   display: flex;
