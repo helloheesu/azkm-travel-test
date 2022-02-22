@@ -138,9 +138,6 @@ const Share = ({
                 <SocialButton service="kakao" altText="카카오" />
               </li>
             )}
-            <li onClick={() => onClick('instagram')}>
-              <SocialButton service="instagram" altText="인스타그램" />
-            </li>
             <li onClick={() => onClick('facebook')}>
               <SocialButton service="facebook" altText="페이스북" />
             </li>
