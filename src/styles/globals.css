@@ -258,7 +258,13 @@ p.subtitle {
   margin-top: 1em;
   background-color: transparent;
 }
+.outro.image-background {
+  margin-top: 5px;
 
+  background-image: url('/images/product/outro-bg.png');
+  /* height/width ratio */
+  padding-top: 42%;
+}
 .profile-links li {
   margin-top: 0.6em;
 }
