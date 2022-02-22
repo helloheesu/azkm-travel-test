@@ -35,7 +35,7 @@ const Result: NextPage<Props> = ({ locale }) => {
 
   return (
     <div className="content-wrapper content-aligner">
-      <MainImage src={'/images/ui/loading.png'} alt="로딩 이미지 설명" />
+      <MainImage src={'/images/ui/loading.gif'} alt="로딩 이미지 설명" />
       {{ ko: '분석 중...', en: 'Loading...' }[locale]}
     </div>
   );
