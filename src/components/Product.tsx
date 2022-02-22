@@ -48,7 +48,7 @@ const Product = ({ locale }: { locale: Locale }) => {
           <li>
             <a
               target="_blank"
-              href="https://smartstore.naver.com/jasminegarden/products/6326234032"
+              href="https://www.idus.com/w/product/df032e6e-86cf-4d86-9fb2-d8d28759a48c?keyword_channel=user&search_word=%EC%95%84%EC%B0%8C%EB%81%84%EB%AF%B8"
               rel="noreferrer"
             >
               <div className="profile-container">
