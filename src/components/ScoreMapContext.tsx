@@ -47,6 +47,7 @@ export const ScoreMapProvider: FunctionComponent = ({ children }) => {
       const score = scoreMap[character];
       if (score > highestScore) {
         highestCharacter = character;
+        highestScore = score;
       }
     });
 
