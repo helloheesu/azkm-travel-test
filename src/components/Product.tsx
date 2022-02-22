@@ -28,6 +28,7 @@ const Product = ({ locale }: { locale: Locale }) => {
           <div
             style={{
               flexDirection: 'column',
+              justifyContent: 'space-around',
             }}
           >
             <div
@@ -57,28 +58,17 @@ const Product = ({ locale }: { locale: Locale }) => {
                   justifyContent: 'space-around',
                 }}
               >
-                <li>
-                  <a
-                    target="_blank"
-                    href="https://instagram.com/azkm_friends"
-                    rel="noreferrer"
-                  >
-                    <div className="profile-container">
-                      <SocialButton
-                        service="instagram"
-                        altText="인스타페이지로 이동"
-                      />
-                      <span>azkm_friends</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
+                <li
+                  style={{
+                    backgroundColor: '#bbe3be',
+                  }}
+                >
                   <a
                     target="_blank"
                     href="https://smartstore.naver.com/jasminegarden/products/6326234032"
                     rel="noreferrer"
                   >
-                    <div className="profile-container">
+                    <div className="profile-container smartstore">
                       <SocialButton
                         service="smartstore"
                         altText="스마트스토어로 이동"
@@ -87,18 +77,41 @@ const Product = ({ locale }: { locale: Locale }) => {
                     </div>
                   </a>
                 </li>
-                <li>
+                <li
+                  style={{
+                    backgroundColor: '#fcb78e',
+                  }}
+                >
                   <a
                     target="_blank"
                     href="https://www.idus.com/w/product/df032e6e-86cf-4d86-9fb2-d8d28759a48c?keyword_channel=user&search_word=%EC%95%84%EC%B0%8C%EB%81%84%EB%AF%B8"
                     rel="noreferrer"
                   >
-                    <div className="profile-container">
+                    <div className="profile-container idus">
                       <SocialButton
                         service="idus"
                         altText="아이디어스로 이동"
                       />
                       <span>{{ ko: '아이디어스', en: 'Idus' }[locale]}</span>
+                    </div>
+                  </a>
+                </li>
+                <li
+                  style={{
+                    backgroundColor: '#edd1f4',
+                  }}
+                >
+                  <a
+                    target="_blank"
+                    href="https://instagram.com/azkm_friends"
+                    rel="noreferrer"
+                  >
+                    <div className="profile-container instagram">
+                      <SocialButton
+                        service="instagram"
+                        altText="인스타페이지로 이동"
+                      />
+                      <span>azkm_friends</span>
                     </div>
                   </a>
                 </li>
