@@ -13,17 +13,19 @@ interface Props {
   character: Character;
   characterName: string;
   descriptions: string[];
+  summary: string;
   locale: Locale;
 }
 const ResultPage = ({
   character,
   characterName,
   descriptions,
+  summary,
   locale,
 }: Props) => {
   const imgSrc = `/images/characters/${character}.png`;
   const title = {
-    ko: '당신의 베스트 여행메이트는',
+    ko: '나랑 잘 맞는 여행 친구는',
     en: 'You best travel mate',
   }[locale];
 
@@ -31,6 +33,7 @@ const ResultPage = ({
     <div className="content-wrapper content-aligner result">
       <Head
         title={`${title}: ${characterName}`}
+        description={summary}
         img={imgSrc}
         pathname={character}
       />
