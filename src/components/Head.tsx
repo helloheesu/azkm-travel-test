@@ -10,7 +10,7 @@ interface Props {
 const Comp = ({
   title = '여행 유형 테스트',
   description = '나랑 잘 맞는 아찌끄미 친구 찾기',
-  img = '/og.png',
+  img = '/images/main/intro.png',
   pathname = '',
 }: Props) => {
   const [baseUrl, setBaseUrl] = useState(
