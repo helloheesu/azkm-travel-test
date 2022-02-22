@@ -8,8 +8,8 @@ interface Props {
   pathname?: string;
 }
 const Comp = ({
-  title = '아찌끄미 여행 유형 테스트',
-  description = '나와 가장 잘 맞는 여행 스타일의 캐릭터는?',
+  title = '여행 유형 테스트',
+  description = '나랑 잘 맞는 아찌끄미 친구 찾기',
   img = '/og.png',
   pathname = '',
 }: Props) => {

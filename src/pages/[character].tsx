@@ -45,14 +45,15 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
 };
 
 const Page: NextPage<Props> = ({ character, locale }: Props) => {
-  const descriptions = results[character][locale];
+  const { descriptions, summary } = results[character];
   const characterName = characterNames[character][locale];
 
   return (
     <ResultPage
       character={character}
       characterName={characterName}
-      descriptions={descriptions}
+      descriptions={descriptions[locale]}
+      summary={summary[locale]}
       locale={locale}
     />
   );

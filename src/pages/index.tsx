@@ -29,9 +29,11 @@ const Home: NextPage<Props> = ({ locale }) => {
         {/* <LocaleToggler currentLocale={locale} /> */}
       </div>
       <header>
-        <p>{{ ko: '여행 유형 테스트', en: 'Travel Type Test' }[locale]}</p>
+        <p>
+          {{ ko: '여행 스타일로 알아보는', en: 'Travel Type Test' }[locale]}
+        </p>
         <h1 className="title">
-          {{ ko: '나는 어떤 유형일까?', en: 'Which type am I?' }[locale]}
+          {{ ko: '아찌끄미 친구 찾기', en: 'Which type am I?' }[locale]}
         </h1>
       </header>
       <MainImage src={'/images/main/intro.png'} alt="인트로 이미지" />
