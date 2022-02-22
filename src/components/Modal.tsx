@@ -40,14 +40,16 @@ const Modal = ({ isOn, children, onClose, closeText = '닫기' }: Props) => {
             padding: '2em',
           }}
         >
-          <button
-            onClick={onClose}
-            style={{
-              fontSize: 'inherit',
-            }}
-          >
-            {closeText}
-          </button>
+          <div className="button image-background content-container">
+            <button
+              onClick={onClose}
+              style={{
+                fontSize: 'inherit',
+              }}
+            >
+              {closeText}
+            </button>
+          </div>
         </div>
       </div>
     </div>
