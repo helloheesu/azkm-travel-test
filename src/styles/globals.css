@@ -308,3 +308,16 @@ p.subtitle {
 .credits ul::before {
   content: ':';
 }
+.credits li {
+  position: relative;
+}
+.credits a {
+  display: flex;
+  align-items: center;
+}
+.credits button {
+  min-width: 1em;
+  min-height: 1em;
+  position: relative;
+  margin-right: 3px;
+}
