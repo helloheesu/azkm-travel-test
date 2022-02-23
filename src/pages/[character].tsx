@@ -1,4 +1,5 @@
 import Credits from 'components/Credits';
+import { logPageview } from 'components/GA';
 import Head from 'components/Head';
 import Link from 'components/Link';
 import MainImage from 'components/MainImage';
@@ -9,6 +10,7 @@ import { Locale } from 'data/languages';
 import results from 'data/results';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { ParsedUrlQuery } from 'querystring';
+import { useEffect } from 'react';
 
 interface StaticProps extends ParsedUrlQuery {
   character: Character;
@@ -58,6 +60,10 @@ const Page: NextPage<Props> = ({ character, locale }: Props) => {
     ko: '나랑 잘 맞는 여행 친구는',
     en: 'You best travel mate',
   }[locale];
+
+  useEffect(() => {
+    logPageview(`/result/${character}`);
+  }, [character]);
 
   return (
     <div className="content-wrapper content-aligner result">

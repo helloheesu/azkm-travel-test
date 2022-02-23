@@ -6,9 +6,10 @@ declare global {
   }
 }
 
-export const logPageview = (url: string) => {
-  window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, {
-    page_path: url,
+export const logPageview = (path: string) => {
+  window.gtag('event', 'page_view', {
+    page_path: path,
+    send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,
   });
 };
 
