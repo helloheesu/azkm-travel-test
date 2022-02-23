@@ -74,7 +74,9 @@ const Product = ({ locale }: { locale: Locale }) => {
                         service="smartstore"
                         altText="스마트스토어로 이동"
                       />
-                      <span>{{ ko: '스토어', en: 'Smartstore' }[locale]}</span>
+                      <span>
+                        {{ ko: '공식스토어', en: 'Smartstore' }[locale]}
+                      </span>
                     </div>
                   </a>
                 </li>

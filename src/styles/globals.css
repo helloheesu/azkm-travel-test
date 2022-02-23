@@ -274,12 +274,13 @@ p.subtitle {
 .profile-links li {
   border: 3px solid #4f3526;
   border-radius: 13px;
-  padding: 2px;
+  padding: 3px;
   font-size: 0.8rem;
+  box-shadow: 3px 3px 3px #bababa;
 }
 .profile-links li.emphasize {
-  font-size: 1rem;
-  padding: 3px 7px;
+  padding: 3px 5px;
+  box-shadow: 2px 2px 3px #808080;
 }
 .profile-container {
   width: 100%;
