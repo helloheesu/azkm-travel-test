@@ -102,7 +102,7 @@ const Page: NextPage<Props> = ({ character, locale }: Props) => {
             text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
             href={'/'}
           />
-          <Share />
+          <Share character={character} />
         </footer>
       </section>
       <Product locale={locale} />

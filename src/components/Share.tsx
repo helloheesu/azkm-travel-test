@@ -1,3 +1,5 @@
+import { Character } from 'data/character';
+import ga from 'lib/ga';
 import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
 import SocialButton from './SocialButton';
@@ -7,6 +9,7 @@ interface Props {
   url?: string;
   description?: string;
   img?: string;
+  character: Character;
 }
 
 export type Service =
@@ -30,6 +33,7 @@ const Share = ({
   url: givenUrl = '',
   description: givenDescription = '',
   img: givenImg = '',
+  character,
 }: Props) => {
   const [isRendered, setIsRendered] = useState(false);
   const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
@@ -66,6 +70,10 @@ const Share = ({
   const img = givenImg || ogImage?.content;
 
   const onClick = async (service: Service) => {
+    ga.event('share', {
+      method: service,
+      item_id: character,
+    });
     switch (service) {
       case 'share':
         await navigator.share({
