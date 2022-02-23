@@ -62,13 +62,14 @@ const Product = ({ locale }: { locale: Locale }) => {
                   style={{
                     backgroundColor: '#bbe3be',
                   }}
+                  className="emphasize"
                 >
                   <a
                     target="_blank"
                     href="https://smartstore.naver.com/jasminegarden/products/6326234032"
                     rel="noreferrer"
                   >
-                    <div className="profile-container smartstore">
+                    <div className="profile-container">
                       <SocialButton
                         service="smartstore"
                         altText="스마트스토어로 이동"
@@ -87,7 +88,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                     href="https://www.idus.com/w/product/df032e6e-86cf-4d86-9fb2-d8d28759a48c?keyword_channel=user&search_word=%EC%95%84%EC%B0%8C%EB%81%84%EB%AF%B8"
                     rel="noreferrer"
                   >
-                    <div className="profile-container idus">
+                    <div className="profile-container">
                       <SocialButton
                         service="idus"
                         altText="아이디어스로 이동"
@@ -106,12 +107,12 @@ const Product = ({ locale }: { locale: Locale }) => {
                     href="https://instagram.com/azkm_friends"
                     rel="noreferrer"
                   >
-                    <div className="profile-container instagram">
+                    <div className="profile-container enlarge-icon">
                       <SocialButton
                         service="instagram"
                         altText="인스타페이지로 이동"
                       />
-                      <span>azkm_friends</span>
+                      <span>인스타그램</span>
                     </div>
                   </a>
                 </li>
