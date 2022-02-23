@@ -35,7 +35,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </ScoreMapProvider>
       </div>
-      <div className="image-preloader" />
     </div>
   );
 }
