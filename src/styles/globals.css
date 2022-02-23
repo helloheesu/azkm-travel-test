@@ -277,7 +277,7 @@ p.subtitle {
   border-radius: 13px;
   padding: 3px;
   font-size: 0.8rem;
-  font-size: min(3.4vw, 0.8rem);
+  font-size: min(3vw, 0.8rem);
   box-shadow: 3px 3px 3px #bababa;
 }
 .profile-links li.emphasize {
