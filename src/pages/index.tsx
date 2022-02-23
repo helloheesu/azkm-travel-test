@@ -1,3 +1,4 @@
+import { logPageview } from 'components/GA';
 import Head from 'components/Head';
 import Link from 'components/Link';
 import LocaleToggler from 'components/LocaleToggler';
@@ -5,6 +6,7 @@ import MainImage from 'components/MainImage';
 import { Locale } from 'data/languages';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 interface Props {
   locale: Locale;
@@ -17,6 +19,10 @@ export const getStaticProps: GetStaticProps<Props> = ({ locale }) => {
   };
 };
 const Home: NextPage<Props> = ({ locale }) => {
+  useEffect(() => {
+    logPageview(`/`);
+  }, []);
+
   return (
     <div className="content-wrapper content-aligner">
       <Head />
