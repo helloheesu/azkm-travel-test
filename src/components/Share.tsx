@@ -1,7 +1,7 @@
 import { Character } from 'data/character';
-import ga from 'lib/ga';
 import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
+import { logEvent } from './GA';
 import SocialButton from './SocialButton';
 
 interface Props {
@@ -70,7 +70,7 @@ const Share = ({
   const img = givenImg || ogImage?.content;
 
   const onClick = async (service: Service) => {
-    ga.event('share', {
+    logEvent('share', {
       method: service,
       item_id: character,
     });
