@@ -25,8 +25,8 @@ const Result: NextPage<Props> = ({ locale }) => {
     setTimeout(() => {
       router.replace(
         {
-          pathname: '/[result]',
-          query: { result: highestCharacter },
+          pathname: '/[character]',
+          query: { character: highestCharacter },
         },
         `/${highestCharacter}`,
         {
