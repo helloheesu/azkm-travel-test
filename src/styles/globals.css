@@ -122,11 +122,12 @@ p.subtitle {
 
   background-image: url('/images/ui/main.png');
   /* height/width ratio */
-  padding-top: 70%;
+  aspect-ratio: 2050 / 1450;
 }
-.main-image .size-container {
+.size-container {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .main-image img {
   object-fit: contain;
@@ -136,12 +137,11 @@ p.subtitle {
 }
 
 .button {
-  padding: 0.8em 2em;
   font-size: 1rem;
 
   background-image: url('/images/ui/button.png');
   /* height/width ratio */
-  padding-top: 22%;
+  aspect-ratio: 2050 / 470;
 }
 .button:not(:first-of-type) {
   margin-top: 0.2em;
@@ -159,7 +159,7 @@ p.subtitle {
 .progress-container {
   background-image: url('/images/ui/progress.png');
   /* height/width ratio */
-  padding-top: 5.2%;
+  aspect-ratio: 2365 / 123;
 }
 .progress-container .border-container {
   width: 100%;
@@ -223,7 +223,7 @@ p.subtitle {
 .share .image-background {
   background-image: url('/images/ui/button.png');
   /* height/width ratio */
-  padding-top: 23%;
+  aspect-ratio: 2050 / 470;
 }
 .share li {
   flex-grow: 1;
@@ -259,7 +259,7 @@ p.subtitle {
 
   background-image: url('/images/product/outro-bg.png');
   /* height/width ratio */
-  padding-top: 42%;
+  aspect-ratio: 2050 / 867;
 }
 .profile-links {
   width: 100%;
