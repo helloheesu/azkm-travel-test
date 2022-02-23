@@ -152,9 +152,9 @@ const Share = ({
             <li onClick={() => onClick('twitter')}>
               <SocialButton service="twitter" altText="트위터" />
             </li>
-            <li onClick={() => onClick('url')}>
+            {/* <li onClick={() => onClick('url')}>
               <SocialButton service="url" altText="URL" />
-            </li>
+            </li> */}
             <div className="hidden">
               <p>
                 Icons made by{' '}
