@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import tests, { TestData } from 'data/tests';
 import { ParsedUrlQuery } from 'querystring';
 import { Locale } from 'data/languages';
-import Head from 'components/Head';
+import Head, { DEFAULT_TITLE } from 'components/Head';
 import Link from 'components/Link';
 import MainImage from 'components/MainImage';
 import Modal from 'components/Modal';
@@ -94,7 +94,10 @@ const Test: NextPage<Props> = ({
 
   return (
     <div className="fix-and-stretch-aligner">
-      <Head img={imgSrc} />
+      <Head
+        img={imgSrc}
+        title={`${DEFAULT_TITLE} - ${pageNumber}/${totalPageNumber}`}
+      />
       {isModalOn && (
         <Modal
           onClose={() => setIsModalOn(false)}
