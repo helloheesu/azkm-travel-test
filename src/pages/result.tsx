@@ -22,16 +22,18 @@ const Result: NextPage<Props> = ({ locale }) => {
 
   const router = useRouter();
   useEffect(() => {
-    router.replace(
-      {
-        pathname: '/[result]',
-        query: { result: highestCharacter },
-      },
-      `/${highestCharacter}`,
-      {
-        shallow: true,
-      }
-    );
+    setTimeout(() => {
+      router.replace(
+        {
+          pathname: '/[result]',
+          query: { result: highestCharacter },
+        },
+        `/${highestCharacter}`,
+        {
+          shallow: true,
+        }
+      );
+    }, 1000);
   }, [highestCharacter, router]);
 
   return (
