@@ -64,11 +64,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                   }}
                   className="emphasize"
                 >
-                  <a
-                    target="_blank"
-                    href="https://smartstore.naver.com/jasminegarden/products/6326234032"
-                    rel="noreferrer"
-                  >
+                  <a href="https://smartstore.naver.com/jasminegarden/products/6326234032">
                     <div className="profile-container">
                       <SocialButton
                         service="smartstore"
@@ -85,11 +81,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                     backgroundColor: '#fcb78e',
                   }}
                 >
-                  <a
-                    target="_blank"
-                    href="https://idus.kr/iwh52"
-                    rel="noreferrer"
-                  >
+                  <a href="https://idus.kr/iwh52">
                     <div className="profile-container">
                       <SocialButton
                         service="idus"
@@ -104,11 +96,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                     backgroundColor: '#edd1f4',
                   }}
                 >
-                  <a
-                    target="_blank"
-                    href="https://instagram.com/azkm_friends"
-                    rel="noreferrer"
-                  >
+                  <a href="https://instagram.com/azkm_friends">
                     <div className="profile-container enlarge-icon">
                       <SocialButton
                         service="instagram"
