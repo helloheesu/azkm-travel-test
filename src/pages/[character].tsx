@@ -61,6 +61,11 @@ const Page: NextPage<Props> = ({ character, locale }: Props) => {
 
   return (
     <div className="content-wrapper content-aligner result">
+      <style jsx>{`
+        .description li::before {
+          background-image: url('/images/list-icons/${character}.png');
+        }
+      `}</style>
       <Head
         title={`${title}: ${characterName}`}
         description={summary[locale]}
