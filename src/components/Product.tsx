@@ -2,9 +2,20 @@ import { Locale } from 'data/languages';
 import Image from 'next/image';
 import ProductImage from '../../public/images/product/cartoon.png';
 import CharactersImage from '../../public/images/product/outro-characters.png';
+import { logEvent } from './GA';
+import { Service } from './Share';
 import SocialButton from './SocialButton';
 
 const Product = ({ locale }: { locale: Locale }) => {
+  const onImageRendered = () => {
+    logEvent('product_shown', {});
+  };
+  const onClickLink = (service: Service) => {
+    logEvent('product_click', {
+      service,
+    });
+  };
+
   return (
     <section className="product-container">
       <header
@@ -22,7 +33,11 @@ const Product = ({ locale }: { locale: Locale }) => {
       </header>
       <main>
         <div className="product-detail">
-          <Image src={ProductImage} alt="상품 소개 이미지" />
+          <Image
+            src={ProductImage}
+            alt="상품 소개 이미지"
+            onLoadingComplete={onImageRendered}
+          />
         </div>
         <div className="outro image-background content-container">
           <div
@@ -63,6 +78,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                     backgroundColor: '#bbe3be',
                   }}
                   className="emphasize"
+                  onClick={() => onClickLink('smartstore')}
                 >
                   <a href="https://smartstore.naver.com/jasminegarden/products/6326234032">
                     <div className="profile-container">
@@ -80,6 +96,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                   style={{
                     backgroundColor: '#fcb78e',
                   }}
+                  onClick={() => onClickLink('idus')}
                 >
                   <a href="https://idus.kr/iwh52">
                     <div className="profile-container">
@@ -95,6 +112,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                   style={{
                     backgroundColor: '#edd1f4',
                   }}
+                  onClick={() => onClickLink('instagram')}
                 >
                   <a href="https://instagram.com/azkm_friends">
                     <div className="profile-container enlarge-icon">
