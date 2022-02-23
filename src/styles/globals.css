@@ -216,6 +216,9 @@ p.subtitle {
   margin-top: 1em;
 }
 
+.share {
+  margin-top: 0.2em;
+}
 .share ul {
   display: flex;
   justify-content: space-around;
@@ -332,4 +335,5 @@ p.subtitle {
   min-height: 1em;
   position: relative;
   margin-right: 3px;
+  font-size: 0.6em;
 }
