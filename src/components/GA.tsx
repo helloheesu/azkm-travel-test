@@ -14,7 +14,7 @@ export const logPageview = (path: string) => {
     });
 };
 
-export const logEvent = (action: string, params: any) => {
+export const logEvent = (action: string, params: {}) => {
   window.gtag && window.gtag('event', action, params);
 };
 
