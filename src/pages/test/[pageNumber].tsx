@@ -7,7 +7,7 @@ import Link from 'components/Link';
 import MainImage from 'components/MainImage';
 import Modal from 'components/Modal';
 import Progress from 'components/Progress';
-import ScoreMapContext from 'components/ScoreMapContext';
+import ScoreMapContext, { ScoreMap } from 'components/ScoreMapContext';
 import { useContext, useState, useEffect } from 'react';
 import { logEvent, logPageview } from 'components/GA';
 import Poi from 'components/Poi';
@@ -100,6 +100,14 @@ const Test: NextPage<Props> = ({
     logPageview(`/test/${pageNumber}`);
   }, [pageNumber]);
 
+  const onClickItem = (scores: ScoreMap, itemNumber: number) => {
+    increaseScores(scores);
+    logEvent('select_item', {
+      pageNumber,
+      itemNumber,
+    });
+  };
+
   return (
     <div className="fix-and-stretch-aligner">
       <Head
@@ -124,7 +132,7 @@ const Test: NextPage<Props> = ({
             href={href}
             as={as}
             text={text[locale]}
-            onClick={() => increaseScores(scores)}
+            onClick={() => onClickItem(scores, i + 1)}
           />
         ))}
       </div>
