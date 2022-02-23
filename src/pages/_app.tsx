@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
 import { ScoreMapProvider } from 'components/ScoreMapContext';
 import Script from 'next/script';
-import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [height, setHeight] = useState('100vh');

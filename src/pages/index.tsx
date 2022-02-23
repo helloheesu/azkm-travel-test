@@ -4,6 +4,7 @@ import LocaleToggler from 'components/LocaleToggler';
 import MainImage from 'components/MainImage';
 import { Locale } from 'data/languages';
 import type { GetStaticProps, NextPage } from 'next';
+import Image from 'next/image';
 
 interface Props {
   locale: Locale;
@@ -19,6 +20,12 @@ const Home: NextPage<Props> = ({ locale }) => {
   return (
     <div className="content-wrapper content-aligner">
       <Head />
+      <Image
+        src="/images/ui/loading.gif"
+        width="0"
+        height="0"
+        alt="preload-loading"
+      />
       <div
         style={{
           position: 'absolute',
