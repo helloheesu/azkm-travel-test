@@ -7,8 +7,9 @@ interface Props {
   img?: string;
   pathname?: string;
 }
+export const DEFAULT_TITLE = '여행 유형 테스트';
 const Comp = ({
-  title = '여행 유형 테스트',
+  title = DEFAULT_TITLE,
   description = '나랑 잘 맞는 아찌끄미 친구 찾기',
   img = '/images/main/intro.png',
   pathname = '',
