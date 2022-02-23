@@ -1,5 +1,5 @@
-// next/image fill layout flickers
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
+
 interface Props {
   src: string;
   alt?: string;
@@ -8,7 +8,7 @@ const MainImage = ({ src, alt }: Props) => {
   return (
     <div className="main-image image-background content-container">
       <div className="size-container">
-        <img src={src} alt={alt} />
+        <Image src={src} alt={alt} layout="fill" priority={true} />
       </div>
     </div>
   );
