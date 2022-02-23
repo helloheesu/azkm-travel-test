@@ -1,15 +1,14 @@
 interface Props {
-  isOn: boolean;
   onClose: () => void;
   closeText?: string;
   children?: React.ReactNode;
 }
 
-const Modal = ({ isOn, children, onClose, closeText = '닫기' }: Props) => {
+const Modal = ({ children, onClose, closeText = '닫기' }: Props) => {
   return (
     <div
       style={{
-        display: isOn ? 'flex' : 'none',
+        display: 'flex',
         position: 'absolute',
         top: 0,
         bottom: 0,
