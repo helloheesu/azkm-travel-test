@@ -87,7 +87,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                 >
                   <a
                     target="_blank"
-                    href="https://www.idus.com/w/product/df032e6e-86cf-4d86-9fb2-d8d28759a48c?keyword_channel=user&search_word=%EC%95%84%EC%B0%8C%EB%81%84%EB%AF%B8"
+                    href="https://idus.kr/iwh52"
                     rel="noreferrer"
                   >
                     <div className="profile-container">
