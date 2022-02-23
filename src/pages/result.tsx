@@ -1,10 +1,10 @@
+import { logPageview } from 'components/GA';
 import MainImage from 'components/MainImage';
 import ScoreMapContext from 'components/ScoreMapContext';
 import { Locale } from 'data/languages';
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
-import LoadingImage from '/images/ui/loading.gif';
 
 interface Props {
   locale: Locale;
@@ -35,6 +35,10 @@ const Result: NextPage<Props> = ({ locale }) => {
       );
     }, 1000);
   }, [highestCharacter, router]);
+
+  useEffect(() => {
+    logPageview('/loading');
+  }, []);
 
   return (
     <div className="content-wrapper content-aligner">

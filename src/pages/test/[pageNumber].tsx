@@ -11,6 +11,7 @@ import ScoreMapContext from 'components/ScoreMapContext';
 import Image from 'next/image';
 import { useContext, useState, useEffect } from 'react';
 import PoiImage from '/public/images/characters/Poi.png';
+import { logPageview } from 'components/GA';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -91,6 +92,10 @@ const Test: NextPage<Props> = ({
     const timeoutId = setTimeout(showPoi, 60 * SECOND);
     return () => clearTimeout(timeoutId);
   }, [isPoiShown, pageNumber]);
+
+  useEffect(() => {
+    logPageview(`/test/${pageNumber}`);
+  }, [pageNumber]);
 
   return (
     <div className="fix-and-stretch-aligner">
