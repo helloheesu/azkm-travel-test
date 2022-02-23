@@ -11,7 +11,7 @@ import ScoreMapContext from 'components/ScoreMapContext';
 import Image from 'next/image';
 import { useContext, useState, useEffect } from 'react';
 import PoiImage from '/public/images/characters/Poi.png';
-import { logPageview } from 'components/GA';
+import { logEvent, logPageview } from 'components/GA';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -81,6 +81,10 @@ const Test: NextPage<Props> = ({
 
   useEffect(() => {
     const showPoi = () => {
+      logEvent('easter_egg', {
+        visible: !isPoiShown,
+        pageNumber,
+      });
       if (isPoiShown) {
         return;
       }
