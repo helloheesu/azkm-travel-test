@@ -53,6 +53,7 @@ p.subtitle {
 
 .container {
   max-width: 425px;
+  min-width: 330px;
   margin: 0 auto;
   width: 100vw;
   height: 100vh;
@@ -276,6 +277,7 @@ p.subtitle {
   border-radius: 13px;
   padding: 3px;
   font-size: 0.8rem;
+  font-size: min(3.4vw, 0.8rem);
   box-shadow: 3px 3px 3px #bababa;
 }
 .profile-links li.emphasize {
