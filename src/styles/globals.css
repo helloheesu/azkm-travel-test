@@ -257,6 +257,19 @@ p.subtitle {
   margin-top: 1em;
   background-color: transparent;
 }
+.product-page:not(:first-of-type)::before {
+  content: '';
+  width: 100%;
+  aspect-ratio: 2050 / 200;
+  position: absolute;
+  left: 0;
+  top: calc(-5% + 5px);
+  background-image: url('/images/product/page-connector.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
 .outro.image-background {
   margin-top: 5px;
 
