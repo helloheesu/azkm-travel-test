@@ -337,3 +337,25 @@ p.subtitle {
   margin-right: 3px;
   font-size: 0.6em;
 }
+
+.match-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.match {
+  flex-grow: 1;
+  width: 100%;
+  min-height: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-color: #ffffeb;
+  border-radius: 14px;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #4f3527;
+}
