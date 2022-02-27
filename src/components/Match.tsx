@@ -13,8 +13,8 @@ const Match = ({ character, locale }: Props) => {
   return (
     <div className="match-container">
       <div className="match match-best">
-        <p>{best.description[locale]}</p>
-        <p>{characterNames[best.name][locale]}</p>
+        <p className="description">{best.description[locale]}</p>
+        <p className="name">{characterNames[best.name][locale]}</p>
         <div>
           <Image
             src={`/images/characters/${best.name}.png`}
@@ -26,8 +26,8 @@ const Match = ({ character, locale }: Props) => {
         </div>
       </div>
       <div className="match match-worst">
-        <p>{worst.description[locale]}</p>
-        <p>{characterNames[worst.name][locale]}</p>
+        <p className="description">{worst.description[locale]}</p>
+        <p className="name">{characterNames[worst.name][locale]}</p>
         <div>
           <Image
             src={`/images/characters/${worst.name}.png`}

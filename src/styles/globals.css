@@ -354,7 +354,10 @@ p.subtitle {
 .match-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
+}
+.match-container .description {
+  font-size: 0.8em;
 }
 .match {
   flex-grow: 1;
