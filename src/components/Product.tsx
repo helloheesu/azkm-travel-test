@@ -1,7 +1,8 @@
 import { Locale } from 'data/languages';
 import Image from 'next/image';
-import ProductImage from '../../public/images/product/cartoon.png';
+import CartoonImage from '../../public/images/product/cartoon.png';
 import CharactersImage from '../../public/images/product/outro-characters.png';
+import ProductImage from '../../public/images/product/product.png';
 import { logEvent } from './GA';
 import { Service } from './Share';
 import SocialButton from './SocialButton';
@@ -32,18 +33,20 @@ const Product = ({ locale }: { locale: Locale }) => {
         }
       </header>
       <main>
-        <div className="product-detail">
+        <div className="product-page">
           <Image
-            src={ProductImage}
+            src={CartoonImage}
             alt="상품 소개 이미지"
             onLoadingComplete={onImageRendered}
           />
         </div>
-        <div className="outro image-background content-container">
+        <div className="outro product-page image-background">
           <div
             style={{
+              display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-around',
+              justifyContent: 'space-evenly',
+              padding: '1em',
             }}
           >
             <div
@@ -51,6 +54,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-around',
+                padding: '2px 1em',
               }}
             >
               <div
@@ -65,6 +69,17 @@ const Product = ({ locale }: { locale: Locale }) => {
                 <p>어떤 디저트를</p>
                 <p>먹었는지 궁금하다면?</p>
               </div>
+            </div>
+            <div
+              style={{
+                aspectRatio: '1 / 1',
+                position: 'relative',
+                marginTop: '5px',
+                borderRadius: '7px',
+                overflow: 'hidden',
+              }}
+            >
+              <Image src={ProductImage} alt="케이스 사진" layout="fill" />
             </div>
             <div className="profile-links">
               <ul

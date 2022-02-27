@@ -253,16 +253,16 @@ p.subtitle {
   margin: 0;
 }
 
-.product-detail {
+.product-page {
   margin-top: 1em;
   background-color: transparent;
 }
 .outro.image-background {
   margin-top: 5px;
 
-  background-image: url('/images/product/outro-bg.png');
+  background-image: url('/images/product/product-bg.png');
   /* height/width ratio */
-  aspect-ratio: 2050 / 867;
+  aspect-ratio: 2050 / 3000;
 }
 .profile-links {
   width: 100%;
