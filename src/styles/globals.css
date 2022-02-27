@@ -362,16 +362,18 @@ p.subtitle {
 .match {
   flex-grow: 1;
   width: 100%;
+}
+.match-box {
+  background-color: #ffffeb;
+  border-radius: 14px;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #4f3527;
+
   min-height: 3em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-
-  background-color: #ffffeb;
-  border-radius: 14px;
-  margin: 5px;
-  padding: 5px;
-  border: 2px solid #4f3527;
 }

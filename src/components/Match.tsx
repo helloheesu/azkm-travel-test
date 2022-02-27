@@ -27,20 +27,23 @@ const Match = ({ character, locale }: Props) => {
         as={`/${best.name}`}
         passHref
       >
-        <div
-          className="match match-best"
-          onClick={() => onClick({ relationship: 'best' })}
-        >
-          <p className="description">{best.description[locale]}</p>
-          <p className="name">{characterNames[best.name][locale]}</p>
-          <div>
-            <Image
-              src={`/images/characters/${best.name}.png`}
-              alt=""
-              layout="intrinsic"
-              width={2000}
-              height={1600}
-            />
+        <div className="match">
+          <div
+            className="match-box match-best"
+            onClick={() => onClick({ relationship: 'best' })}
+          >
+            <p>찰떡친구</p>
+            <div>
+              <Image
+                src={`/images/characters/${best.name}.png`}
+                alt=""
+                layout="intrinsic"
+                width={2000}
+                height={1600}
+              />
+            </div>
+            <p className="description">{best.description[locale]}</p>
+            <p className="name">{characterNames[best.name][locale]}</p>
           </div>
         </div>
       </Link>
@@ -52,20 +55,23 @@ const Match = ({ character, locale }: Props) => {
         as={`/${worst.name}`}
         passHref
       >
-        <div
-          className="match match-worst"
-          onClick={() => onClick({ relationship: 'worst' })}
-        >
-          <p className="description">{worst.description[locale]}</p>
-          <p className="name">{characterNames[worst.name][locale]}</p>
-          <div>
-            <Image
-              src={`/images/characters/${worst.name}.png`}
-              alt=""
-              layout="intrinsic"
-              width={2000}
-              height={1600}
-            />
+        <div className="match">
+          <div
+            className="match-box match-worst"
+            onClick={() => onClick({ relationship: 'worst' })}
+          >
+            <p>개떡친구</p>
+            <div>
+              <Image
+                src={`/images/characters/${worst.name}.png`}
+                alt=""
+                layout="intrinsic"
+                width={2000}
+                height={1600}
+              />
+            </div>
+            <p className="description">{worst.description[locale]}</p>
+            <p className="name">{characterNames[worst.name][locale]}</p>
           </div>
         </div>
       </Link>
