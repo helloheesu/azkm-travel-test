@@ -108,15 +108,15 @@ const Page: NextPage<Props> = ({ character, locale }: Props) => {
             </ul>
           </div>
         </main>
-        <footer className="footer">
-          <Link
-            text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
-            href={'/'}
-          />
-          <Share character={character} />
-        </footer>
       </section>
       <Product locale={locale} />
+      <footer className="footer">
+        <Link
+          text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
+          href={'/'}
+        />
+        <Share character={character} />
+      </footer>
       <Credits locale={locale} />
     </div>
   );
