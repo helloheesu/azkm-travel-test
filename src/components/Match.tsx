@@ -3,6 +3,7 @@ import { Locale } from 'data/languages';
 import match from 'data/match';
 import Image from 'next/image';
 import Link from 'next/link';
+import { logEvent } from './GA';
 
 interface Props {
   character: Character;
@@ -10,6 +11,11 @@ interface Props {
 }
 const Match = ({ character, locale }: Props) => {
   const { best, worst } = match[character];
+  const onClick = ({ relationship }: { relationship: 'best' | 'worst' }) =>
+    logEvent('click_match', {
+      character,
+      relationship,
+    });
 
   return (
     <div className="match-container">
@@ -21,7 +27,10 @@ const Match = ({ character, locale }: Props) => {
         as={`/${best.name}`}
         passHref
       >
-        <div className="match match-best">
+        <div
+          className="match match-best"
+          onClick={() => onClick({ relationship: 'best' })}
+        >
           <p className="description">{best.description[locale]}</p>
           <p className="name">{characterNames[best.name][locale]}</p>
           <div>
@@ -43,7 +52,10 @@ const Match = ({ character, locale }: Props) => {
         as={`/${worst.name}`}
         passHref
       >
-        <div className="match match-worst">
+        <div
+          className="match match-worst"
+          onClick={() => onClick({ relationship: 'worst' })}
+        >
           <p className="description">{worst.description[locale]}</p>
           <p className="name">{characterNames[worst.name][locale]}</p>
           <div>
