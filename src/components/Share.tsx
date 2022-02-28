@@ -119,11 +119,17 @@ const Share = ({
         break;
       case 'download':
         {
-          console.log(canvasRef);
-          const link = document.createElement('a');
-          link.download = `${character}.png`;
-          link.href = canvasRef.current ? canvasRef.current.toDataURL() : img;
-          link.click();
+          canvasRef.current?.toBlob((blob) => {
+            const link = document.createElement('a');
+
+            const fileName = `${character}.jpg`;
+            link.download = fileName;
+
+            link.href = blob ? window.URL.createObjectURL(blob) : img;
+
+            link.target = '_blank';
+            link.click();
+          }, 'image/jpeg');
         }
         break;
       default:
