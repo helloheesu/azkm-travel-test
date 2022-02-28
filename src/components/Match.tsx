@@ -32,7 +32,7 @@ const Match = ({ character, locale }: Props) => {
             className="match-box match-best"
             onClick={() => onClick({ relationship: 'best' })}
           >
-            <p>찰떡친구</p>
+            <p className="bold">찰떡친구</p>
             <div>
               <Image
                 src={`/images/characters/${best.name}.png`}
@@ -60,7 +60,7 @@ const Match = ({ character, locale }: Props) => {
             className="match-box match-worst"
             onClick={() => onClick({ relationship: 'worst' })}
           >
-            <p>개떡친구</p>
+            <p className="bold">개떡친구</p>
             <div>
               <Image
                 src={`/images/characters/${worst.name}.png`}

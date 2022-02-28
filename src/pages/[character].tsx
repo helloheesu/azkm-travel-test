@@ -104,8 +104,8 @@ const Page: NextPage<Props> = ({
       />
       <section>
         <header className="heading">
-          <p className="subtitle">{title}:</p>
-          <h1 className="title">{characterName}</h1>
+          <p>{title}:</p>
+          <h1 className="no-margin bold">{characterName}</h1>
         </header>
         <main className="main">
           <BorderBox>

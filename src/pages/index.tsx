@@ -46,7 +46,7 @@ const Home: NextPage<Props> = ({ locale }) => {
         <p>
           {{ ko: '여행 스타일로 알아보는', en: 'Travel Type Test' }[locale]}
         </p>
-        <h1 className="title">
+        <h1 className="no-margin">
           {{ ko: '아찌끄미 친구 찾기', en: 'Which type am I?' }[locale]}
         </h1>
       </header>

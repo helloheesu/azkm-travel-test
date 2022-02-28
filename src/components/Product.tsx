@@ -41,14 +41,7 @@ const Product = ({ locale }: { locale: Locale }) => {
           />
         </div>
         <div className="outro product-page image-background">
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-evenly',
-              padding: '1em',
-            }}
-          >
+          <div className="outro-flex-column">
             <div
               style={{
                 display: 'flex',
@@ -64,7 +57,7 @@ const Product = ({ locale }: { locale: Locale }) => {
               >
                 <Image src={CharactersImage} alt="" />
               </div>
-              <div>
+              <div className="outro-title">
                 <p>아찌끄미 친구들이</p>
                 <p>어떤 디저트를</p>
                 <p>먹었는지 궁금하다면?</p>

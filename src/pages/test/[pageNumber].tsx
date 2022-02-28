@@ -125,7 +125,7 @@ const Test: NextPage<Props> = ({
       )}
       <Progress max={totalPageNumber} value={pageNumber} />
       <div className="content-aligner stretch">
-        <h2 className="title">{title[locale]}</h2>
+        <h2 className="no-margin test-title">{title[locale]}</h2>
         <BorderBox>
           <MainImage src={imgSrc} alt={mainImgDescription} />
         </BorderBox>
