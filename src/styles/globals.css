@@ -1,9 +1,7 @@
 @font-face {
-  font-family: 'BR R';
-  src: local('ACCchildrenheartTTF Regular'),
-    local('ACCchildrenheartOTF Regular'), url('/fonts/ACCchildren.ttf'),
-    url('/fonts/ACCchildren.otf');
-  font-weight: 100;
+  font-family: 'GangwonEduSaeeum';
+  src: local('GangwonEduSaeeum'), url('/fonts/GangwonEduSaeeum.otf'),
+    url('/fonts/GangwonEduSaeeum.ttf');
 }
 
 /* reset start */
@@ -15,7 +13,6 @@ a {
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: bold;
 }
 html,
 body,
@@ -37,7 +34,7 @@ button {
 /* reset end */
 
 * {
-  font-family: BR R;
+  font-family: GangwonEduSaeeum;
   color: inherit;
 }
 body {
@@ -50,7 +47,6 @@ body {
 }
 .title,
 .button {
-  line-height: 1.2em;
 }
 p.subtitle {
   font-size: 1.6rem;
@@ -142,7 +138,7 @@ p.subtitle {
 }
 
 .button {
-  font-size: 1rem;
+  font-size: 1.2em;
 
   background-image: url('/images/ui/button.png');
   /* height/width ratio */
