@@ -95,11 +95,9 @@ const Share = ({
         break;
       case 'url':
         try {
-          await (navigator.clipboard?.writeText &&
-            navigator.clipboard.writeText(url));
+          await navigator.clipboard.writeText(url);
         } catch (e) {
           try {
-            inputRef.current!.value = url;
             inputRef.current!.select();
             await document.execCommand('copy');
           } catch (e) {
@@ -149,10 +147,14 @@ const Share = ({
             </li>
             <li onClick={() => onClick('url')}>
               <input
-                className="hidden"
                 ref={inputRef}
                 type="text"
                 defaultValue={url}
+                style={{
+                  position: 'absolute',
+                  left: '-999px',
+                  top: '-999px',
+                }}
               />
               <SocialButton service="url" altText="URL" />
             </li>
