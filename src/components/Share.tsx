@@ -1,6 +1,6 @@
 import { Character } from 'data/character';
 import Script from 'next/script';
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import { logEvent } from './GA';
 import SocialButton from './SocialButton';
 
@@ -10,12 +10,14 @@ interface Props {
   description?: string;
   img?: string;
   character: Character;
+  canvasRef: RefObject<HTMLCanvasElement>;
 }
 
 export type Service =
   | 'share'
   | 'kakao'
   | 'url'
+  | 'download'
   | 'facebook'
   | 'twitter'
   | 'instagram'
@@ -34,6 +36,7 @@ const Share = ({
   description: givenDescription = '',
   img: givenImg = '',
   character,
+  canvasRef,
 }: Props) => {
   const [isRendered, setIsRendered] = useState(false);
   const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
@@ -67,7 +70,7 @@ const Share = ({
   const ogImage = document.querySelector<HTMLMetaElement>(
     'meta[property="og:image"]'
   );
-  const img = givenImg || ogImage?.content;
+  const img = givenImg || ogImage?.content || '';
 
   const onClick = async (service: Service) => {
     logEvent('share', {
@@ -114,6 +117,15 @@ const Share = ({
           'https://twitter.com/intent/tweet?text=' + title + '&url=' + url
         );
         break;
+      case 'download':
+        {
+          console.log(canvasRef);
+          const link = document.createElement('a');
+          link.download = `${character}.png`;
+          link.href = canvasRef.current ? canvasRef.current.toDataURL() : img;
+          link.click();
+        }
+        break;
       default:
         alert('아직 개발 중');
         break;
@@ -139,6 +151,9 @@ const Share = ({
                 <SocialButton service="kakao" altText="카카오" />
               </li>
             )}
+            <li onClick={() => onClick('download')}>
+              <SocialButton service="download" altText="이미지 다운로드" />
+            </li>
             <li onClick={() => onClick('facebook')}>
               <SocialButton service="facebook" altText="페이스북" />
             </li>
@@ -185,6 +200,12 @@ const Share = ({
                   www.flaticon.com
                 </a>
               </p>
+              <a
+                href="https://www.flaticon.com/free-icons/download"
+                title="download icons"
+              >
+                Download icons created by kosonicon - Flaticon
+              </a>
             </div>
           </ul>
         </div>

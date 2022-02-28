@@ -1,4 +1,5 @@
 import Credits from 'components/Credits';
+import Downloader from 'components/Downloader';
 import { logPageview } from 'components/GA';
 import Head from 'components/Head';
 import Link from 'components/Link';
@@ -11,7 +12,7 @@ import { Locale } from 'data/languages';
 import results from 'data/results';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface StaticProps extends ParsedUrlQuery {
   character: Character;
@@ -41,6 +42,7 @@ interface Props {
   characterName: string;
   summary: string;
   imgSrc: string;
+  patterImgSrc: string;
   descriptions: string[];
 }
 export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
@@ -57,6 +59,7 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
     ko: '나랑 잘 맞는 여행 친구는',
     en: 'You best travel mate',
   }[_locale];
+  const patterImgSrc = `/images/list-icons/${character}.png`;
 
   return {
     props: {
@@ -66,6 +69,7 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
       characterName,
       summary: summary[_locale],
       imgSrc,
+      patterImgSrc,
       descriptions: descriptions[_locale],
     },
   };
@@ -78,17 +82,20 @@ const Page: NextPage<Props> = ({
   characterName,
   summary,
   imgSrc,
+  patterImgSrc,
   descriptions,
 }: Props) => {
   useEffect(() => {
     logPageview(`/result/${character}`);
   }, [character]);
 
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   return (
     <div className="content-wrapper content-aligner result">
       <style jsx>{`
         .description li::before {
-          background-image: url('/images/list-icons/${character}.png');
+          background-image: url('${patterImgSrc}');
         }
       `}</style>
       <Head
@@ -119,6 +126,11 @@ const Page: NextPage<Props> = ({
               {/* <LocaleToggler currentLocale={locale} /> */}
             </div>
           </div>
+          <Downloader
+            canvasRef={canvasRef}
+            patterImgSrc={patterImgSrc}
+            characterImgSrc={imgSrc}
+          />
           <div className="description">
             <ul>
               {descriptions.map((text, i) => (
@@ -137,7 +149,7 @@ const Page: NextPage<Props> = ({
           text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
           href={'/'}
         />
-        <Share character={character} />
+        <Share character={character} canvasRef={canvasRef} />
       </footer>
       <Credits locale={locale} />
     </div>
