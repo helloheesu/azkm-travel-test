@@ -94,13 +94,17 @@ const Share = ({
         }
         break;
       case 'url':
-        if (!!navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(url);
-        } else if (inputRef.current) {
-          inputRef.current.select();
-          await document.execCommand('copy');
-        } else {
-          alert('클립보드 복사에 실패했어요 ㅠㅠ 다른 방법을 이용해주세요');
+        try {
+          await (navigator.clipboard?.writeText &&
+            navigator.clipboard.writeText(url));
+        } catch (e) {
+          try {
+            inputRef.current!.value = url;
+            inputRef.current!.select();
+            await document.execCommand('copy');
+          } catch (e) {
+            alert('클립보드 복사에 실패했어요 ㅠㅠ 다른 방법을 이용해주세요');
+          }
         }
         alert('클립보드에 주소가 복사되었어요');
         break;
@@ -127,12 +131,6 @@ const Share = ({
       {isRendered && (
         <div className="image-background content-container">
           <ul>
-            <input
-              className="hidden"
-              ref={inputRef}
-              type="text"
-              defaultValue={url}
-            />
             {shareable && (
               <li onClick={() => onClick('share')}>
                 <SocialButton service="share" altText="공유하기" />
@@ -150,6 +148,12 @@ const Share = ({
               <SocialButton service="twitter" altText="트위터" />
             </li>
             <li onClick={() => onClick('url')}>
+              <input
+                className="hidden"
+                ref={inputRef}
+                type="text"
+                defaultValue={url}
+              />
               <SocialButton service="url" altText="URL" />
             </li>
             <div className="hidden">
