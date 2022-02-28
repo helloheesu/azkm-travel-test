@@ -30,7 +30,7 @@ const Downloader = ({ canvasRef, patterImgSrc, characterImgSrc }: Props) => {
         waitForImage(characterImgSrc),
       ]);
       const pattern = ctx.createPattern(patternIconImg, 'repeat')!;
-      ctx.globalAlpha = 0.5;
+      ctx.globalAlpha = 0.2;
       ctx.fillStyle = pattern;
       ctx.fillRect(0, 0, 2000, 2000);
       ctx.globalAlpha = 1.0;
