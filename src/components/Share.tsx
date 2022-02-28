@@ -81,7 +81,6 @@ const Share = ({
           url,
           text: description,
         });
-        // log 'share'
         break;
       case 'kakao':
         if (window.Kakao?.isInitialized()) {
@@ -93,8 +92,6 @@ const Share = ({
             },
           });
         }
-        // log 'kakao'
-        // log when succeed
         break;
       case 'url':
         if (!!navigator.clipboard?.writeText) {
@@ -103,7 +100,7 @@ const Share = ({
           inputRef.current.select();
           await document.execCommand('copy');
         } else {
-          break;
+          alert('클립보드 복사에 실패했어요 ㅠㅠ 다른 방법을 이용해주세요');
         }
         alert('클립보드에 주소가 복사되었어요');
         break;
@@ -152,9 +149,9 @@ const Share = ({
             <li onClick={() => onClick('twitter')}>
               <SocialButton service="twitter" altText="트위터" />
             </li>
-            {/* <li onClick={() => onClick('url')}>
+            <li onClick={() => onClick('url')}>
               <SocialButton service="url" altText="URL" />
-            </li> */}
+            </li>
             <div className="hidden">
               <p>
                 Icons made by{' '}
