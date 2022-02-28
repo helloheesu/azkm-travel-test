@@ -113,24 +113,30 @@ const Page: NextPage<Props> = ({
           <div
             style={{
               position: 'relative',
+              borderRadius: '14px',
+              overflow: 'hidden',
+              border: '3px solid #503527',
+              boxSizing: 'border-box',
+              margin: '1em 0',
             }}
           >
-            <MainImage src={imgSrc} alt={character} />
-            <div
+            <Downloader
+              canvasRef={canvasRef}
+              patterImgSrc={patterImgSrc}
+              characterImgSrc={imgSrc}
+            />
+            <p
+              className="guide"
               style={{
                 position: 'absolute',
-                right: '1em',
-                top: '1em',
+                bottom: '4px',
+                left: '50%',
+                transform: 'translateX(-50%)',
               }}
             >
-              {/* <LocaleToggler currentLocale={locale} /> */}
-            </div>
+              &#9650;꾹 눌러서 저장하기&#9650;
+            </p>
           </div>
-          <Downloader
-            canvasRef={canvasRef}
-            patterImgSrc={patterImgSrc}
-            characterImgSrc={imgSrc}
-          />
           <div className="description">
             <ul>
               {descriptions.map((text, i) => (

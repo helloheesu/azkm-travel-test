@@ -3,10 +3,16 @@ import Image from 'next/image';
 interface Props {
   src: React.ComponentProps<typeof Image>['src'];
   alt?: string;
+  containerClassName?: string;
 }
-const MainImage = ({ src, alt }: Props) => {
+const MainImage = ({ src, alt, containerClassName }: Props) => {
   return (
-    <div className="main-image image-background content-container">
+    <div
+      className={
+        'main-image image-background content-container' +
+        (containerClassName || '')
+      }
+    >
       <div className="size-container">
         <Image
           src={src}

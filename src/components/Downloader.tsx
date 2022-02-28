@@ -57,10 +57,7 @@ const Downloader = ({ canvasRef, patterImgSrc, characterImgSrc }: Props) => {
 
   return (
     <canvas
-      style={{
-        position: 'absolute',
-        display: 'none',
-      }}
+      style={{ width: '100%', height: '100%' }}
       ref={canvasRef}
       width={2000}
       height={2000}
