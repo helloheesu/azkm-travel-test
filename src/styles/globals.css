@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'BR R';
-  src: local(BR R), url('/fonts/BR_Regular.ttf'), url('/fonts/BR_Regular.otf');
-  font-weight: 100;
+  font-family: 'GangwonEduSaeeum';
+  src: local('GangwonEduSaeeum'), url('/fonts/GangwonEduSaeeum.otf'),
+    url('/fonts/GangwonEduSaeeum.ttf');
 }
 
 /* reset start */
@@ -10,7 +10,8 @@ a {
 }
 * {
   box-sizing: border-box;
-  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 html,
 body,
@@ -31,24 +32,35 @@ button {
 }
 /* reset end */
 
+html {
+  font-size: 20px;
+}
 * {
-  font-family: BR R;
+  font-family: GangwonEduSaeeum;
   color: inherit;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
 }
 body {
   text-align: center;
   background-color: #f5d57e;
 }
 
-.title {
+header {
+  font-size: 1.1em;
+}
+.bold {
+  font-weight: bold;
+}
+.no-margin {
   margin: 0;
 }
-.title,
-.button {
-  line-height: 1.2em;
-}
-p.subtitle {
-  font-size: 1.6rem;
+.test-title {
+  font-size: 1.3em;
+  margin-bottom: 0.4em;
 }
 
 .container {
@@ -117,7 +129,7 @@ p.subtitle {
 }
 
 .button {
-  font-size: 1rem;
+  margin-bottom: 0.3em;
 
   background-image: url('/images/ui/button.png');
   /* height/width ratio */
@@ -167,12 +179,12 @@ p.subtitle {
 
 .result .description {
   text-align: left;
-  line-height: 2em;
 }
 .description li {
   position: relative;
   padding-left: 2em;
-  margin-left: 4px;
+  line-height: 1.6em;
+  margin-bottom: 0.4em;
 }
 .description li::before {
   content: '';
@@ -181,11 +193,11 @@ p.subtitle {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 1.6em;
-  height: 1.6em;
+  width: 1.4em;
+  height: 1.4em;
   position: absolute;
-  left: 0;
-  top: 3px;
+  left: 3px;
+  top: 5px;
 }
 
 .hidden {
@@ -234,11 +246,9 @@ p.subtitle {
 .product-container {
   margin-top: 3em;
 }
-
 .product-container .heading h1 {
   margin: 0;
 }
-
 .product-page {
   margin-top: 1em;
   background-color: transparent;
@@ -249,12 +259,16 @@ p.subtitle {
   aspect-ratio: 2050 / 200;
   position: absolute;
   left: 0;
-  top: calc(-5% + 5px);
+  top: -16px;
   background-image: url('/images/product/page-connector.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
+}
+.product-container .outro-title {
+  line-height: 0.8em;
+  margin-top: -0.3em;
 }
 .outro.image-background {
   margin-top: 2px;
@@ -262,6 +276,15 @@ p.subtitle {
   background-image: url('/images/product/product-bg.png');
   /* height/width ratio */
   aspect-ratio: 2050 / 3000;
+}
+.outro .outro-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+.outro .outro-flex-column > * {
+  margin-bottom: 0.3em;
 }
 .profile-links {
   width: 100%;
@@ -372,7 +395,7 @@ p.subtitle {
   position: relative;
   width: 100%;
   height: 100%;
-  margin: 1em auto;
+  margin: 0.8em auto;
 }
 .border-background {
   position: absolute;
@@ -396,7 +419,7 @@ p.subtitle {
 
 .guide {
   position: absolute;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 .guide.guide-bottom {
   bottom: 1em;
