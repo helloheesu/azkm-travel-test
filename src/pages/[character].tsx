@@ -37,31 +37,49 @@ export const getStaticPaths: GetStaticPaths<StaticProps> = ({
 interface Props {
   character: Character;
   locale: Locale;
+  title: string;
+  characterName: string;
+  summary: string;
+  imgSrc: string;
+  descriptions: string[];
 }
 export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
   params,
   locale,
 }) => {
   const character = params!.character as Character;
+  const _locale = (locale as Locale) || 'ko';
 
-  return {
-    props: {
-      character,
-      locale: (locale as Locale) || 'ko',
-    },
-  };
-};
-
-const Page: NextPage<Props> = ({ character, locale }: Props) => {
   const { descriptions, summary } = results[character];
-  const characterName = characterNames[character][locale];
-
+  const characterName = characterNames[character][_locale];
   const imgSrc = `/images/characters/${character}.png`;
   const title = {
     ko: '나랑 잘 맞는 여행 친구는',
     en: 'You best travel mate',
-  }[locale];
+  }[_locale];
 
+  return {
+    props: {
+      character,
+      locale: _locale,
+      title,
+      characterName,
+      summary: summary[_locale],
+      imgSrc,
+      descriptions: descriptions[_locale],
+    },
+  };
+};
+
+const Page: NextPage<Props> = ({
+  character,
+  locale,
+  title,
+  characterName,
+  summary,
+  imgSrc,
+  descriptions,
+}: Props) => {
   useEffect(() => {
     logPageview(`/result/${character}`);
   }, [character]);
@@ -75,7 +93,7 @@ const Page: NextPage<Props> = ({ character, locale }: Props) => {
       `}</style>
       <Head
         title={`${title}: ${characterName}`}
-        description={summary[locale]}
+        description={summary}
         img={imgSrc}
         pathname={character}
       />
@@ -103,7 +121,7 @@ const Page: NextPage<Props> = ({ character, locale }: Props) => {
           </div>
           <div className="description">
             <ul>
-              {descriptions[locale].map((text, i) => (
+              {descriptions.map((text, i) => (
                 <li key={i}>{text}</li>
               ))}
             </ul>
