@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'BR R';
-  src: local(BR R), url('/fonts/BR_Regular.ttf'), url('/fonts/BR_Regular.otf');
+  src: local('ACCchildrenheartTTF Regular'),
+    local('ACCchildrenheartOTF Regular'), url('/fonts/ACCchildren.ttf'),
+    url('/fonts/ACCchildren.otf');
   font-weight: 100;
 }
 
