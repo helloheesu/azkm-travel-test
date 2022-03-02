@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
 import { logEvent } from './GA';
 import SocialButton from './SocialButton';
+import DimmedSpinner from './DimmedSpinner';
 
 interface Props {
   title?: string;
@@ -40,6 +41,7 @@ const Share = ({
 }: Props) => {
   const [isRendered, setIsRendered] = useState(false);
   const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -87,6 +89,10 @@ const Share = ({
         break;
       case 'kakao':
         if (window.Kakao?.isInitialized()) {
+          setIsLoading(true);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 3000);
           window.Kakao.Link.sendScrap({
             requestUrl: url,
             templateId: 70961,
@@ -144,6 +150,7 @@ const Share = ({
             {isKakaoLoaded && (
               <li onClick={() => onClick('kakao')}>
                 <SocialButton service="kakao" altText="카카오" />
+                {isLoading && <DimmedSpinner />}
               </li>
             )}
             {attachmentSrc && (
