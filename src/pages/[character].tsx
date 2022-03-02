@@ -10,6 +10,7 @@ import { Character, characterNames, characters } from 'data/character';
 import { Locale } from 'data/languages';
 import results from 'data/results';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import { useEffect } from 'react';
 
@@ -41,6 +42,7 @@ interface Props {
   characterName: string;
   summary: string;
   imgSrc: string;
+  downloadlbeSrc: string;
   descriptions: string[];
 }
 export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
@@ -53,6 +55,7 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
   const { descriptions, summary } = results[character];
   const characterName = characterNames[character][_locale];
   const imgSrc = `/images/characters/${character}.png`;
+  const downloadlbeSrc = `/images/characters-with-pattern/${character}.png`;
   const title = {
     ko: '나랑 잘 맞는 여행 친구는',
     en: 'You best travel mate',
@@ -66,6 +69,7 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
       characterName,
       summary: summary[_locale],
       imgSrc,
+      downloadlbeSrc,
       descriptions: descriptions[_locale],
     },
   };
@@ -78,6 +82,7 @@ const Page: NextPage<Props> = ({
   characterName,
   summary,
   imgSrc,
+  downloadlbeSrc,
   descriptions,
 }: Props) => {
   useEffect(() => {
@@ -103,12 +108,14 @@ const Page: NextPage<Props> = ({
           <h1 className="title">{characterName}</h1>
         </header>
         <main className="main">
-          <div
-            style={{
-              position: 'relative',
-            }}
-          >
-            <MainImage src={imgSrc} alt={character} />
+          <div className="result-main">
+            <div className="border-background nonselectable"></div>
+            <div className="border-radius-mask">
+              <Image src={downloadlbeSrc} alt={character} layout="fill" />
+              <p className="guide nonselectable">
+                &#9650;꾹 눌러서 저장하기&#9650;
+              </p>
+            </div>
             <div
               style={{
                 position: 'absolute',
