@@ -110,7 +110,13 @@ const Page: NextPage<Props> = ({
           <div className="result-main">
             <div className="border-background nonselectable"></div>
             <div className="border-radius-mask">
-              <Image src={downloadlbeSrc} alt={character} layout="fill" />
+              <Image
+                src={downloadlbeSrc}
+                alt={character}
+                layout="fill"
+                priority={true}
+                loading="eager"
+              />
               <p className="guide nonselectable">
                 &#9650;꾹 눌러서 저장하기&#9650;
               </p>
