@@ -2,7 +2,6 @@ import Credits from 'components/Credits';
 import { logPageview } from 'components/GA';
 import Head from 'components/Head';
 import Link from 'components/Link';
-import MainImage from 'components/MainImage';
 import Match from 'components/Match';
 import Product from 'components/Product';
 import Share from 'components/Share';
@@ -144,7 +143,7 @@ const Page: NextPage<Props> = ({
           text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
           href={'/'}
         />
-        <Share character={character} />
+        <Share character={character} attachmentSrc={downloadlbeSrc} />
       </footer>
       <Credits locale={locale} />
     </div>

@@ -10,12 +10,14 @@ interface Props {
   description?: string;
   img?: string;
   character: Character;
+  attachmentSrc: string;
 }
 
 export type Service =
   | 'share'
   | 'kakao'
   | 'url'
+  | 'download'
   | 'facebook'
   | 'twitter'
   | 'instagram'
@@ -34,6 +36,7 @@ const Share = ({
   description: givenDescription = '',
   img: givenImg = '',
   character,
+  attachmentSrc,
 }: Props) => {
   const [isRendered, setIsRendered] = useState(false);
   const [isKakaoLoaded, setIsKakaoLoaded] = useState(false);
@@ -67,7 +70,7 @@ const Share = ({
   const ogImage = document.querySelector<HTMLMetaElement>(
     'meta[property="og:image"]'
   );
-  const img = givenImg || ogImage?.content;
+  const img = givenImg || ogImage?.content || '';
 
   const onClick = async (service: Service) => {
     logEvent('share', {
@@ -114,11 +117,15 @@ const Share = ({
           'https://twitter.com/intent/tweet?text=' + title + '&url=' + url
         );
         break;
+      case 'download':
+        break;
       default:
         alert('아직 개발 중');
         break;
     }
   };
+
+  console.log(attachmentSrc);
 
   return (
     <div className="share">
@@ -137,6 +144,13 @@ const Share = ({
             {isKakaoLoaded && (
               <li onClick={() => onClick('kakao')}>
                 <SocialButton service="kakao" altText="카카오" />
+              </li>
+            )}
+            {attachmentSrc && (
+              <li>
+                <a href={attachmentSrc} download={`${character}.png`}>
+                  <SocialButton service="download" altText="이미지 다운로드" />
+                </a>
               </li>
             )}
             <li onClick={() => onClick('facebook')}>
@@ -185,6 +199,12 @@ const Share = ({
                   www.flaticon.com
                 </a>
               </p>
+              <a
+                href="https://www.flaticon.com/free-icons/download"
+                title="download icons"
+              >
+                Download icons created by kosonicon - Flaticon
+              </a>
             </div>
           </ul>
         </div>
