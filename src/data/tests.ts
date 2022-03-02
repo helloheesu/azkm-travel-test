@@ -13,7 +13,7 @@ export interface TestData {
 const tests: TestData[] = [
   {
     title: {
-      ko: '코로나가 드디어 끝이나고 해외여행을 가려고한다!',
+      ko: '코로나가 드디어 끝이 나고 해외여행을 가려고 한다!',
       en: 'There is no COVID travel regulation anymore. You are preparing to travel to…',
     },
     options: [
@@ -49,7 +49,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '아주 멀리 가보는건 어때? 유럽이나 미국으로',
+          ko: '아주 멀리 가보는 건 어때? 유럽이나 미국으로',
           en: 'Countries that you never went before',
         },
         scores: {
@@ -66,13 +66,13 @@ const tests: TestData[] = [
   },
   {
     title: {
-      ko: '여행 출발 당일 친구가 늦습니다. 어떻게 하고 싶나요?',
+      ko: '여행 출발 당일 친구가 늦는다. 어떻게 할까?',
       en: "One of your friends who goes travel with you doesn't show up on time. What do you want to do?",
     },
     options: [
       {
         text: {
-          ko: '예상했다! 전화를 해서 안 받으면 버리고 가버린다~',
+          ko: '예상했다! 전화해서 안 받으면 버리고 가버린다~',
           en: 'Why am I not surprised at all? Ditch the guy if necessary.',
         },
         scores: {
@@ -87,7 +87,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '여행계획이 틀어지더라도 모두 기다렸다가 같이 간다.',
+          ko: '여행 계획이 틀어지더라도 모두 기다렸다가 같이 간다.',
           en: 'What are friends for? We wait until he comes.',
         },
         scores: {
@@ -102,7 +102,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '이런 결정은 대세에 따라야지~ 잠잠코 있는다.',
+          ko: '이런 결정은 대세에 따라야지~ 잠자코 있는다.',
           en: "Let's see what others say, and follow the majority.",
         },
         scores: {
@@ -119,7 +119,7 @@ const tests: TestData[] = [
   },
   {
     title: {
-      ko: '목적지로 가면서 나는 무엇을 하고 있을까요?',
+      ko: '목적지로 가면서 나는 무엇을 하고 있을까?',
       en: 'On the way to our destination, what would you like to do?',
     },
     options: [
@@ -155,7 +155,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '여행의 시작은 이동할 때 부터지! 창 밖을 구경한다.',
+          ko: '여행의 시작은 이동할 때부터지! 창밖을 구경한다.',
           en: 'Looking outside and enjoy the scene. The travel has already begun.',
         },
         scores: {
@@ -172,13 +172,13 @@ const tests: TestData[] = [
   },
   {
     title: {
-      ko: '드디어 도착! 여행지에서 가장 먼저 눈에 들어 온 것은 무엇인가요?',
+      ko: '드디어 도착! 여행지에서 가장 먼저 눈에 들어온 것은?',
       en: 'We have finally arrived! What is the very first thing that comes into your mind?',
     },
     options: [
       {
         text: {
-          ko: '처음 보는 새로운 사람들...건물들...',
+          ko: '처음 보는 새로운 사람들... 건물들...',
           en: 'New people, new buildings, new everything.',
         },
         scores: {
@@ -225,7 +225,7 @@ const tests: TestData[] = [
   },
   {
     title: {
-      ko: '식당에서 아주 비싼 메뉴를 시켰는데.. 이건 우욱 먹을 수가 없다. 넌 도전할래?',
+      ko: '식당에서 아주 비싼 메뉴를 시켰는데.. 이건 우욱 먹을 수가 없다.',
       en: 'Just ordered a very expensive food, but not my taste. What would you do?',
     },
     options: [
@@ -246,7 +246,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '한 입 먹어봤지만.. 난 도저히 안되겠어..  굶는게 나아..',
+          ko: '한 입 먹어봤지만.. 난 도저히 안 되겠어..  굶는 게 나아..',
           en: "No. I just took the bite, and I can't take it anymore. I would rather starve to death.",
         },
         scores: {
@@ -331,13 +331,13 @@ const tests: TestData[] = [
   },
   {
     title: {
-      ko: '여행 이동중에 화장실이 급하다! 어떻게하지..?',
+      ko: '여행 이동 중에 화장실이 급하다! 어떻게 하지..?',
       en: 'While moving around during the travel, you suddenly get the emergency call from the nature.',
     },
     options: [
       {
         text: {
-          ko: '끝까지 참는다.. 어?..왜 하늘이 노란색이지?',
+          ko: '끝까지 참는다.. 어?.. 왜 하늘이 노란색이지?',
           en: 'I have no idea where we are. So I will try to hold it as much as I can, until we arrive to where we planned.',
         },
         scores: {
@@ -369,13 +369,13 @@ const tests: TestData[] = [
   },
   {
     title: {
-      ko: '여행지에서의 개인 자유시간! 무엇을 하고 싶나요?',
+      ko: '여행지에서의 개인 자유시간! 무엇을 할까?',
       en: 'Your travel schedule for today is over and you have some free time. What do you want to do?',
     },
     options: [
       {
         text: {
-          ko: '난 쉬러왔어. 숙소에 누워서 핸드폰이나 해야지',
+          ko: '난 쉬러 왔어. 숙소에 누워서 핸드폰이나 해야지',
           en: 'I came here to rest. Chill in my room.',
         },
         scores: {
@@ -390,7 +390,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '난 먹으러왔어. 편의점으로가서 간식을 잔뜩 산다.',
+          ko: '난 먹으러 왔어. 편의점으로 가서 간식을 잔뜩 산다.',
           en: 'I came here to eat. Go to nearby stores and grab as many snacks as I can get.',
         },
         scores: {
@@ -405,7 +405,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '난 보러왔어. 주변에 볼거리를 앱으로 찾는다.',
+          ko: '난 보러 왔어. 주변에 볼거리를 앱으로 찾는다.',
           en: 'I came to see things. Find the nearby attractions.',
         },
         scores: {
@@ -422,7 +422,7 @@ const tests: TestData[] = [
   },
   {
     title: {
-      ko: '여행이 이제 끝났다. 마지막으로 하고싶은것은? (이제 여행을 마치고 돌아가는 길인데 약간 시간이 촉박하다. )',
+      ko: '여행이 이제 끝났다. 마지막으로 하고 싶은 것은?',
       en: 'The travel is now over. What is the very last thing that you want to do?',
     },
     options: [
@@ -443,7 +443,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '피곤해.. 아무런 생각이 들지않아!',
+          ko: '피곤해.. 아무런 생각이 들지 않아!',
           en: "Nothing. I am exhausted, can't wait to go back.",
         },
         scores: {
@@ -458,7 +458,7 @@ const tests: TestData[] = [
       },
       {
         text: {
-          ko: '아쉬워서 다음여행은 언제 어디로갈지 이야기한다.',
+          ko: '아쉬워서 다음 여행은 언제 어디로 갈지 이야기한다.',
           en: 'I miss here already. Can we set up another travel schedule?',
         },
         scores: {
