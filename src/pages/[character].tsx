@@ -43,6 +43,7 @@ interface Props {
   summary: string;
   characterImgSrc: string;
   characterWithPatternImgSrc: string;
+  characterWithBgcolorImgSrc: string;
   descriptions: string[];
 }
 export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
@@ -68,6 +69,7 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
       summary: summary[_locale],
       characterImgSrc: `/images/characters/${character}.png`,
       characterWithPatternImgSrc: `/images/characters-with-pattern/${character}.png`,
+      characterWithBgcolorImgSrc: `/images/characters-with-bgcolor/${character}.png`,
       descriptions: descriptions[_locale],
     },
   };
@@ -81,6 +83,7 @@ const Page: NextPage<Props> = ({
   summary,
   characterImgSrc,
   characterWithPatternImgSrc,
+  characterWithBgcolorImgSrc,
   descriptions,
 }: Props) => {
   useEffect(() => {
@@ -144,7 +147,7 @@ const Page: NextPage<Props> = ({
         />
         <Share
           character={character}
-          attachmentSrc={characterWithPatternImgSrc}
+          attachmentSrc={characterWithBgcolorImgSrc}
         />
       </footer>
       <Credits locale={locale} />
