@@ -12,6 +12,7 @@ import { useContext, useState, useEffect } from 'react';
 import { logEvent, logPageview } from 'components/GA';
 import Poi from 'components/Poi';
 import MainImage from 'components/MainImage';
+import ImagePreLoader from 'components/ImagePreLoader';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -115,6 +116,9 @@ const Test: NextPage<Props> = ({
         img={imgSrc}
         title={`${DEFAULT_TITLE} - ${pageNumber}/${totalPageNumber}`}
       />
+      {pageNumber < totalPageNumber && (
+        <ImagePreLoader src={`/images/main/${pageNumber + 1}.png`} />
+      )}
       {isModalOn && (
         <Modal
           onClose={() => setIsModalOn(false)}

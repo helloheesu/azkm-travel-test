@@ -551,3 +551,8 @@ header {
     transform: rotate(360deg);
   }
 }
+
+.preloader {
+  position: absolute;
+  visibility: hidden;
+}

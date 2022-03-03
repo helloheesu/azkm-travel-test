@@ -5,9 +5,10 @@ import LocaleToggler from 'components/LocaleToggler';
 import BorderBox from 'components/BorderBox';
 import { Locale } from 'data/languages';
 import type { GetStaticProps, NextPage } from 'next';
-import Image from 'next/image';
 import { useEffect } from 'react';
 import MainImage from 'components/MainImage';
+import ImagePreLoader from 'components/ImagePreLoader';
+import LoadingImage from '../../public/images/ui/loading.gif';
 
 interface Props {
   locale: Locale;
@@ -27,12 +28,7 @@ const Home: NextPage<Props> = ({ locale }) => {
   return (
     <div className="content-wrapper content-aligner">
       <Head />
-      <Image
-        src="/images/ui/loading.gif"
-        width="0"
-        height="0"
-        alt="preload-loading"
-      />
+      <ImagePreLoader src={LoadingImage} />
       <div
         style={{
           position: 'absolute',
