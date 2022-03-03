@@ -2,6 +2,7 @@ import Credits from 'components/Credits';
 import { logPageview } from 'components/GA';
 import Head from 'components/Head';
 import Link from 'components/Link';
+import BorderBox from 'components/BorderBox';
 import Match from 'components/Match';
 import Product from 'components/Product';
 import Share from 'components/Share';
@@ -107,30 +108,24 @@ const Page: NextPage<Props> = ({
           <h1 className="title">{characterName}</h1>
         </header>
         <main className="main">
-          <div className="result-main">
-            <div className="border-background nonselectable"></div>
-            <div className="border-radius-mask">
-              <Image
-                src={downloadlbeSrc}
-                alt={character}
-                layout="fill"
-                priority={true}
-                loading="eager"
-              />
-              <p className="guide nonselectable">
-                &#9650;꾹 눌러서 저장하기&#9650;
-              </p>
-            </div>
-            <div
-              style={{
-                position: 'absolute',
-                right: '1em',
-                top: '1em',
-              }}
-            >
+          <BorderBox>
+            <Image
+              src={downloadlbeSrc}
+              alt={character}
+              width={2000}
+              height={2000}
+              priority={true}
+              loading="eager"
+              objectFit="contain"
+              objectPosition="center"
+            />
+            <p className="guide guide-bottom nonselectable">
+              &#9650;꾹 눌러서 저장하기&#9650;
+            </p>
+            <div className="guide guide-top-right">
               {/* <LocaleToggler currentLocale={locale} /> */}
             </div>
-          </div>
+          </BorderBox>
           <div className="description">
             <ul>
               {descriptions.map((text, i) => (
