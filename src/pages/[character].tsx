@@ -41,8 +41,8 @@ interface Props {
   title: string;
   characterName: string;
   summary: string;
-  imgSrc: string;
-  downloadlbeSrc: string;
+  characterImgSrc: string;
+  characterWithPatternImgSrc: string;
   descriptions: string[];
 }
 export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
@@ -54,8 +54,6 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
 
   const { descriptions, summary } = results[character];
   const characterName = characterNames[character][_locale];
-  const imgSrc = `/images/characters/${character}.png`;
-  const downloadlbeSrc = `/images/characters-with-pattern/${character}.png`;
   const title = {
     ko: '나랑 잘 맞는 여행 친구는',
     en: 'You best travel mate',
@@ -68,8 +66,8 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
       title,
       characterName,
       summary: summary[_locale],
-      imgSrc,
-      downloadlbeSrc,
+      characterImgSrc: `/images/characters/${character}.png`,
+      characterWithPatternImgSrc: `/images/characters-with-pattern/${character}.png`,
       descriptions: descriptions[_locale],
     },
   };
@@ -81,8 +79,8 @@ const Page: NextPage<Props> = ({
   title,
   characterName,
   summary,
-  imgSrc,
-  downloadlbeSrc,
+  characterImgSrc,
+  characterWithPatternImgSrc,
   descriptions,
 }: Props) => {
   useEffect(() => {
@@ -99,7 +97,7 @@ const Page: NextPage<Props> = ({
       <Head
         title={`${title}: ${characterName}`}
         description={summary}
-        img={imgSrc}
+        img={characterImgSrc}
         pathname={character}
       />
       <section>
@@ -110,7 +108,7 @@ const Page: NextPage<Props> = ({
         <main className="main">
           <BorderBox>
             <Image
-              src={downloadlbeSrc}
+              src={characterWithPatternImgSrc}
               alt={character}
               width={2000}
               height={2000}
@@ -144,7 +142,10 @@ const Page: NextPage<Props> = ({
           text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
           href={'/'}
         />
-        <Share character={character} attachmentSrc={downloadlbeSrc} />
+        <Share
+          character={character}
+          attachmentSrc={characterWithPatternImgSrc}
+        />
       </footer>
       <Credits locale={locale} />
     </div>
