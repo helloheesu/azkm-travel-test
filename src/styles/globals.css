@@ -29,9 +29,11 @@ button {
 @font-face {
   font-family: 'GangwonEduSaeeum';
   src: local('강원교육새음 Medium'), local('GangwonEduSaeeum Medium'),
-    local('GangwonEduSaeeum OTF Medium'),
-    url('/fonts/GangwonEduSaeeum.otf') format('opentype'),
-    url('/fonts/GangwonEduSaeeum.ttf') format('truetype');
+    local('GangwonEduSaeeumMedium'), local('GangwonEduSaeeum OTF Medium'),
+    url('/fonts/GangwonEduSaeeum.woff2') format('woff2'),
+    url('/fonts/GangwonEduSaeeum.woff') format('woff'),
+    url('/fonts/GangwonEduSaeeum.ttf') format('truetype'),
+    url('/fonts/GangwonEduSaeeum.otf') format('opentype');
 }
 
 html {
