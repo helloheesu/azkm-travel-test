@@ -6,6 +6,7 @@ import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 import MainImage from 'components/MainImage';
+import ImagePreLoader from 'components/ImagePreLoader';
 
 interface Props {
   locale: Locale;
@@ -43,6 +44,13 @@ const Result: NextPage<Props> = ({ locale }) => {
 
   return (
     <div className="content-wrapper content-aligner">
+      <ImagePreLoader
+        src={`/images/characters-with-pattern/${highestCharacter}.png`}
+        size={{
+          width: 2000,
+          height: 2000,
+        }}
+      />
       <BorderBox>
         <MainImage src={'/images/ui/loading.gif'} alt="로딩 이미지 설명" />
       </BorderBox>
