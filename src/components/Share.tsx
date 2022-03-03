@@ -55,7 +55,7 @@ const Share = ({
   }, []);
   useEffect(() => {
     if (isKakaoLoaded && window.Kakao) {
-      window.Kakao.init('462c5c22392a021d6cb372f4140a34a1');
+      window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_APP_KEY);
       return () => window.Kakao.cleanup();
     }
   }, [isKakaoLoaded]);
