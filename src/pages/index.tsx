@@ -28,7 +28,7 @@ const Home: NextPage<Props> = ({ locale }) => {
   return (
     <div className="content-wrapper content-aligner">
       <Head />
-      <ImagePreLoader src={LoadingImage} />
+      <ImagePreLoader src="/images/main/1.png" />
       <div
         style={{
           position: 'absolute',

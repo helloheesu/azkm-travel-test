@@ -116,9 +116,13 @@ const Test: NextPage<Props> = ({
         img={imgSrc}
         title={`${DEFAULT_TITLE} - ${pageNumber}/${totalPageNumber}`}
       />
-      {pageNumber < totalPageNumber && (
-        <ImagePreLoader src={`/images/main/${pageNumber + 1}.png`} />
-      )}
+      <ImagePreLoader
+        src={
+          pageNumber < totalPageNumber
+            ? `/images/main/${pageNumber + 1}.png`
+            : '/images/ui/loading.gif'
+        }
+      />
       {isModalOn && (
         <Modal
           onClose={() => setIsModalOn(false)}

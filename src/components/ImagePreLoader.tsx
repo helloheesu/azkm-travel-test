@@ -7,16 +7,12 @@ interface Props {
 const ImagePreLoader = ({ src, size }: Props) => {
   return (
     <div className="preloader">
-      {typeof src === 'string' ? (
-        <Image
-          src={src}
-          width={size?.width || 2050}
-          height={size?.height || 1450}
-          alt=""
-        />
-      ) : (
-        <Image src={src} alt="" />
-      )}
+      <Image
+        src={src}
+        width={size?.width || 2050}
+        height={size?.height || 1450}
+        alt=""
+      />
     </div>
   );
 };
