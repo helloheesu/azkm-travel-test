@@ -6,7 +6,7 @@ interface Props extends React.ComponentProps<typeof NextLink> {
 }
 const Link = ({ text, onClick, ...linkProps }: Props) => {
   return (
-    <NextLink {...linkProps}>
+    <NextLink prefetch={true} {...linkProps}>
       <a
         className="button image-background content-container"
         onClick={onClick}
