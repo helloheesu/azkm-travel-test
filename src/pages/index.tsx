@@ -2,11 +2,12 @@ import { logPageview } from 'components/GA';
 import Head from 'components/Head';
 import Link from 'components/Link';
 import LocaleToggler from 'components/LocaleToggler';
-import MainImage from 'components/MainImage';
+import BorderBox from 'components/BorderBox';
 import { Locale } from 'data/languages';
 import type { GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import MainImage from 'components/MainImage';
 
 interface Props {
   locale: Locale;
@@ -49,7 +50,9 @@ const Home: NextPage<Props> = ({ locale }) => {
           {{ ko: '아찌끄미 친구 찾기', en: 'Which type am I?' }[locale]}
         </h1>
       </header>
-      <MainImage src={'/images/main/intro.png'} alt="인트로 이미지" />
+      <BorderBox>
+        <MainImage src={'/images/main/intro.png'} alt="인트로 이미지" />
+      </BorderBox>
       <Link
         href={{
           pathname: '/test/[pageNumber]',

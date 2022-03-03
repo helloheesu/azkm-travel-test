@@ -6,16 +6,17 @@ interface Props {
 }
 const MainImage = ({ src, alt }: Props) => {
   return (
-    <div className="main-image image-background content-container">
-      <div className="size-container">
-        <Image
-          src={src}
-          alt={alt}
-          layout="fill"
-          priority={true}
-          loading="eager"
-        />
-      </div>
+    <div className="main-image">
+      <Image
+        src={src}
+        alt={alt}
+        width={2050}
+        height={1450}
+        priority={true}
+        loading="eager"
+        objectFit="contain"
+        objectPosition="center"
+      />
     </div>
   );
 };

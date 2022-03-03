@@ -1,10 +1,11 @@
 import { logPageview } from 'components/GA';
-import MainImage from 'components/MainImage';
+import BorderBox from 'components/BorderBox';
 import ScoreMapContext from 'components/ScoreMapContext';
 import { Locale } from 'data/languages';
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
+import MainImage from 'components/MainImage';
 
 interface Props {
   locale: Locale;
@@ -42,7 +43,9 @@ const Result: NextPage<Props> = ({ locale }) => {
 
   return (
     <div className="content-wrapper content-aligner">
-      <MainImage src={'/images/ui/loading.gif'} alt="로딩 이미지 설명" />
+      <BorderBox>
+        <MainImage src={'/images/ui/loading.gif'} alt="로딩 이미지 설명" />
+      </BorderBox>
       {{ ko: '분석 중...', en: 'Loading...' }[locale]}
     </div>
   );

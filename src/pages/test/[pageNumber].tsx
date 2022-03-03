@@ -4,13 +4,14 @@ import { ParsedUrlQuery } from 'querystring';
 import { Locale } from 'data/languages';
 import Head, { DEFAULT_TITLE } from 'components/Head';
 import Link from 'components/Link';
-import MainImage from 'components/MainImage';
+import BorderBox from 'components/BorderBox';
 import Modal from 'components/Modal';
 import Progress from 'components/Progress';
 import ScoreMapContext, { ScoreMap } from 'components/ScoreMapContext';
 import { useContext, useState, useEffect } from 'react';
 import { logEvent, logPageview } from 'components/GA';
 import Poi from 'components/Poi';
+import MainImage from 'components/MainImage';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -125,7 +126,9 @@ const Test: NextPage<Props> = ({
       <Progress max={totalPageNumber} value={pageNumber} />
       <div className="content-aligner stretch">
         <h2 className="title">{title[locale]}</h2>
-        <MainImage src={imgSrc} alt={mainImgDescription} />
+        <BorderBox>
+          <MainImage src={imgSrc} alt={mainImgDescription} />
+        </BorderBox>
         {options.map(({ text, scores }, i) => (
           <Link
             key={i}
