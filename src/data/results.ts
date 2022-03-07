@@ -10,7 +10,7 @@ const results: {
   vanilla: {
     summary: {
       ko: '겁이 많아 익숙한 장소만 자주 가는 바닐라',
-      en: '',
+      en: 'Vanilla',
     },
     descriptions: {
       ko: [
@@ -20,13 +20,19 @@ const results: {
         '또한 겁이 많아 여행지에서 친구들 이외에는 누군가와 대화하거나 상대하는 것을 두려워하지요.',
         '사실 여행보단 집에서 쉬는 걸 좋아해요. (여행에서도 숙소에 있는걸 좋아합니다.)',
       ],
-      en: ['translation wip...'],
+      en: [
+        'Likes to take time on things when it comes to travel.',
+        'Sleeps a lot, therefore likes to have a flexible travel schedule.',
+        "Has very strong food preferences, so often has a hard time finding the ‘right food'.",
+        'Also afraid of talking to strangers.',
+        'In fact, not a big fan of travel at all.',
+      ],
     },
   },
   munboo: {
     summary: {
       ko: '효율적인 여행을 위해 계획을 세우는 먼부',
-      en: '',
+      en: 'Munboo',
     },
     descriptions: {
       ko: [
@@ -36,13 +42,17 @@ const results: {
         '여행 중 시간에 맞춰서 매번 끼니를 먹는 건 중요하지만 어떤 걸 먹어야 할지는 크게 중요하지 않아요.',
         '그래서 먹어보고 싶은 게 있다면 취향에 상관없이 호기심을 보이며 먹는답니다.',
       ],
-      en: ['translation wip...'],
+      en: [
+        'Is all about friends. The whole point of travel is to talk, have fun, and share quality time with them.',
+        'Likes to plan for all routes and always check Google Maps after arriving at new places.',
+        'Thinks it is important to eat on time, but not really a gourmet type. Hence, this creature is trying new food all the time.',
+      ],
     },
   },
   coby: {
     summary: {
       ko: '자연에서 휴식하기를 좋아하는 코비',
-      en: '',
+      en: 'Coby',
     },
     descriptions: {
       ko: [
@@ -51,13 +61,18 @@ const results: {
         '그러기에 휴식 시간에도 군것질을 할 때가 많아요.',
         '자연에 관심이 많은 코비는 도시보단 자연에서 휴식하는 걸 더 좋아해요.',
       ],
-      en: ['translation wip...'],
+      en: [
+        'Values quality food over anything else. For this pal, the point of travel is to eat.',
+        "Can consume any kind of food - doesn't matter if it has a foul smell or has weird texture.",
+        'Never stops eating, even between meals.',
+        'Strongly prefer nature over the city.',
+      ],
     },
   },
   hiff: {
     summary: {
       ko: '셀카가 마음에 들지 않아 혼자 사진 찍는 걸 싫어하는 히프',
-      en: '',
+      en: 'Hiff',
     },
     descriptions: {
       ko: [
@@ -67,13 +82,18 @@ const results: {
         '여행을 갈 때 창밖에 풍경들을 많이 신경 써요.',
         '요리사이기 때문에 로컬푸드에 관심이 많답니다.',
       ],
-      en: ['translation wip...'],
+      en: [
+        "Doesn't mind where to go as long as with a group of friends.",
+        "Isn't really good at packing up stuff, so asking for help for most of the time.",
+        'Likes to stare outside the window when going from one place to another.',
+        'Is a chef, so has a great interest in local food.',
+      ],
     },
   },
   totti: {
     summary: {
       ko: '식도락 여행을 좋아하는 또띠',
-      en: '',
+      en: 'Totti',
     },
     descriptions: {
       ko: [
@@ -82,13 +102,18 @@ const results: {
         '만약 여행 중에 마음에 드는 사람이 있다면 당당하게 다가가 말을 걸고 함께 친구가 되길 바라요',
         '여행이 끝난 뒤 모든 걸 불태운 또띠는 깊게 잠을 잔답니다.',
       ],
-      en: ['translation wip...... Mongolian Wrestling'],
+      en: [
+        'Is a great fan of famous martial arts, like Muay Thai.',
+        'Is full of life, therefore seeking for places to unleash his energy.',
+        'Is not afraid of approaching strangers and having a good time together.',
+        'Drops into bed after coming back from the travel.',
+      ],
     },
   },
   cinamon: {
     summary: {
       ko: '호캉스나 집으로 초대하기를 좋아하는 시나몽',
-      en: '',
+      en: 'Cinamon',
     },
     descriptions: {
       ko: [
@@ -97,13 +122,18 @@ const results: {
         '편한 여행을 위해서라면 돈을 아끼는 편은 아니에요. 여행이 끝나고 나선 친구들을 위해서 기념품 사는 걸 좋아한답니다.',
         '여행을 갔을 때 미리 시간에 맞춰 동선을 짜 놓는 것을 좋아해요.',
       ],
-      en: ['translation wip...'],
+      en: [
+        'Considers that a good trip is essentially about having a good rest.',
+        'Cares little about everything else, as long as the travel is relaxing.',
+        'Prefers to have routes planned when traveling.',
+        'Is willing to open his wallet for comfort, and the souvenirs for friends.',
+      ],
     },
   },
   somsom: {
     summary: {
       ko: '힐링 여행을 좋아하는 솜솜이',
-      en: '',
+      en: 'Somsom',
     },
     descriptions: {
       ko: [
@@ -112,7 +142,11 @@ const results: {
         '꼭 누군가와 함께 떠나야 한다고 생각하지 않기 때문에 혼자서 주도적인 여행을 해요.',
         '힐링 여행을 좋아하기에 어딜 가든 잘 먹고, 잠도 자고 잘 놀 수 있어요.',
       ],
-      en: ['translation wip...'],
+      en: [
+        'Travels to stay away from normal, tedious life.',
+        "Doesn't mind going alone. It is about going to new places and trying new things.",
+        'So whom to come with, or where to go are all secondary. This one can have fun anywhere in the world.',
+      ],
     },
   },
 };

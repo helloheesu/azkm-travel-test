@@ -1,6 +1,7 @@
 import { Character, characterNames } from 'data/character';
 import { Locale } from 'data/languages';
 import match from 'data/match';
+import { result } from 'data/sentences';
 import Image from 'next/image';
 import Link from 'next/link';
 import { logEvent } from './GA';
@@ -32,7 +33,7 @@ const Match = ({ character, locale }: Props) => {
             className="match-box match-best"
             onClick={() => onClick({ relationship: 'best' })}
           >
-            <p className="bold">찰떡친구</p>
+            <p className="bold">{result.best_match[locale]}</p>
             <div>
               <Image
                 src={`/images/characters/${best.name}.png`}
@@ -60,7 +61,7 @@ const Match = ({ character, locale }: Props) => {
             className="match-box match-worst"
             onClick={() => onClick({ relationship: 'worst' })}
           >
-            <p className="bold">개떡친구</p>
+            <p className="bold">{result.worst_match[locale]}</p>
             <div>
               <Image
                 src={`/images/characters/${worst.name}.png`}
