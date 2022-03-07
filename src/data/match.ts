@@ -15,7 +15,7 @@ const match: {
 } = {
   vanilla: {
     best: {
-      name: 'hiff',
+      name: 'hief',
       description: {
         ko: '디저트를 만드는 요리사인',
         en: '',
@@ -38,7 +38,7 @@ const match: {
       },
     },
     worst: {
-      name: 'coby',
+      name: 'kobi',
       description: {
         ko: '효율보단 감성적인',
         en: '',
@@ -47,14 +47,14 @@ const match: {
   },
   totti: {
     best: {
-      name: 'coby',
+      name: 'kobi',
       description: {
         ko: '자연 여행을 좋아하는',
         en: '',
       },
     },
     worst: {
-      name: 'cinamon',
+      name: 'cinnamong',
       description: {
         ko: '운동을 좋아하지 않는',
         en: '',
@@ -63,21 +63,21 @@ const match: {
   },
   somsom: {
     best: {
-      name: 'cinamon',
+      name: 'cinnamong',
       description: {
         ko: 'Flex 여행을 즐기는',
         en: '',
       },
     },
     worst: {
-      name: 'hiff',
+      name: 'hief',
       description: {
         ko: '먹는 거에만 돈 쓰는',
         en: '',
       },
     },
   },
-  hiff: {
+  hief: {
     best: {
       name: 'vanilla',
       description: {
@@ -93,7 +93,7 @@ const match: {
       },
     },
   },
-  cinamon: {
+  cinnamong: {
     best: {
       name: 'munboo',
       description: {
@@ -109,7 +109,7 @@ const match: {
       },
     },
   },
-  coby: {
+  kobi: {
     best: {
       name: 'totti',
       description: {
