@@ -1,7 +1,9 @@
+import { Locale } from 'data/languages';
+import { foy } from 'data/sentences';
 import Image from 'next/image';
 import FoyImage from '/public/images/characters/foy.png';
 
-const Foy = () => {
+const Foy = ({ locale }: { locale: Locale }) => {
   return (
     <section
       style={{
@@ -16,7 +18,7 @@ const Foy = () => {
           fontSize: '1.4em',
         }}
       >
-        <h1>포이 사우루스</h1>
+        <h1>{foy.foy[locale]}</h1>
       </header>
       <Image src={FoyImage} alt="" />
       <main
@@ -25,8 +27,11 @@ const Foy = () => {
           lineHeight: '1.6em',
         }}
       >
-        <p>멍때리기를 좋아하는 당신</p>
-        <p>어쩌면 포이 사우루스와 잘 맞을지도?!</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: foy.description[locale],
+          }}
+        />
       </main>
     </section>
   );

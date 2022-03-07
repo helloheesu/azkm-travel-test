@@ -13,6 +13,7 @@ import { logEvent, logPageview } from 'components/GA';
 import Foy from 'components/Foy';
 import MainImage from 'components/MainImage';
 import ImagePreLoader from 'components/ImagePreLoader';
+import { foy } from 'data/sentences';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -126,9 +127,9 @@ const Test: NextPage<Props> = ({
       {isModalOn && (
         <Modal
           onClose={() => setIsModalOn(false)}
-          closeText={'테스트 계속 하기 >'}
+          closeText={`${foy.continue[locale]} >`}
         >
-          <Foy />
+          <Foy locale={locale} />
         </Modal>
       )}
       <Progress max={totalPageNumber} value={pageNumber} />

@@ -32,3 +32,15 @@ export const index: { [key: string]: i18nText } = {
   title: { ko: '아찌끄미 친구 찾기', en: 'Which type am I?' },
   start: { ko: '테스트 시작', en: 'Start' },
 };
+
+export const foy: { [key: string]: i18nText } = {
+  foy: { ko: '포이 사우루스', en: 'Foy Saurus' },
+  description: {
+    ko: '멍때리기를 좋아하는 당신<br/>어쩌면 포이 사우루스와 잘 맞을지도?!',
+    en: 'Do you enjoy zoning out?<br/>Foy Saurus might be your best match!',
+  },
+  continue: {
+    ko: '테스트 계속 하기',
+    en: 'Back to test',
+  },
+};
