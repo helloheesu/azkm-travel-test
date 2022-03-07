@@ -7,14 +7,14 @@ export const credits: { [key: string]: i18nText } = {
   jaz: { ko: '재즈', en: 'Jaz' },
 };
 
-export const product: { [key: string]: i18nText<string | string[]> } = {
+export const product: { [key: string]: i18nText } = {
   see_more: {
     ko: '아찌끄미 친구들의 해외 여행 중...',
     en: 'While traveling with AZKM friends...',
   },
   outro: {
-    ko: ['아찌끄미 친구들이', '어떤 디저트를', '먹었는지 궁금하다면?'],
-    en: ["Let's see", 'which dessert', 'AZKM freinds', 'have chosen...'],
+    ko: '아찌끄미 친구들이<br/>어떤 디저트를<br/>먹었는지 궁금하다면?',
+    en: "Let's see<br/>which dessert<br/>AZKM freinds<br/>have chosen...",
   },
 };
 

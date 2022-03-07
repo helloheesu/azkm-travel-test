@@ -284,7 +284,7 @@ header {
 .outro .outro-flex-column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 1em;
 }
 .outro .outro-flex-column > * {
