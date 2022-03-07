@@ -49,10 +49,10 @@ const results: {
       ],
     },
   },
-  coby: {
+  kobi: {
     summary: {
       ko: '자연에서 휴식하기를 좋아하는 코비',
-      en: 'Coby',
+      en: 'Kobi',
     },
     descriptions: {
       ko: [
@@ -69,10 +69,10 @@ const results: {
       ],
     },
   },
-  hiff: {
+  hief: {
     summary: {
       ko: '셀카가 마음에 들지 않아 혼자 사진 찍는 걸 싫어하는 히프',
-      en: 'Hiff',
+      en: 'Hief',
     },
     descriptions: {
       ko: [
@@ -110,10 +110,10 @@ const results: {
       ],
     },
   },
-  cinamon: {
+  cinnamong: {
     summary: {
       ko: '호캉스나 집으로 초대하기를 좋아하는 시나몽',
-      en: 'Cinamon',
+      en: 'Cinnamong',
     },
     descriptions: {
       ko: [
