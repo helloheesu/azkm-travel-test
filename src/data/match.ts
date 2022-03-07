@@ -18,14 +18,14 @@ const match: {
       name: 'hief',
       description: {
         ko: '디저트를 만드는 요리사인',
-        en: '',
+        en: 'A chef who makes great dessert',
       },
     },
     worst: {
       name: 'somsom',
       description: {
         ko: '혼자 여행을 좋아하는',
-        en: '',
+        en: 'Who likes to travel alone',
       },
     },
   },
@@ -34,14 +34,14 @@ const match: {
       name: 'somsom',
       description: {
         ko: '효율적인 여행 동료인',
-        en: '',
+        en: 'Who likes to plan thoroughly',
       },
     },
     worst: {
       name: 'kobi',
       description: {
         ko: '효율보단 감성적인',
-        en: '',
+        en: 'Who likes to wing it',
       },
     },
   },
@@ -50,14 +50,14 @@ const match: {
       name: 'kobi',
       description: {
         ko: '자연 여행을 좋아하는',
-        en: '',
+        en: 'Who likes to enjoy the nature',
       },
     },
     worst: {
       name: 'cinnamong',
       description: {
         ko: '운동을 좋아하지 않는',
-        en: '',
+        en: "Who doesn't like to get active",
       },
     },
   },
@@ -66,14 +66,14 @@ const match: {
       name: 'cinnamong',
       description: {
         ko: 'Flex 여행을 즐기는',
-        en: '',
+        en: 'Who likes to splurge',
       },
     },
     worst: {
       name: 'hief',
       description: {
         ko: '먹는 거에만 돈 쓰는',
-        en: '',
+        en: 'Who only spends money on food',
       },
     },
   },
@@ -82,14 +82,14 @@ const match: {
       name: 'vanilla',
       description: {
         ko: '식당 최고의 단골 손님인',
-        en: '',
+        en: 'The best regular customer of his restaurant',
       },
     },
     worst: {
       name: 'munboo',
       description: {
         ko: '너무 계획대로 움직이는',
-        en: '',
+        en: 'Who likes to get everything planned',
       },
     },
   },
@@ -98,14 +98,14 @@ const match: {
       name: 'munboo',
       description: {
         ko: '길을 잘 찾는',
-        en: '',
+        en: 'Born to find the right path',
       },
     },
     worst: {
       name: 'totti',
       description: {
         ko: '쉴 줄 모르는 에너자이저인',
-        en: '',
+        en: 'Who is full of energy',
       },
     },
   },
@@ -114,14 +114,14 @@ const match: {
       name: 'totti',
       description: {
         ko: '자연 관광을 즐기는',
-        en: '',
+        en: 'Who likes to enjoy the nature',
       },
     },
     worst: {
       name: 'vanilla',
       description: {
         ko: '블루베리만 좋아하는',
-        en: '',
+        en: 'Who only cares about Blueberry',
       },
     },
   },
