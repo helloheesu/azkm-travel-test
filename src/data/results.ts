@@ -1,10 +1,10 @@
 import { Character } from './character';
-import { Locale } from './languages';
+import { i18nText } from './languages';
 
 const results: {
   [key in Character]: {
-    summary: { [key in Locale]: string };
-    descriptions: { [key in Locale]: string[] };
+    summary: i18nText;
+    descriptions: i18nText<string[]>;
   };
 } = {
   vanilla: {

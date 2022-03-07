@@ -1,6 +1,6 @@
 export type Locale = 'en' | 'ko';
-export type i18nText = {
-  [key in Locale]: string;
+export type i18nText<T = string> = {
+  [key in Locale]: T;
 };
 
 export const getLocale = (): Locale => {
