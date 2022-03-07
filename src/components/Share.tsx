@@ -1,4 +1,5 @@
 import { Character } from 'data/character';
+import { Service } from 'data/share';
 import Script from 'next/script';
 import { useEffect, useRef, useState } from 'react';
 import { logEvent } from './GA';
@@ -14,17 +15,6 @@ interface Props {
   attachmentSrc: string;
 }
 
-export type Service =
-  | 'share'
-  | 'kakao'
-  | 'url'
-  | 'download'
-  | 'facebook'
-  | 'twitter'
-  | 'instagram'
-  | 'smartstore'
-  | 'idus'
-  | 'github';
 declare global {
   interface Window {
     Kakao: any;

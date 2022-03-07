@@ -1,10 +1,10 @@
 import { Locale } from 'data/languages';
+import { Service } from 'data/share';
 import Image from 'next/image';
 import CartoonImage from '../../public/images/product/cartoon.png';
 import CharactersImage from '../../public/images/product/outro-characters.png';
 import ProductImage from '../../public/images/product/product.png';
 import { logEvent } from './GA';
-import { Service } from './Share';
 import SocialButton from './SocialButton';
 
 const Product = ({ locale }: { locale: Locale }) => {

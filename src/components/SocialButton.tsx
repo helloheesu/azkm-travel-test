@@ -1,5 +1,5 @@
+import { Service } from 'data/share';
 import Image from 'next/image';
-import { Service } from './Share';
 
 const getButtonImgUrl = (service: Service) => `/images/social/${service}.png`;
 
