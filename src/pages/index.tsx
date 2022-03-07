@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import MainImage from 'components/MainImage';
 import ImagePreLoader from 'components/ImagePreLoader';
 import LoadingImage from '../../public/images/ui/loading.gif';
+import { index } from 'data/sentences';
 
 interface Props {
   locale: Locale;
@@ -39,12 +40,8 @@ const Home: NextPage<Props> = ({ locale }) => {
         {/* <LocaleToggler currentLocale={locale} /> */}
       </div>
       <header>
-        <p>
-          {{ ko: '여행 스타일로 알아보는', en: 'Travel Type Test' }[locale]}
-        </p>
-        <h1 className="no-margin">
-          {{ ko: '아찌끄미 친구 찾기', en: 'Which type am I?' }[locale]}
-        </h1>
+        <p>{index.subtitle[locale]}</p>
+        <h1 className="no-margin">{index.title[locale]}</h1>
       </header>
       <BorderBox>
         <MainImage src={'/images/main/intro.png'} alt="인트로 이미지" />
@@ -55,7 +52,7 @@ const Home: NextPage<Props> = ({ locale }) => {
           query: { pageNumber: '1' },
         }}
         as={'/'}
-        text={`${{ ko: '테스트 시작', en: 'Start' }[locale]} >`}
+        text={`${index.start[locale]} >`}
       />
     </div>
   );

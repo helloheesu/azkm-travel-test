@@ -13,6 +13,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import { useEffect } from 'react';
+import { result } from 'data/sentences';
 
 interface StaticProps extends ParsedUrlQuery {
   character: Character;
@@ -55,10 +56,7 @@ export const getStaticProps: GetStaticProps<Props, StaticProps> = ({
 
   const { descriptions, summary } = results[character];
   const characterName = characterNames[character][_locale];
-  const title = {
-    ko: '나랑 잘 맞는 여행 친구는',
-    en: 'You best travel mate',
-  }[_locale];
+  const title = result.title[_locale];
 
   return {
     props: {
@@ -141,10 +139,7 @@ const Page: NextPage<Props> = ({
       </section>
       <Product locale={locale} />
       <footer className="footer">
-        <Link
-          text={{ ko: '테스트 다시하기', en: 'Restart' }[locale]}
-          href={'/'}
-        />
+        <Link text={result.restart[locale]} href={'/'} />
         <Share
           character={character}
           attachmentSrc={characterWithBgcolorImgSrc}

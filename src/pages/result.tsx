@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 import MainImage from 'components/MainImage';
 import ImagePreLoader from 'components/ImagePreLoader';
+import { result } from 'data/sentences';
 
 interface Props {
   locale: Locale;
@@ -54,7 +55,7 @@ const Result: NextPage<Props> = ({ locale }) => {
       <BorderBox>
         <MainImage src={'/images/ui/loading.gif'} alt="로딩 이미지 설명" />
       </BorderBox>
-      {{ ko: '분석 중...', en: 'Loading...' }[locale]}
+      {result.loading[locale]}
     </div>
   );
 };

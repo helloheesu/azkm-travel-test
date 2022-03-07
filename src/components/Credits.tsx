@@ -1,4 +1,5 @@
 import { Locale } from 'data/languages';
+import { credits } from 'data/sentences';
 import { logEvent } from './GA';
 import SocialButton from './SocialButton';
 
@@ -14,7 +15,7 @@ const Credits = ({ locale }: { locale: Locale }) => {
 
   return (
     <section className="credits">
-      <header>{{ ko: '만든 사람들', en: 'Credits' }[locale]}</header>
+      <header>{credits.credits[locale]}</header>
       <ul>
         <li onClick={() => onClickLink('Hwany')}>
           <a
@@ -26,7 +27,7 @@ const Credits = ({ locale }: { locale: Locale }) => {
               service="instagram"
               onLoadingComplete={onImageRendered}
             />
-            <span>{{ ko: '화니', en: 'Hwany' }[locale]}</span>
+            <span>{credits.hwany[locale]}</span>
           </a>
         </li>
         <li onClick={() => onClickLink('Heesu')}>
@@ -36,7 +37,7 @@ const Credits = ({ locale }: { locale: Locale }) => {
             rel="noreferrer"
           >
             <SocialButton service="github" />
-            <span>{{ ko: '히수', en: 'Heesu' }[locale]}</span>
+            <span>{credits.heesu[locale]}</span>
           </a>
         </li>
         <li onClick={() => onClickLink('Jaz')}>
@@ -46,7 +47,7 @@ const Credits = ({ locale }: { locale: Locale }) => {
             rel="noreferrer"
           >
             <SocialButton service="instagram" />
-            <span>{{ ko: '재즈', en: 'Jaz' }[locale]}</span>
+            <span>{credits.jaz[locale]}</span>
           </a>
         </li>
       </ul>

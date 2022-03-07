@@ -1,5 +1,6 @@
 import { Locale } from 'data/languages';
-import { Service } from 'data/share';
+import { Service, serviceNames } from 'data/share';
+import { product } from 'data/sentences';
 import Image from 'next/image';
 import CartoonImage from '../../public/images/product/cartoon.png';
 import CharactersImage from '../../public/images/product/outro-characters.png';
@@ -25,12 +26,7 @@ const Product = ({ locale }: { locale: Locale }) => {
           fontSize: '1.4rem',
         }}
       >
-        {
-          {
-            ko: '아찌끄미 친구들의 해외 여행 중...',
-            en: 'See more about AZKM',
-          }[locale]
-        }
+        {product.see_more[locale]}
       </header>
       <main>
         <div className="product-page">
@@ -58,9 +54,9 @@ const Product = ({ locale }: { locale: Locale }) => {
                 <Image src={CharactersImage} alt="" />
               </div>
               <div className="outro-title">
-                <p>아찌끄미 친구들이</p>
-                <p>어떤 디저트를</p>
-                <p>먹었는지 궁금하다면?</p>
+                {(product.outro[locale] as string[]).map((sentence, i) => (
+                  <p key={i}>{sentence}</p>
+                ))}
               </div>
             </div>
             <div
@@ -94,9 +90,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                         service="smartstore"
                         altText="스마트스토어로 이동"
                       />
-                      <span>
-                        {{ ko: '공식스토어', en: 'Smartstore' }[locale]}
-                      </span>
+                      <span>{serviceNames.smartstore[locale]}</span>
                     </div>
                   </a>
                 </li>
@@ -112,7 +106,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                         service="idus"
                         altText="아이디어스로 이동"
                       />
-                      <span>{{ ko: '아이디어스', en: 'Idus' }[locale]}</span>
+                      <span>{serviceNames.idus[locale]}</span>
                     </div>
                   </a>
                 </li>
@@ -128,7 +122,7 @@ const Product = ({ locale }: { locale: Locale }) => {
                         service="instagram"
                         altText="인스타페이지로 이동"
                       />
-                      <span>인스타그램</span>
+                      <span>{serviceNames.instagram[locale]}</span>
                     </div>
                   </a>
                 </li>
