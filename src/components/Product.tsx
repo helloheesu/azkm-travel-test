@@ -54,9 +54,9 @@ const Product = ({ locale }: { locale: Locale }) => {
                 <Image src={CharactersImage} alt="" />
               </div>
               <div className="outro-title">
-                {(product.outro[locale] as string[]).map((sentence, i) => (
-                  <p key={i}>{sentence}</p>
-                ))}
+                <p
+                  dangerouslySetInnerHTML={{ __html: product.outro[locale] }}
+                />
               </div>
             </div>
             <div
