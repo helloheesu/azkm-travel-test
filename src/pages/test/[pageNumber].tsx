@@ -10,7 +10,7 @@ import Progress from 'components/Progress';
 import ScoreMapContext, { ScoreMap } from 'components/ScoreMapContext';
 import { useContext, useState, useEffect } from 'react';
 import { logEvent, logPageview } from 'components/GA';
-import Poi from 'components/Poi';
+import Foy from 'components/Foy';
 import MainImage from 'components/MainImage';
 import ImagePreLoader from 'components/ImagePreLoader';
 
@@ -77,26 +77,26 @@ const Test: NextPage<Props> = ({
   const imgSrc = `/images/main/${pageNumber}.png`;
   const { increaseScores } = useContext(ScoreMapContext);
 
-  const [isPoiShown, setIsPoiShown] = useState(false);
+  const [isFoyShown, setIsFoyShown] = useState(false);
   const [isModalOn, setIsModalOn] = useState(false);
 
   useEffect(() => {
-    const showPoi = () => {
+    const showFoy = () => {
       logEvent('easter_egg', {
-        visible: !isPoiShown,
+        visible: !isFoyShown,
         pageNumber,
       });
-      if (isPoiShown) {
+      if (isFoyShown) {
         return;
       }
-      setIsPoiShown(true);
+      setIsFoyShown(true);
       setIsModalOn(true);
     };
 
     const SECOND = 1000;
-    const timeoutId = setTimeout(showPoi, 60 * SECOND);
+    const timeoutId = setTimeout(showFoy, 60 * SECOND);
     return () => clearTimeout(timeoutId);
-  }, [isPoiShown, pageNumber]);
+  }, [isFoyShown, pageNumber]);
 
   useEffect(() => {
     logPageview(`/test/${pageNumber}`);
@@ -128,7 +128,7 @@ const Test: NextPage<Props> = ({
           onClose={() => setIsModalOn(false)}
           closeText={'테스트 계속 하기 >'}
         >
-          <Poi />
+          <Foy />
         </Modal>
       )}
       <Progress max={totalPageNumber} value={pageNumber} />
