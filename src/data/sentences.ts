@@ -22,6 +22,9 @@ export const result: { [key: string]: i18nText } = {
   loading: { ko: '분석 중...', en: 'Loading...' },
   title: { ko: '나랑 잘 맞는 여행 친구는', en: 'You best travel mate' },
   restart: { ko: '테스트 다시하기', en: 'Restart' },
+  save: { ko: '꾹 눌러서 저장하기', en: 'Longpress to save' },
+  best_match: { ko: '찰떡친구', en: 'Best Match' },
+  worst_match: { ko: '개떡친구', en: 'Worst Match' },
 };
 
 export const index: { [key: string]: i18nText } = {

@@ -120,7 +120,7 @@ const Page: NextPage<Props> = ({
               objectPosition="center"
             />
             <p className="guide guide-bottom nonselectable">
-              &#9650;꾹 눌러서 저장하기&#9650;
+              &#9650;{result.save[locale]}&#9650;
             </p>
             <div className="guide guide-top-right">
               <LocaleToggler currentLocale={locale} />
