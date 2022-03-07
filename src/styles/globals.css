@@ -313,7 +313,7 @@ header {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 .profile-container > *:not(:first-child) {
   margin-left: 4px;
@@ -336,6 +336,10 @@ header {
   margin-top: 3em;
   align-items: center;
 }
+.credits header {
+  font-size: 1.2em;
+  margin-top: -0.2em;
+}
 .credits > * {
   flex-grow: 1;
 }
@@ -357,11 +361,13 @@ header {
   align-items: center;
 }
 .credits button {
-  min-width: 1em;
-  min-height: 1em;
+  min-width: 0.8em;
+  min-height: 0.8em;
   position: relative;
-  margin-right: 3px;
-  font-size: 0.6em;
+  margin-right: 5px;
+}
+.credits li button + span {
+  margin-top: -0.3em;
 }
 
 .match-container {
