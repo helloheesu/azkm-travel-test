@@ -370,12 +370,19 @@ header {
   align-items: stretch;
   cursor: pointer;
 }
-.match-container .description {
-  font-size: 0.8em;
-}
 .match {
   flex-grow: 1;
   width: 100%;
+}
+.match-title {
+  font-size: 1.2em;
+}
+.match .description {
+  font-size: 0.8em;
+  text-align: center;
+}
+.match .name {
+  font-size: 1.1em;
 }
 .match-box {
   background-color: #ffffeb;
@@ -387,9 +394,11 @@ header {
   min-height: 3em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
+
+  height: 100%;
 }
 
 .main-image {
