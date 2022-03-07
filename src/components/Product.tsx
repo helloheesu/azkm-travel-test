@@ -2,7 +2,6 @@ import { Locale } from 'data/languages';
 import { Service, serviceNames } from 'data/share';
 import { product } from 'data/sentences';
 import Image from 'next/image';
-import CartoonImage from '../../public/images/product/cartoon.png';
 import CharactersImage from '../../public/images/product/outro-characters.png';
 import ProductImage from '../../public/images/product/product.png';
 import { logEvent } from './GA';
@@ -31,8 +30,10 @@ const Product = ({ locale }: { locale: Locale }) => {
       <main>
         <div className="product-page">
           <Image
-            src={CartoonImage}
+            src={`/images/product/cartoon-${locale}.png`}
             alt="상품 소개 이미지"
+            width={2050}
+            height={3000}
             onLoadingComplete={onImageRendered}
           />
         </div>
