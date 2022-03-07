@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import PoiImage from '/public/images/characters/Poi.png';
+import FoyImage from '/public/images/characters/foy.png';
 
-const Poi = () => {
+const Foy = () => {
   return (
     <section
       style={{
@@ -18,7 +18,7 @@ const Poi = () => {
       >
         <h1>포이 사우루스</h1>
       </header>
-      <Image src={PoiImage} alt="" />
+      <Image src={FoyImage} alt="" />
       <main
         style={{
           fontSize: '1.2em',
@@ -32,4 +32,4 @@ const Poi = () => {
   );
 };
 
-export default Poi;
+export default Foy;
