@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import { useEffect } from 'react';
 import { result } from 'data/sentences';
+import LocaleToggler from 'components/LocaleToggler';
 
 interface StaticProps extends ParsedUrlQuery {
   character: Character;
@@ -122,7 +123,7 @@ const Page: NextPage<Props> = ({
               &#9650;꾹 눌러서 저장하기&#9650;
             </p>
             <div className="guide guide-top-right">
-              {/* <LocaleToggler currentLocale={locale} /> */}
+              <LocaleToggler currentLocale={locale} />
             </div>
           </BorderBox>
           <div className="description">

@@ -30,21 +30,15 @@ const Home: NextPage<Props> = ({ locale }) => {
     <div className="content-wrapper content-aligner">
       <Head />
       <ImagePreLoader src="/images/main/1.png" />
-      <div
-        style={{
-          position: 'absolute',
-          top: '2em',
-          right: '1em',
-        }}
-      >
-        {/* <LocaleToggler currentLocale={locale} /> */}
-      </div>
       <header>
         <p>{index.subtitle[locale]}</p>
         <h1 className="no-margin">{index.title[locale]}</h1>
       </header>
       <BorderBox>
         <MainImage src={'/images/main/intro.png'} alt="인트로 이미지" />
+        <div className="guide guide-top-right">
+          <LocaleToggler currentLocale={locale} />
+        </div>
       </BorderBox>
       <Link
         href={{
