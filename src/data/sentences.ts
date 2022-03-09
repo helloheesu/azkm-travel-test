@@ -20,6 +20,14 @@ export const product: { [key: string]: i18nText } = {
 
 export const result: { [key: string]: i18nText } = {
   loading: { ko: '분석 중...', en: 'Loading...' },
+  product: {
+    ko: '아찌끄미 핸드폰 케이스 보러가기',
+    en: 'Look around AZKM phone cases',
+  },
+  continue: {
+    ko: '결과 보러가기',
+    en: 'Show me the result',
+  },
   title: { ko: '나랑 잘 맞는 여행 친구는', en: 'Your best travel mate' },
   restart: { ko: '테스트 다시하기', en: 'Restart' },
   save: { ko: '꾹 눌러서 저장하기', en: 'Long Press to Save' },

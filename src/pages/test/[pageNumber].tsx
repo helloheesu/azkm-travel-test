@@ -73,7 +73,8 @@ const Test: NextPage<Props> = ({
           query: { pageNumber: (pageNumber + 1).toString() },
         }
       : '/result';
-  const as = '/';
+  const as = pageNumber < totalPageNumber ? '/' : undefined;
+  const replace = pageNumber < totalPageNumber;
 
   const imgSrc = `/images/main/${pageNumber}.png`;
   const { increaseScores } = useContext(ScoreMapContext);
@@ -146,6 +147,7 @@ const Test: NextPage<Props> = ({
             as={as}
             text={text[locale]}
             onClick={() => onClickItem(scores, i + 1)}
+            replace={replace}
           />
         ))}
       </div>
