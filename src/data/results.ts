@@ -10,7 +10,7 @@ const results: {
   vanilla: {
     summary: {
       ko: '겁이 많아 익숙한 장소만 자주 가는 바닐라',
-      en: 'Vanilla',
+      en: 'An introvert, who usually goes to places well aware of',
     },
     descriptions: {
       ko: [
@@ -32,7 +32,7 @@ const results: {
   munboo: {
     summary: {
       ko: '효율적인 여행을 위해 계획을 세우는 먼부',
-      en: 'Munboo',
+      en: 'Who plans accordingly to take an efficient travel',
     },
     descriptions: {
       ko: [
@@ -52,7 +52,7 @@ const results: {
   kobi: {
     summary: {
       ko: '자연에서 휴식하기를 좋아하는 코비',
-      en: 'Kobi',
+      en: 'Who likes to spend time in nature',
     },
     descriptions: {
       ko: [
@@ -72,7 +72,7 @@ const results: {
   hief: {
     summary: {
       ko: '셀카가 마음에 들지 않아 혼자 사진 찍는 걸 싫어하는 히프',
-      en: 'Hief',
+      en: 'Not a selfie type, prefers to take photos together',
     },
     descriptions: {
       ko: [
@@ -93,7 +93,7 @@ const results: {
   totti: {
     summary: {
       ko: '식도락 여행을 좋아하는 또띠',
-      en: 'Totti',
+      en: 'Loves food travel',
     },
     descriptions: {
       ko: [
@@ -113,7 +113,7 @@ const results: {
   cinnamong: {
     summary: {
       ko: '호캉스나 집으로 초대하기를 좋아하는 시나몽',
-      en: 'Cinnamong',
+      en: 'Prefers to do a staycation, or to invite people',
     },
     descriptions: {
       ko: [
@@ -133,7 +133,7 @@ const results: {
   somsom: {
     summary: {
       ko: '힐링 여행을 좋아하는 솜솜이',
-      en: 'Somsom',
+      en: 'Likes to staying zen while traveling',
     },
     descriptions: {
       ko: [
