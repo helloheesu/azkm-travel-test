@@ -28,8 +28,11 @@ export const result: { [key: string]: i18nText } = {
 };
 
 export const index: { [key: string]: i18nText } = {
-  subtitle: { ko: '여행 스타일로 알아보는', en: 'Travel Type Test' },
-  title: { ko: '아찌끄미 친구 찾기', en: 'Which type am I?' },
+  subtitle: {
+    ko: '여행 스타일로 알아보는',
+    en: 'Check your travel personality',
+  },
+  title: { ko: '아찌끄미 친구 찾기', en: 'And find your AZKM travel mate' },
   start: { ko: '테스트 시작', en: 'Start' },
 };
 
