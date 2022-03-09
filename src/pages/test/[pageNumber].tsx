@@ -72,7 +72,7 @@ const Test: NextPage<Props> = ({
           pathname: '/test/[pageNumber]',
           query: { pageNumber: (pageNumber + 1).toString() },
         }
-      : '/result';
+      : '/loading';
   const as = pageNumber < totalPageNumber ? '/' : undefined;
   const replace = pageNumber < totalPageNumber;
 
