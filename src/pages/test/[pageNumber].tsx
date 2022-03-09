@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import tests, { TestData } from 'data/tests';
 import { ParsedUrlQuery } from 'querystring';
 import { Locale } from 'data/languages';
-import Head, { DEFAULT_TITLE } from 'components/Head';
+import Head from 'components/Head';
 import Link from 'components/Link';
 import BorderBox from 'components/BorderBox';
 import Modal from 'components/Modal';
@@ -13,7 +13,7 @@ import { logEvent, logPageview } from 'components/GA';
 import Foy from 'components/Foy';
 import MainImage from 'components/MainImage';
 import ImagePreLoader from 'components/ImagePreLoader';
-import { foy } from 'data/sentences';
+import { foy, index } from 'data/sentences';
 
 interface StaticProps extends ParsedUrlQuery {
   pageNumber: string;
@@ -115,7 +115,8 @@ const Test: NextPage<Props> = ({
     <div className="fix-and-stretch-aligner">
       <Head
         img={imgSrc}
-        title={`${DEFAULT_TITLE} - ${pageNumber}/${totalPageNumber}`}
+        title={`${index.subtitle[locale]} - ${pageNumber}/${totalPageNumber}`}
+        description={index.title[locale]}
       />
       <ImagePreLoader
         src={

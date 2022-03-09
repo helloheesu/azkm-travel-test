@@ -8,7 +8,6 @@ import type { GetStaticProps, NextPage } from 'next';
 import { useEffect } from 'react';
 import MainImage from 'components/MainImage';
 import ImagePreLoader from 'components/ImagePreLoader';
-import LoadingImage from '../../public/images/ui/loading.gif';
 import { index } from 'data/sentences';
 
 interface Props {
@@ -28,7 +27,7 @@ const Home: NextPage<Props> = ({ locale }) => {
 
   return (
     <div className="content-wrapper content-aligner">
-      <Head />
+      <Head title={index.subtitle[locale]} description={index.title[locale]} />
       <ImagePreLoader src="/images/main/1.png" />
       <header>
         <p>{index.subtitle[locale]}</p>

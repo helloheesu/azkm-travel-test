@@ -2,15 +2,14 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
 interface Props {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   img?: string;
   pathname?: string;
 }
-export const DEFAULT_TITLE = '여행 유형 테스트';
-const Comp = ({
-  title = DEFAULT_TITLE,
-  description = '나랑 잘 맞는 아찌끄미 친구 찾기',
+const CustomHead = ({
+  title,
+  description,
   img = '/images/main/intro.png',
   pathname = '',
 }: Props) => {
@@ -46,4 +45,4 @@ const Comp = ({
   );
 };
 
-export default Comp;
+export default CustomHead;
