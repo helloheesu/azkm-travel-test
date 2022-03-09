@@ -69,7 +69,12 @@ const Product = ({ locale }: { locale: Locale }) => {
                 overflow: 'hidden',
               }}
             >
-              <Image src={ProductImage} alt="케이스 사진" layout="fill" />
+              <Image
+                src={'/images/product/product.png'}
+                alt="케이스 사진"
+                width={1000}
+                height={1000}
+              />
             </div>
             <div className="profile-links">
               <ul
